@@ -10,27 +10,37 @@
 
 </head>
 	<body>
-		<div class="container-fluid">
-			<section class="well well-lg col-md-4 col-md-offset-4 login">
-				{{ Form::open(array('url' => '', 'role' => 'form')) }}
-					<div class="form-group">
-						{{ Form::label('username', 'Usuario') }}
-						<div class="input-group">
-							<div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-							{{ Form::text('username', null, array('class' => 'form-control')) }}
-						</div>
-					</div>
-					<div class="form-group">
-						{{ Form::label('password', 'Contraseña') }}
-						<div class="input-group">
-							<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-							{{ Form::password('password', array('class' => 'form-control')) }}
-						</div>
-					</div>
-					<div class="form-group">
-						{{ Form::submit('Entrar', array('class' => 'btn btn-primary')) }}
-					</div>
-				{{ Form::close() }}
+		<div class="container-fluid login">
+
+			<section class="col-md-4 col-md-offset-4">
+
+			    @if (Session::has('error'))
+                    <p class="alert alert-danger">{{ Session::get('error') }}</p>
+                @endif
+
+
+                <div class="well well-lg login-form">
+                    {{ Form::open(['route' => 'login', 'role' => 'form']) }}
+                        <div class="form-group">
+                            {{ Form::label('email', 'Email') }}
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                                {{ Form::text('email', null, ['class' => 'form-control']) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ Form::label('password', 'Contraseña') }}
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                                {{ Form::password('password', ['class' => 'form-control']) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ Form::submit('Entrar', ['class' => 'btn btn-primary']) }}
+                        </div>
+                    {{ Form::close() }}
+                </div>
+
 			</section>
 
 			<p class="col-md-4 col-md-offset-4 login-footer">
