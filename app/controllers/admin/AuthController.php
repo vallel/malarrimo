@@ -2,14 +2,24 @@
 
 class AuthController extends BaseController {
 
+    public function showLogin()
+    {
+        if (Auth::check())
+        {
+            return Redirect::route('users');
+        }
+
+        return View::make('admin/login');
+    }
+
     public function login()
     {
         $data = Input::all();
 
-        $credentials = [
+        $credentials = array(
             'email' => $data['email'],
             'password' => $data['password'],
-        ];
+        );
 
         if (Auth::attempt($credentials))
         {
@@ -17,6 +27,12 @@ class AuthController extends BaseController {
         }
 
         return Redirect::back()->with('error', 'Usuario y/o contraseña inválidos');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return Redirect::to('admin');
     }
 
 } 
