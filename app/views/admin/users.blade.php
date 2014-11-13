@@ -2,9 +2,13 @@
 
 @section('content')
 
-    <h1>Usuarios</h1>
+    <h1 class="section-header">Usuarios</h1>
 
-    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#create-user">
+    @if (Session::has('msg'))
+        {{ Session::get('msg') }}
+    @endif
+
+    <a href="" class="btn btn-primary tool-btn" data-toggle="modal" data-target="#create-user">
         <span class="glyphicon glyphicon-plus-sign"></span> Crear usuario
     </a>
 
