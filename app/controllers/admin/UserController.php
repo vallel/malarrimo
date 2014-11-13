@@ -22,7 +22,9 @@ class UserController extends BaseController {
 
     public function create()
     {
-        dd(Input::all());
+        $userData = Input::only(['userName', 'email', 'password']);
+        $this->userRepo->create($userData['userName'], $userData['email'], $userData['password']);
+        return Redirect::to('admin/usuarios')->with('msg', '<p class="alert alert-success">Usuario <strong>' . $userData['userName'] . '</strong> creado</p>');
     }
 
 } 
