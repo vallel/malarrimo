@@ -2,14 +2,13 @@
 
 namespace Malarrimo\Managers;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\MessageBag;
 
 abstract class ManagerBase
 {
 
     /**
-     * @var Model
+     * @var \Eloquent
      */
     protected $entity;
 
@@ -24,7 +23,7 @@ abstract class ManagerBase
     protected $errors;
 
     /**
-     * @param Model $entity
+     * @param /Eloquent $entity
      * @param array $data
      */
     public function __construct($entity, $data)
@@ -39,12 +38,21 @@ abstract class ManagerBase
     abstract public function getRules();
 
     /**
+     * @return array
+     */
+    public function getMessages()
+    {
+        return [];
+    }
+
+    /**
      * @return bool
      */
     public function isValid()
     {
         $rules = $this->getRules();
-        $validation = \Validator::make($this->data, $rules);
+        $messages = $this->getMessages();
+        $validation = \Validator::make($this->data, $rules, $messages);
 
         $this->errors = $validation->messages();
 

@@ -3,7 +3,7 @@
 namespace Malarrimo\Managers;
 
 
-class UserManager  extends ManagerBase
+class UserManager extends ManagerBase
 {
 
     /**
@@ -14,10 +14,27 @@ class UserManager  extends ManagerBase
         $rules = [
             'user_name' => '',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|confirmed',
+            'password' => 'required',
+            'password_confirmation' => 'required|same:password',
         ];
 
         return $rules;
+    }
+
+    /**
+     * @return bool
+     */
+    public function save()
+    {
+        if (!$this->isValid())
+        {
+            return false;
+        }
+
+        $this->entity->fill($this->data);
+        $this->entity->save();
+
+        return true;
     }
 
 }

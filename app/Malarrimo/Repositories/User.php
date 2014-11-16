@@ -6,27 +6,14 @@ use Malarrimo\Entities\User as UserEntity;
 
 class User {
 
-    /**
-     * @return UserEntity[]
-     */
-    public function getActives()
+    public function getAll()
     {
-        return UserEntity::where('status', '=', 'Active')->get();
+        return UserEntity::all();
     }
 
-    /**
-     * @param string $name
-     * @param string $email
-     * @param string $password
-     */
-    public function create($name, $email, $password)
+    public function newUser()
     {
-        $user = new UserEntity();
-        $user->user_name = $name;
-        $user->email = $email;
-        $user->password = $password;
-        $user->status = 'Active';
-        $user->save();
+        return new UserEntity();
     }
 
 } 

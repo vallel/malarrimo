@@ -1,6 +1,7 @@
 <?php
 
 use Malarrimo\Repositories\User;
+use Malarrimo\Managers\UserManager;
 
 class UserController extends BaseController {
 
@@ -16,15 +17,26 @@ class UserController extends BaseController {
 
     public function getList()
     {
-        $users = $this->userRepo->getActives();
+        $users = $this->userRepo->getAll();
         return View::make('admin/users')->with('users', $users);
+    }
+
+    public function add()
+    {
+        return View::make('admin/user');
     }
 
     public function create()
     {
-        $userData = Input::only(['userName', 'email', 'password']);
-        $this->userRepo->create($userData['userName'], $userData['email'], $userData['password']);
-        return Redirect::to('admin/usuarios')->with('msg', '<p class="alert alert-success">Usuario <strong>' . $userData['userName'] . '</strong> creado</p>');
+        $user = $this->userRepo->newUser();
+        $manager = new UserManager($user, Input::all());
+
+        if ($manager->save())
+        {
+            return Redirect::to('admin/usuarios')->with('msg', '<p class="alert alert-success">Usuario creado</p>');
+        }
+
+        return Redirect::back()->withInput()->withErrors($manager->getErrors());
     }
 
 } 

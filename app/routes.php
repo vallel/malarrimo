@@ -7,4 +7,5 @@ Route::post('admin/logout', ['as' => 'logout', 'uses' => 'AuthController@logout'
 
 // User administration
 Route::get('admin/usuarios', ['as' => 'users', 'uses' => 'UserController@getList']);
+Route::get('admin/usuarios/nuevo', ['as' => 'newUser', 'uses' => 'UserController@add']);
 Route::post('admin/usuarios/crear', ['as' => 'createUser', 'uses' => 'UserController@create']);

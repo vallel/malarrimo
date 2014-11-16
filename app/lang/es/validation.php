@@ -116,6 +116,7 @@ return array(
 
 'attributes' => array(
     'username' => 'usuario',
-    'password' => 'contraseña'
+    'password' => 'contraseña',
+    'password_confirmation' => 'de confirmación de contraseña',
 ),
 );
