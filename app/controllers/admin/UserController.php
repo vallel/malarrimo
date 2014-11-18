@@ -39,4 +39,33 @@ class UserController extends BaseController {
         return Redirect::back()->withInput()->withErrors($manager->getErrors());
     }
 
+    public function edit($id)
+    {
+        if (empty($id))
+        {
+            return Redirect::back();
+        }
+
+        $user = $this->userRepo->find($id);
+
+        if (empty($user))
+        {
+            return Redirect::back()->with('msg', '<p class="alert alert-danger">No se encontró el usuario seleccionado</p>');
+        }
+
+        return View::make('admin/user')->with('user', $user);
+    }
+
+    public function delete($id)
+    {
+        if ($this->userRepo->delete($id))
+        {
+            return Redirect::back()->with('msg', '<p class="alert alert-success">El usuario seleccionado ha sido borrado</p>');
+        }
+        else
+        {
+            return Redirect::back()->with('msg', '<p class="alert alert-danger">No fué posible borrar el usuario seleccionado</p>');
+        }
+    }
+
 } 

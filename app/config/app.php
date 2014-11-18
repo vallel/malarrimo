@@ -121,8 +121,12 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+
+        // vendor
 		'Way\Generators\GeneratorsServiceProvider',
 
+        // custom
+        'Malarrimo\Components\FieldServiceProvider',
 	),
 
 	/*
@@ -189,6 +193,9 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+        // custom
+        'Field'         => 'Malarrimo\Components\Field',
 
 	),
 

@@ -21,20 +21,4 @@ class UserManager extends ManagerBase
         return $rules;
     }
 
-    /**
-     * @return bool
-     */
-    public function save()
-    {
-        if (!$this->isValid())
-        {
-            return false;
-        }
-
-        $this->entity->fill($this->data);
-        $this->entity->save();
-
-        return true;
-    }
-
 }

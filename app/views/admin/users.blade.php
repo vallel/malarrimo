@@ -24,8 +24,8 @@
             <td>{{ $user->user_name }}</td>
             <td>{{ $user->email }}</td>
             <td>
-                <a href="" class="btn" title="Editar usuario"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="" class="btn" title="Eliminar usuario"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="{{ route('editUser', [$user->id]) }}" class="btn" title="Editar usuario"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="{{ route('deleteUser', [$user->id]) }}" class="btn" title="Eliminar usuario"><span class="glyphicon glyphicon-trash"></span></a>
             </td>
         </tr>
         @endforeach
