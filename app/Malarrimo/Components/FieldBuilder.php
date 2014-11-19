@@ -2,6 +2,11 @@
 
 namespace Malarrimo\Components;
 
+use Illuminate\Filesystem\Filesystem as File;
+use Illuminate\Html\FormBuilder as Form;
+use Illuminate\Session\Store as Session;
+use Illuminate\View\Factory as View;
+
 /**
  * Class FieldBuilder
  * @package Malarrimo\Components
@@ -9,13 +14,37 @@ namespace Malarrimo\Components;
 class FieldBuilder
 {
 
-    /**
-     * @var array
-     */
+    /** @var Form  */
+    protected $form;
+
+    /** @var View  */
+    protected $view;
+
+    /** @var Session  */
+    protected $session;
+
+    /** @var File  */
+    protected $file;
+
+    /** @var array  */
     protected $defaultClasses = [
         'default' => 'form-control',
         'checkbox' => '',
     ];
+
+    /**
+     * @param Form $form
+     * @param View $view
+     * @param Session $session
+     * @param File $file
+     */
+    public function __construct(Form $form, View $view, Session $session, File $file)
+    {
+        $this->form = $form;
+        $this->view = $view;
+        $this->session = $session;
+        $this->file = $file;
+    }
 
     /**
      * @param string $method
@@ -73,13 +102,13 @@ class FieldBuilder
         switch($type)
         {
             case 'select':
-                return \Form::select($name, $options, $value, $attributes);
+                return $this->form->select($name, $options, $value, $attributes);
             case 'password':
-                return \Form::password($name, $attributes);
+                return $this->form->password($name, $attributes);
             case 'checkbox':
-                return \Form::checkbox($name);
+                return $this->form->checkbox($name);
             default:
-                return \Form::input($type, $name, $value, $attributes);
+                return $this->form->input($type, $name, $value, $attributes);
         }
     }
 
@@ -91,9 +120,9 @@ class FieldBuilder
     {
         $error = null;
 
-        if (\Session::has('errors'))
+        if ($this->session->has('errors'))
         {
-            $errors = \Session::get('errors');
+            $errors = $this->session->get('errors');
 
             if ($errors->has($name))
             {
@@ -110,7 +139,7 @@ class FieldBuilder
      */
     public function buildTemplate($type)
     {
-        if (\File::exists('app/views/fields/' . $type . '.blade.php'))
+        if ($this->file->exists('app/views/fields/' . $type . '.blade.php'))
         {
             return 'fields/' . $type;
         }
@@ -134,7 +163,7 @@ class FieldBuilder
         $error = $this->buildError($name);
         $template = $this->buildTemplate($type);
 
-        return \View::make($template, compact('name', 'label', 'control', 'error'));
+        return $this->view->make($template, compact('name', 'label', 'control', 'error'));
     }
 
     /**
