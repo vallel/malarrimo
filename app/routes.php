@@ -13,3 +13,4 @@ Route::get('admin/usuarios/nuevo', ['as' => 'newUser', 'uses' => 'UserController
 Route::get('admin/usuarios/editar/{id}', ['as' => 'editUser', 'uses' => 'UserController@edit']);
 Route::get('admin/usuarios/borrar/{id}', ['as' => 'deleteUser', 'uses' => 'UserController@delete']);
 Route::post('admin/usuarios/crear', ['as' => 'createUser', 'uses' => 'UserController@create']);
+Route::post('admin/usuarios/editar/{id}', ['as' => 'updateUser', 'uses' => 'UserController@update']);

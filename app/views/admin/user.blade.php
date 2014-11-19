@@ -4,7 +4,15 @@
 
     <h1 class="section-header">Crear usuario</h1>
 
+    @if (Session::has('msg'))
+        {{ Session::get('msg') }}
+    @endif
+
+    @if (isset($user))
+    {{ Form::model($user, ['route' => ['updateUser', $user->id], 'role' => 'form']) }}
+    @else
     {{ Form::open(['route' => 'createUser', 'role' => 'form']) }}
+    @endif
 
         {{ Field::text('user_name', 'Nombre') }}
 

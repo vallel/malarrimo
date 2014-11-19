@@ -46,6 +46,14 @@ abstract class ManagerBase
     }
 
     /**
+     * @return null|int
+     */
+    public function getId()
+    {
+        return $this->entity->id ?: null;
+    }
+
+    /**
      * @return bool
      */
     public function isValid()
