@@ -28,7 +28,7 @@ class UserController extends BaseController {
 
     public function create()
     {
-        $user = $this->userRepo->newUser();
+        $user = $this->userRepo->newInstance();
         $manager = new UserManager($user, Input::all());
 
         if ($manager->save())

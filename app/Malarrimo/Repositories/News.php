@@ -2,12 +2,13 @@
 
 namespace Malarrimo\Repositories;
 
-class User extends Base
+
+class News extends Base
 {
 
     public function __construct()
     {
-        $this->entityName = 'Malarrimo\Entities\User';
+        $this->entityName = 'Malarrimo\Entities\News';
     }
 
 } 
