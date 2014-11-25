@@ -31,7 +31,7 @@ class NewsController extends BaseController
     {
         $post = $this->repository->newInstance();
         $data = Input::all();
-        $data['user_id'] = 1;
+        $data['user_id'] = Auth::user()->id;
 
         $manager = new NewsManager($post, $data);
 
@@ -58,7 +58,7 @@ class NewsController extends BaseController
 
         $post = $this->repository->find($id);
         $data = Input::all();
-        $data['user_id'] = 1;
+        $data['user_id'] = Auth::user()->id;
 
         $manager = new NewsManager($post, $data);
 
