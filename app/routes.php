@@ -2,6 +2,15 @@
 
 Route::pattern('id', '\d+');
 
+Route::get('comodidades', ['as' => 'comodidades', 'uses' => 'FacilitiesController@restaurant']);
+Route::get('comodidades/restaurante', ['as' => 'comodidades', 'uses' => 'FacilitiesController@restaurant']);
+
+
+
+/* --------------------------
+ * Admin Panel
+ ---------------------------- */
+
 // Admin panel login
 Route::get('admin', ['as' => 'admin', 'uses' => 'AuthController@showLogin']);
 Route::post('admin/login', ['as' => 'login', 'uses' => 'AuthController@login']);
