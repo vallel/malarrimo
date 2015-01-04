@@ -26,7 +26,7 @@
     </nav>
 
     <!-- Dinamic content -->
-    <h1>¡El mejor sazón del Pacífico!</h1>
+    <h1 clas="section-content-title">¡El mejor sazón del Pacífico!</h1>
     <p>Desde 1973 el restaurante Malarrimo ha sido un destino favorito para comer de viajeros internacionales</p>
     <p>Su menú incluye mariscos, comida mexicana e internacional más especialidades de temporada incluyendo el
     Callo Mano de León que se ha hecho famoso en este lugar.</p>

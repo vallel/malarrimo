@@ -10,6 +10,8 @@
 
 	{{ HTML::style('css/main.css') }}
 
+    {{ HTML::script('js/jquery-1.11.1.min.js') }}
+
 </head>
 <body>
 
@@ -85,7 +87,10 @@
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=250086971679898&version=v2.0";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    @yield('scripts')
 
 </body>
 </html>

@@ -89,8 +89,10 @@ small {
 
 .site-header {
     height: 270px;
-    background-repeat: no-repeat;
     color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #65536d;
 }
 
 .logo {
@@ -222,6 +224,14 @@ small {
     text-decoration: underline;
 }
 
+.section-menu-title {
+    font-size: 1.5em;
+}
+
+.section-menu-title:hover {
+    text-decoration: none;
+}
+
 .section-menu-active {
     background-color: #f25a28;
 }
@@ -230,7 +240,11 @@ small {
     color: #888;
 }
 
-.section-content h1 {
+.section-content-article {
+    float: left;
+}
+
+.section-content-title {
     padding-top: 20px;
     margin-bottom: 10px;
     font-size: 1.5em;
@@ -239,6 +253,15 @@ small {
 .section-content p {
     line-height: 1.3;
     margin-bottom: 10px;
+}
+
+.section-content-list {
+    list-style: disc;
+    margin-left: 25px;
+}
+
+.section-content-list li {
+    margin-bottom: 5px;
 }
 
 .bottom-bar {
@@ -310,10 +333,41 @@ small {
 ************************************/
 .facilities-header {
     background-image: url('../img/header-comodidades.jpg');
-    background-position: center;
-    background-color: #65536d;
 }
 
 .facilities-banner {
     background-image: url('../img/bann-comodidades-restaurante.jpg');
+}
+
+
+
+/***********************************
+  -------- LOCATION PAGE ---------
+************************************/
+.location-header {
+    background-image: url('../img/header-ubicacion.jpg');
+}
+
+.location-section-menu li a {
+    line-height: 45px;
+}
+
+.location-icon {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    margin-right: 5px;
+    margin-bottom: -17px;
+}
+
+.flight-icon {
+    background-image: url('../img/ubicacion-vuelos.png');
+}
+
+.bus-icon {
+    background-image: url('../img/ubicacion-autobuses.png');
+}
+
+.boat-icon {
+    background-image: url('../img/ubicacion-barco.png');
 }
