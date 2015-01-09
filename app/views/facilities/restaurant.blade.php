@@ -26,12 +26,14 @@
     </nav>
 
     <!-- Dinamic content -->
-    <h1 clas="section-content-title">¡El mejor sazón del Pacífico!</h1>
-    <p>Desde 1973 el restaurante Malarrimo ha sido un destino favorito para comer de viajeros internacionales</p>
-    <p>Su menú incluye mariscos, comida mexicana e internacional más especialidades de temporada incluyendo el
-    Callo Mano de León que se ha hecho famoso en este lugar.</p>
-    <p>El restaurante Malarrimo está abierto desde las 7:30 am y ofrece servicio de bar completo, cuarto de recreo
-    y facilidades de banquete.</p>
+    <article class="section-content-article">
+        <h1 class="section-content-title">¡El mejor sazón del Pacífico!</h1>
+        <p>Desde 1973 el restaurante Malarrimo ha sido un destino favorito para comer de viajeros internacionales</p>
+        <p>Su menú incluye mariscos, comida mexicana e internacional más especialidades de temporada incluyendo el
+        Callo Mano de León que se ha hecho famoso en este lugar.</p>
+        <p>El restaurante Malarrimo está abierto desde las 7:30 am y ofrece servicio de bar completo, cuarto de recreo
+        y facilidades de banquete.</p>
+    </article>
 
 </div>
 

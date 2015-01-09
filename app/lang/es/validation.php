@@ -118,5 +118,8 @@ return array(
     'username' => 'usuario',
     'password' => 'contraseña',
     'password_confirmation' => 'de confirmación de contraseña',
+	'name' => 'Nombre',
+	'email' => 'Correo electrónico',
+	'messageBody' => 'Mensaje',
 ),
 );

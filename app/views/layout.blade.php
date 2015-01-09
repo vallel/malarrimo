@@ -8,6 +8,7 @@
 
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
 
+    {{ HTML::style('css/bootstrap.min.css') }}
 	{{ HTML::style('css/main.css') }}
 
     {{ HTML::script('js/jquery-1.11.1.min.js') }}
@@ -36,14 +37,30 @@
 
             <nav>
                 <ul class="main-menu">
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Ubicación</a></li>
-                    <li class="main-menu-active"><a href="">Comodidades</a></li>
-                    <li><a href="">Tours</a></li>
-                    <li><a href="">Reservaciones</a></li>
-                    <li><a href="">Noticias</a></li>
-                    <li><a href="">Galería</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li {{ Route::currentRouteName() == 'home' ? 'class="main-menu-active"' : '' }}>
+                        <a href="">Inicio</a>
+                    </li>
+                    <li {{ Route::currentRouteName() == 'location' ? 'class="main-menu-active"' : '' }}>
+                        <a href="{{ route('location') }}">Ubicación</a>
+                    </li>
+                    <li {{ Route::currentRouteName() == 'facilities' ? 'class="main-menu-active"' : '' }}>
+                        <a href="{{ route('facilities') }}">Comodidades</a>
+                    </li>
+                    <li {{ Route::currentRouteName() == 'tours' ? 'class="main-menu-active"' : '' }}>
+                        <a href="">Tours</a>
+                    </li>
+                    <li {{ Route::currentRouteName() == 'booking' ? 'class="main-menu-active"' : '' }}>
+                        <a href="">Reservaciones</a>
+                    </li>
+                    <li {{ Route::currentRouteName() == 'news' ? 'class="main-menu-active"' : '' }}>
+                        <a href="">Noticias</a>
+                    </li>
+                    <li {{ Route::currentRouteName() == 'gallery' ? 'class="main-menu-active"' : '' }}>
+                        <a href="">Galería</a>
+                    </li>
+                    <li {{ Route::currentRouteName() == 'contact' ? 'class="main-menu-active"' : '' }}>
+                        <a href="{{ route('contact') }}">Contacto</a>
+                    </li>
                 </ul>
             </nav>
         </div>

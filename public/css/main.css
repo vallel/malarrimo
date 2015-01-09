@@ -77,6 +77,10 @@ body {
     background-color: #f3f7ff;
 }
 
+strong {
+    font-weight: bold;
+}
+
 small {
     font-size: 0.7em;
 }
@@ -92,7 +96,6 @@ small {
     color: #fff;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #65536d;
 }
 
 .logo {
@@ -220,16 +223,12 @@ small {
     padding: 15px 10px;
 }
 
-.section-menu-item:hover {
+a.section-menu-item:hover {
     text-decoration: underline;
 }
 
 .section-menu-title {
     font-size: 1.5em;
-}
-
-.section-menu-title:hover {
-    text-decoration: none;
 }
 
 .section-menu-active {
@@ -242,6 +241,7 @@ small {
 
 .section-content-article {
     float: left;
+    width: 620px;
 }
 
 .section-content-title {
@@ -333,6 +333,7 @@ small {
 ************************************/
 .facilities-header {
     background-image: url('../img/header-comodidades.jpg');
+    background-color: #65536d;
 }
 
 .facilities-banner {
@@ -346,6 +347,7 @@ small {
 ************************************/
 .location-header {
     background-image: url('../img/header-ubicacion.jpg');
+    background-color: #adab9e;
 }
 
 .location-section-menu li a {
@@ -370,4 +372,29 @@ small {
 
 .boat-icon {
     background-image: url('../img/ubicacion-barco.png');
+}
+
+
+
+/***********************************
+ --------- CONTACT PAGE -----------
+************************************/
+.contact-header {
+    background-image: url('../img/header-contacto.jpg');
+    background-color: #2e338f;
+}
+
+.contact-form {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.contact-button {
+    background-color: #2e3192;
+    border-color: #2e3192;
 }

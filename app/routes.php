@@ -2,11 +2,14 @@
 
 Route::pattern('id', '\d+');
 
-Route::get('comodidades', ['as' => 'comodidades', 'uses' => 'FacilitiesController@restaurant']);
-Route::get('comodidades/restaurante', ['as' => 'comodidades', 'uses' => 'FacilitiesController@restaurant']);
+Route::get('comodidades', ['as' => 'facilities', 'uses' => 'FacilitiesController@restaurant']);
+Route::get('comodidades/restaurante', ['as' => 'restaurant', 'uses' => 'FacilitiesController@restaurant']);
 
-Route::get('ubicacion', ['as' => 'ubicacion', 'uses' => 'LocationController@flights']);
-Route::get('ubicacion/vuelos', ['as' => 'vuelos', 'uses' => 'LocationController@flights']);
+Route::get('ubicacion', ['as' => 'location', 'uses' => 'LocationController@flights']);
+Route::get('ubicacion/vuelos', ['as' => 'flights', 'uses' => 'LocationController@flights']);
+
+Route::get('contacto', ['as' => 'contact', 'uses' => 'ContactController@index']);
+Route::post('contacto/enviar', ['as' => 'contactMessage', 'uses' => 'ContactController@sendMessage']);
 
 
 
