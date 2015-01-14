@@ -6,7 +6,7 @@ class BaseController extends Controller
 	public function __construct()
 	{
 		$currentDateTime = new DateTime('now', new DateTimeZone('America/Denver'));
-		$currentTime = $currentDateTime->format('h:m A');
+		$currentTime = $currentDateTime->format('g:i A');
 
 		View::share('currentTime', $currentTime);
 	}
