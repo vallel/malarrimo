@@ -1,9 +1,5 @@
 @extends('layout')
 
-@section('scripts')
-    
-@endsection
-
 @section('content')
 
     <header class="section-header">

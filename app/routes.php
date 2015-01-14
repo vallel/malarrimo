@@ -8,6 +8,10 @@ Route::get('comodidades/restaurante', ['as' => 'restaurant', 'uses' => 'Faciliti
 Route::get('ubicacion', ['as' => 'location', 'uses' => 'LocationController@flights']);
 Route::get('ubicacion/vuelos', ['as' => 'flights', 'uses' => 'LocationController@flights']);
 
+Route::get('noticias', ['as' => 'news', 'uses' => 'NewsController@index']);
+
+Route::get('galeria', ['as' => 'gallery', 'uses' => 'GalleryController@index']);
+
 Route::get('contacto', ['as' => 'contact', 'uses' => 'ContactController@index']);
 Route::post('contacto/enviar', ['as' => 'contactMessage', 'uses' => 'ContactController@sendMessage']);
 
@@ -34,7 +38,7 @@ Route::post('admin/usuarios/editar/{id}', ['as' => 'updateUser', 'uses' => 'User
 Route::get('admin/noticias', ['as' => 'admin.news', 'uses' => 'NewsController@getList', 'before' => 'auth']);
 Route::get('admin/noticias/agregar', ['as' => 'addNews', 'uses' => 'NewsController@add', 'before' => 'auth']);
 
-Route::get('admin/noticias/editar/{id}', ['as' => 'editNews', 'uses' => 'NewsController@edit', 'before' => 'auth']);
-Route::get('admin/noticias/borrar/{id}', ['as' => 'deleteNews', 'uses' => 'NewsController@delete', 'before' => 'auth']);
-Route::post('admin/noticias/crear', ['as' => 'createPost', 'uses' => 'NewsController@create', 'before' => 'auth']);
-Route::post('admin/noticias/editar/{id}', ['as' => 'updatePost', 'uses' => 'NewsController@update', 'before' => 'auth']);
+Route::get('admin/noticias/editar/{id}', ['as' => 'editNews', 'uses' => 'AdminNewsController@edit', 'before' => 'auth']);
+Route::get('admin/noticias/borrar/{id}', ['as' => 'deleteNews', 'uses' => 'AdminNewsController@delete', 'before' => 'auth']);
+Route::post('admin/noticias/crear', ['as' => 'createPost', 'uses' => 'AdminNewsController@create', 'before' => 'auth']);
+Route::post('admin/noticias/editar/{id}', ['as' => 'updatePost', 'uses' => 'AdminNewsController@update', 'before' => 'auth']);

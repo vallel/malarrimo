@@ -3,7 +3,7 @@
 use Malarrimo\Managers\NewsManager;
 use Malarrimo\Repositories\News;
 
-class NewsController extends BaseController
+class AdminNewsController extends BaseController
 {
 
     /**

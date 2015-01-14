@@ -235,6 +235,12 @@ a.section-menu-item:hover {
     background-color: #f25a28;
 }
 
+.section-sidebar {
+    width: 380px;
+    float: left;
+    margin-right: 40px;
+}
+
 .section-content {
     color: #888;
 }
@@ -372,6 +378,97 @@ a.section-menu-item:hover {
 
 .boat-icon {
     background-image: url('../img/ubicacion-barco.png');
+}
+
+
+
+/***********************************
+ ----------- NEWS PAGE ------------
+************************************/
+.news-header {
+    background-image: url('../img/header-noticias.jpg');
+    background-color: #234E5E;
+}
+
+.news--most-readed-title {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 5px;
+    line-height: 1.3;
+    display: block;
+    font-size: 1.1em;
+}
+
+.news--most-readed-title:hover {
+    text-decoration: none;
+    color: #ddd;
+}
+
+.news--read-more {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.7em;
+}
+
+.news--read-more:hover {
+    color: #fff;
+}
+
+.news--read-more:before {
+    content: url('../img/bullet.png');
+    padding-right: 2px;
+}
+
+.post-item {
+    width: 250px;
+    margin-top: 20px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    float: left;
+    color: #000;
+}
+
+.post-item:nth-child(2n) {
+    margin-right: 0;
+}
+
+.post-item-title {
+    color: #1b1464;
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.post-item--read-more {
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.post-item--read-more:before {
+    content: url('../img/bullet.png');
+}
+
+.news-image-container {
+    width: 250px;
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.news-image {
+    height: 150px;
+    width: auto;
+}
+
+
+/***********************************
+ --------- GALLERY PAGE -----------
+************************************/
+.gallery-header {
+    background-image: url('../img/header-galeria.jpg');
+    background-color: #2e338f;
 }
 
 

@@ -1,6 +1,15 @@
 <?php
 
-class BaseController extends Controller {
+class BaseController extends Controller
+{
+
+	public function __construct()
+	{
+		$currentDateTime = new DateTime('now', new DateTimeZone('America/Denver'));
+		$currentTime = $currentDateTime->format('h:m A');
+
+		View::share('currentTime', $currentTime);
+	}
 
 	/**
 	 * Setup the layout used by the controller.

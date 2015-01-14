@@ -25,7 +25,7 @@
             <ul class="top-bar clearfix">
                 <li>Guerrero Negro B.C.S México</li>
                 <li>-</li>
-                <li><time datetime="">7:30 am</time></li>
+                <li><time datetime="">{{ $currentTime }}</time></li>
                 <li>-</li>
                 <li><span class="weather">70°F / 30°C</span></li>
                 <li><a href="" class="top-icon fb-top-icon"></a></li>
@@ -53,10 +53,10 @@
                         <a href="">Reservaciones</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'news' ? 'class="main-menu-active"' : '' }}>
-                        <a href="">Noticias</a>
+                        <a href="{{ route('news') }}">Noticias</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'gallery' ? 'class="main-menu-active"' : '' }}>
-                        <a href="">Galería</a>
+                        <a href="{{ route('gallery') }}">Galería</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'contact' ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('contact') }}">Contacto</a>
