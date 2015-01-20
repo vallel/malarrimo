@@ -12,13 +12,14 @@
 	{{ HTML::style('css/main.css') }}
 
     {{ HTML::script('js/jquery-1.11.1.min.js') }}
+    {{ HTML::script('js/bootstrap.min.js') }}
 
 </head>
 <body>
 
     <header class="site-header {{ $headerClass or '' }}">
         <div class="content">
-            <a href="" title="Malarrimo" class="logo">
+            <a href="{{ route('home') }}" title="Malarrimo" class="logo">
                 <img src="{{ URL::asset('img/logo.png') }}" width="150" height="150" alt="Malarrimo">
             </a>
 
@@ -38,7 +39,7 @@
             <nav>
                 <ul class="main-menu">
                     <li {{ Route::currentRouteName() == 'home' ? 'class="main-menu-active"' : '' }}>
-                        <a href="">Inicio</a>
+                        <a href="{{ route('home') }}">Inicio</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'location' ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('location') }}">Ubicación</a>
@@ -47,7 +48,7 @@
                         <a href="{{ route('facilities') }}">Comodidades</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'tours' ? 'class="main-menu-active"' : '' }}>
-                        <a href="">Tours</a>
+                        <a href="{{ route('tours') }}">Tours</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'booking' ? 'class="main-menu-active"' : '' }}>
                         <a href="">Reservaciones</a>

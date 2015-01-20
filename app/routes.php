@@ -2,11 +2,15 @@
 
 Route::pattern('id', '\d+');
 
-Route::get('comodidades', ['as' => 'facilities', 'uses' => 'FacilitiesController@restaurant']);
-Route::get('comodidades/restaurante', ['as' => 'restaurant', 'uses' => 'FacilitiesController@restaurant']);
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 Route::get('ubicacion', ['as' => 'location', 'uses' => 'LocationController@flights']);
 Route::get('ubicacion/vuelos', ['as' => 'flights', 'uses' => 'LocationController@flights']);
+
+Route::get('comodidades', ['as' => 'facilities', 'uses' => 'FacilitiesController@restaurant']);
+Route::get('comodidades/restaurante', ['as' => 'restaurant', 'uses' => 'FacilitiesController@restaurant']);
+
+Route::get('tours', ['as' => 'tours', 'uses' => 'ToursController@index']);
 
 Route::get('noticias', ['as' => 'news', 'uses' => 'NewsController@index']);
 
