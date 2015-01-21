@@ -19,6 +19,7 @@
                 @endif
 
 
+                <img src="{{ asset('img/logo.png') }}" class="center-block">
                 <div class="well well-lg login-form">
                     {{ Form::open(['route' => 'login', 'role' => 'form']) }}
                         <div class="form-group">
