@@ -19,7 +19,8 @@ class CreateNewsTable extends Migration {
             $table->string('title');
             $table->text('content');
             $table->string('keywords');
-            $table->enum('status', ['Publicado', 'Borrador']);
+            $table->enum('language', ['esp', 'eng']);
+			$table->string('image')->nullable();
             $table->integer('visits');
 			$table->timestamps();
             $table->softDeletes();

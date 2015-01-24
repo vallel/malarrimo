@@ -106,7 +106,14 @@ class FieldBuilder
             case 'password':
                 return $this->form->password($name, $attributes);
             case 'checkbox':
-                return $this->form->checkbox($name);
+                $value = $value ?: 1;
+                $checked = null;
+                if (isset($attributes['checked']))
+                {
+                    $checked = $attributes['checked'];
+                    unset($attributes['checked']);
+                }
+                return $this->form->checkbox($name, $value, $checked, $attributes);
             case 'textarea':
                 return $this->form->textarea($name, $value, $attributes);
             default:

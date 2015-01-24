@@ -3,6 +3,9 @@
 namespace Malarrimo\Managers;
 
 
+use Input;
+use Str;
+
 class NewsManager extends ManagerBase
 {
 
@@ -14,9 +17,10 @@ class NewsManager extends ManagerBase
         $rules = [
             'title' => 'required',
             'content' => 'required',
+            'language' => 'required',
             'user_id' => 'required',
             'keywords' => '',
-            'status' => '',
+            'image' => 'image|max:1000',
         ];
 
         return $rules;
@@ -24,12 +28,35 @@ class NewsManager extends ManagerBase
 
     public function save()
     {
-        if (!isset($this->data['status']))
+        if (!$this->isValid())
         {
-            $this->data['status'] = 0;
+            return false;
         }
 
-       return parent::save();
+        $this->uploadImage('image');
+
+        $this->entity->fill($this->data);
+        $this->entity->save();
+
+        return true;
+    }
+
+    /**
+     * @param string $fieldName
+     */
+    public function uploadImage($fieldName)
+    {
+        $file = Input::file($fieldName);
+        if ($file)
+        {
+            $fileName = Str::slug($file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
+            $img = $file->move('uploads/news', $fileName);
+
+            if ($img)
+            {
+                $this->data['image'] = $img->getFilename();
+            }
+        }
     }
 
 }

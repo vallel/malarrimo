@@ -6,7 +6,7 @@ class AuthController extends BaseController {
     {
         if (Auth::check())
         {
-            return Redirect::route('users');
+            return Redirect::route('admin.news');
         }
 
         return View::make('admin/login');

@@ -57,7 +57,7 @@
             <div class="home-page-galleries clearfix">
                 @foreach ($galleries as $i => $photo)
                     <figure class="{{ $i == 0 ? 'home-galleries-big' : 'home-galleries-small' }}">
-                        <img src="{{ asset('galerias/1/' . $photo) }}" alt=""/>
+                        <img src="{{ asset('uploads/galleries/1/' . $photo) }}" alt=""/>
                     </figure>
                 @endforeach
             </div>

@@ -33,11 +33,19 @@ class AdminNewsController extends BaseController
         $data = Input::all();
         $data['user_id'] = Auth::user()->id;
 
-        $manager = new NewsManager($post, $data);
-
-        if ($manager->save())
+        try
         {
-            return Redirect::to('admin/noticias')->with('msg', '<p class="alert alert-success">Noticia creada</p>');
+            $manager = new NewsManager($post, $data);
+
+            if ($manager->save())
+            {
+                return Redirect::to('admin/noticias')->with('msg', '<p class="alert alert-success">Noticia creada</p>');
+            }
+        }
+        catch(Exception $ex)
+        {
+            Log::error($ex->getMessage());
+            return Redirect::back()->withInput()->with('msg', '<p class="alert alert-danger">Error: '.$ex->getMessage().'</p>');
         }
 
         return Redirect::back()->withInput()->withErrors($manager->getErrors());

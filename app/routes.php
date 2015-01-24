@@ -39,9 +39,8 @@ Route::post('admin/usuarios/crear', ['as' => 'createUser', 'uses' => 'UserContro
 Route::post('admin/usuarios/editar/{id}', ['as' => 'updateUser', 'uses' => 'UserController@update', 'before' => 'auth']);
 
 // news administration
-Route::get('admin/noticias', ['as' => 'admin.news', 'uses' => 'NewsController@getList', 'before' => 'auth']);
-Route::get('admin/noticias/agregar', ['as' => 'addNews', 'uses' => 'NewsController@add', 'before' => 'auth']);
-
+Route::get('admin/noticias', ['as' => 'admin.news', 'uses' => 'AdminNewsController@getList', 'before' => 'auth']);
+Route::get('admin/noticias/agregar', ['as' => 'addNews', 'uses' => 'AdminNewsController@add', 'before' => 'auth']);
 Route::get('admin/noticias/editar/{id}', ['as' => 'editNews', 'uses' => 'AdminNewsController@edit', 'before' => 'auth']);
 Route::get('admin/noticias/borrar/{id}', ['as' => 'deleteNews', 'uses' => 'AdminNewsController@delete', 'before' => 'auth']);
 Route::post('admin/noticias/crear', ['as' => 'createPost', 'uses' => 'AdminNewsController@create', 'before' => 'auth']);

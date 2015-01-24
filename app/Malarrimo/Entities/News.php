@@ -18,7 +18,7 @@ class News extends \Eloquent
     /**
      * @var array
      */
-    protected $fillable = array('title', 'content', 'status', 'keywords', 'user_id');
+    protected $fillable = array('title', 'content', 'language', 'keywords', 'user_id', 'image');
 
     public function setStatusAttribute($value)
     {

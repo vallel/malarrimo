@@ -114,12 +114,15 @@ return array(
 |
 */
 
-'attributes' => array(
-    'username' => 'usuario',
-    'password' => 'contraseña',
-    'password_confirmation' => 'de confirmación de contraseña',
-	'name' => 'Nombre',
-	'email' => 'Correo electrónico',
-	'messageBody' => 'Mensaje',
-),
+	'attributes' => array(
+		'username' => 'usuario',
+		'password' => 'contraseña',
+		'password_confirmation' => 'de confirmación de contraseña',
+		'name' => 'Nombre',
+		'email' => 'Correo electrónico',
+		'messageBody' => 'Mensaje',
+		'title' => 'Título',
+		'language' => 'de selección de idioma',
+		'content' => 'Contenido',
+	),
 );

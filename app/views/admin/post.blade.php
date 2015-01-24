@@ -9,14 +9,26 @@
     @endif
 
     @if (isset($post))
-    {{ Form::model($post, ['route' => ['updatePost', $post->id], 'role' => 'form']) }}
+    {{ Form::model($post, ['route' => ['updatePost', $post->id], 'role' => 'form', 'files' => true]) }}
     @else
-    {{ Form::open(['route' => 'createPost', 'role' => 'form']) }}
+    {{ Form::open(['route' => 'createPost', 'role' => 'form', 'files' => true]) }}
     @endif
 
         {{ Field::text('title', 'Título') }}
 
-        {{ Field::checkbox('status', 'Publicado') }}
+        <div class="clearfix">
+            <div class="form-group pull-left">
+                {{ Form::label('esp', 'Español') }}
+                {{ Form::radio('language', 'esp', true) }}
+                {{ Form::label('eng', 'Ingles') }}
+                {{ Form::radio('language', 'eng') }}
+                @if ($errors->has('language'))
+                    <p class="text-danger">{{ $errors->first('language') }}</p>
+                @endif
+            </div>
+        </div>
+
+        {{ Field::file('image', 'Imagen') }}
 
         {{ Field::textarea('content', 'Contenido') }}
 
