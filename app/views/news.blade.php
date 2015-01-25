@@ -45,49 +45,18 @@
 
         <section class="news">
 
-            <article class="post-item">
-                <figure class="news-image-container">
-                    <img class="news-image" src="{{ asset('img/bann-comodidades-ecotours.jpg') }}" alt="Noticia"/>
-                </figure>
-                <h1 class="post-item-title">Semarnat apoya observación de ballena gris en Baja California Sur</h1>
-                <p>El investigador de la Universidad Autonoma de Baja California Sur, Jorge Urban, informó que en la temporada
-                    actual, de diciembre-abril, la población de ballena gris ha aumentado más de 40 por ciento en las lagunas
-                    costeras de la entidad.</p>
-                <a href="" class="post-item--read-more">Continuar leyendo</a>
-            </article>
-
-            <article class="post-item">
-                <figure class="news-image-container">
-                    <img class="news-image" src="{{ asset('img/bann-comodidades-ecotours.jpg') }}" alt="Noticia"/>
-                </figure>
-                <h1 class="post-item-title">Semarnat apoya observación de ballena gris en Baja California Sur</h1>
-                <p>El investigador de la Universidad Autonoma de Baja California Sur, Jorge Urban, informó que en la temporada
-                    actual, de diciembre-abril, la población de ballena gris ha aumentado más de 40 por ciento en las lagunas
-                    costeras de la entidad.</p>
-                <a href="" class="post-item--read-more">Continuar leyendo</a>
-            </article>
-
-            <article class="post-item">
-                <figure class="news-image-container">
-                    <img class="news-image" src="{{ asset('img/bann-comodidades-ecotours.jpg') }}" alt="Noticia"/>
-                </figure>
-                <h1 class="post-item-title">Semarnat apoya observación de ballena gris en Baja California Sur</h1>
-                <p>El investigador de la Universidad Autonoma de Baja California Sur, Jorge Urban, informó que en la temporada
-                    actual, de diciembre-abril, la población de ballena gris ha aumentado más de 40 por ciento en las lagunas
-                    costeras de la entidad.</p>
-                <a href="" class="post-item--read-more">Continuar leyendo</a>
-            </article>
-
-            <article class="post-item">
-                <figure class="news-image-container">
-                    <img class="news-image" src="{{ asset('img/bann-comodidades-ecotours.jpg') }}" alt="Noticia"/>
-                </figure>
-                <h1 class="post-item-title">Semarnat apoya observación de ballena gris en Baja California Sur</h1>
-                <p>El investigador de la Universidad Autonoma de Baja California Sur, Jorge Urban, informó que en la temporada
-                    actual, de diciembre-abril, la población de ballena gris ha aumentado más de 40 por ciento en las lagunas
-                    costeras de la entidad.</p>
-                <a href="" class="post-item--read-more">Continuar leyendo</a>
-            </article>
+            @foreach ($news as $post)
+                <article class="post-item">
+                    @if (!empty($post->image))
+                    <figure class="news-image-container">
+                        <img class="news-image" src="{{ asset('uploads/news/' . $post->image) }}" alt="{{ $post->title }}"/>
+                    </figure>
+                    @endif
+                    <h1 class="post-item-title">{{ $post->title }}</h1>
+                    {{ $post->content }}
+                    <a href="{{ $post->id }}" class="post-item--read-more">Continuar leyendo</a>
+                </article>
+            @endforeach
 
         </section>
 

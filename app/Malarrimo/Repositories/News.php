@@ -11,4 +11,10 @@ class News extends Base
         $this->entityName = 'Malarrimo\Entities\News';
     }
 
+    public function getLast($perPage = 6)
+    {
+        $class = $this->entityName;
+        return $class::orderBy('id', 'DESC')->paginate($perPage);
+    }
+
 } 
