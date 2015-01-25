@@ -481,6 +481,10 @@ a.section-menu-item:hover {
     padding-right: 2px;
 }
 
+.news {
+    width: 540px;
+}
+
 .post-item {
     width: 250px;
     margin-top: 20px;
@@ -502,10 +506,16 @@ a.section-menu-item:hover {
     margin-bottom: 5px;
 }
 
+.post-item-content {
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
 .post-item--read-more {
     color: #333;
     text-transform: uppercase;
     font-size: 0.8em;
+    font-weight: bold;
 }
 
 .post-item--read-more:before {

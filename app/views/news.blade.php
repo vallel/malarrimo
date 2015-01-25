@@ -43,17 +43,19 @@
             </ul>
         </nav>
 
-        <section class="news">
+        <section class="section-content-article news">
 
-            @foreach ($news as $post)
-                <article class="post-item">
+            @foreach ($news as $i => $post)
+                <article class="post-item {{ $i%2 == 0 ? '' : 'clearfix' }}">
                     @if (!empty($post->image))
                     <figure class="news-image-container">
                         <img class="news-image" src="{{ asset('uploads/news/' . $post->image) }}" alt="{{ $post->title }}"/>
                     </figure>
                     @endif
                     <h1 class="post-item-title">{{ $post->title }}</h1>
-                    {{ $post->content }}
+                    <div class="post-item-content">
+                        {{ $post->content }}
+                    </div>
                     <a href="{{ $post->id }}" class="post-item--read-more">Continuar leyendo</a>
                 </article>
             @endforeach
