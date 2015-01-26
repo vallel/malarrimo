@@ -12,7 +12,6 @@
 
     <table class="table table-striped">
         <tr>
-            <th>#</th>
             <th>Título</th>
             <th>Fecha</th>
             <th>Autor</th>
@@ -22,7 +21,6 @@
     @if (isset($news))
         @foreach($news as $post)
         <tr>
-            <td>{{ $post->id }}</td>
             <td>{{ $post->title }}</td>
             <td>{{ date('d/m/Y h:j:s a', strtotime($post->created_at)) }}</td>
             <td>{{ $post->user->user_name }}</td>
@@ -35,6 +33,8 @@
         @endforeach
     @endif
     </table>
+
+    {{ isset($news) ? $news->links() : '' }}
 
     {{ HTML::script('js/admin.news.js') }}
 

@@ -21,7 +21,8 @@ class NewsController extends BaseController
         $data = array(
             'title' => 'Noticias | ',
             'headerClass' => 'news-header',
-            'news' => $this->newsRepo->getLast(6),
+            'news' => $this->newsRepo->getLast(),
+            'mostVisited' => $this->newsRepo->getMostVisited(),
         );
 
         return View::make('news', $data);
