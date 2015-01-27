@@ -6,7 +6,7 @@ var malarrimo = malarrimo || {};
 
         init: function() {
             var mapOptions = {
-                zoom: 16,
+                zoom: 7,
                 scrollwheel: false,
                 streetViewControl: false,
                 panControl: true,
