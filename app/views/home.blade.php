@@ -19,33 +19,15 @@
         <nav class="section-menu">
             <ul>
                 <li class="section-menu-item"><h1 class="section-menu-title">Últimas Noticias</h1></li>
+                @foreach ($lastNews as $post)
                 <li class="section-menu-item">
                     <article class="news--most-readed">
-                        <a href="" class="news--most-readed-title"><h2>Aumentó 40% la población de ballena gris en Baja California Sur</h2></a>
-                        <p class="small">El investigador de la Universidad Autonoma de Baja California Sur, Jorge Urban, informó que en la temporada
-                            actual, de diciembre-abril, la población de ballena gris ha aumentado más de 40 por ciento en las lagunas
-                            costeras de la entidad.</p>
-                        <a href="" class="news--read-more">Continuar leyendo</a>
+                        <a href="" class="news--most-readed-title"><h1>{{ $post->title }}</h1></a>
+                        <p class="small">{{ Str::limit($post->content, 200) }}</p>
+                        <a href="{{ $post->id }}" class="news--read-more">Continuar leyendo</a>
                     </article>
                 </li>
-                <li class="section-menu-item">
-                    <article class="news--most-readed">
-                        <a href="" class="news--most-readed-title"><h2>Aumentó 40% la población de ballena gris en Baja California Sur</h2></a>
-                        <p class="small">El investigador de la Universidad Autonoma de Baja California Sur, Jorge Urban, informó que en la temporada
-                            actual, de diciembre-abril, la población de ballena gris ha aumentado más de 40 por ciento en las lagunas
-                            costeras de la entidad.</p>
-                        <a href="" class="news--read-more">Continuar leyendo</a>
-                    </article>
-                </li>
-                <li class="section-menu-item">
-                    <article class="news--most-readed">
-                        <a href="" class="news--most-readed-title"><h2>Aumentó 40% la población de ballena gris en Baja California Sur</h2></a>
-                        <p class="small">El investigador de la Universidad Autonoma de Baja California Sur, Jorge Urban, informó que en la temporada
-                            actual, de diciembre-abril, la población de ballena gris ha aumentado más de 40 por ciento en las lagunas
-                            costeras de la entidad.</p>
-                        <a href="" class="news--read-more">Continuar leyendo</a>
-                    </article>
-                </li>
+                @endforeach
             </ul>
         </nav>
 
