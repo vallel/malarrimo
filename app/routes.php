@@ -4,8 +4,7 @@ Route::pattern('id', '\d+');
 
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-Route::get('ubicacion', ['as' => 'location', 'uses' => 'LocationController@flights']);
-Route::get('ubicacion/vuelos', ['as' => 'flights', 'uses' => 'LocationController@flights']);
+Route::get('ubicacion', ['as' => 'location', 'uses' => 'LocationController@index']);
 
 Route::get('comodidades', ['as' => 'facilities', 'uses' => 'FacilitiesController@restaurant']);
 Route::get('comodidades/restaurante', ['as' => 'restaurant', 'uses' => 'FacilitiesController@restaurant']);
