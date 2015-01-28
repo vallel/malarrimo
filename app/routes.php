@@ -6,8 +6,12 @@ Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 Route::get('ubicacion', ['as' => 'location', 'uses' => 'LocationController@index']);
 
-Route::get('comodidades', ['as' => 'facilities', 'uses' => 'FacilitiesController@restaurant']);
+Route::get('comodidades', ['as' => 'facilities', 'uses' => 'FacilitiesController@tours']);
 Route::get('comodidades/restaurante', ['as' => 'restaurant', 'uses' => 'FacilitiesController@restaurant']);
+Route::get('comodidades/motel', ['as' => 'motel', 'uses' => 'FacilitiesController@motel']);
+Route::get('comodidades/rvparking', ['as' => 'rvparking', 'uses' => 'FacilitiesController@rvparking']);
+Route::get('comodidades/casaelviejocactus', ['as' => 'casaelviejocactus', 'uses' => 'FacilitiesController@casaelviejocactus']);
+Route::get('comodidades/deli', ['as' => 'deli', 'uses' => 'FacilitiesController@deli']);
 
 Route::get('tours', ['as' => 'tours', 'uses' => 'ToursController@index']);
 

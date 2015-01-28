@@ -401,8 +401,24 @@ a.section-menu-item:hover {
     background-color: #65536d;
 }
 
-.facilities-banner {
+.restaurant-banner {
     background-image: url('../img/bann-comodidades-restaurante.jpg');
+}
+
+.motel-banner {
+    background-image: url('../img/bann-comodidades-motel.jpg');
+}
+
+.rvparking-banner {
+    background-image: url('../img/bann-comodidades-rvparking.jpg');
+}
+
+.cevc-banner {
+    background-image: url('../img/bann-comodidades-elviejocactus.jpg');
+}
+
+.deli-banner {
+    background-image: url('../img/bann-comodidades-deli.jpg');
 }
 
 
