@@ -401,6 +401,10 @@ a.section-menu-item:hover {
     background-color: #65536d;
 }
 
+.facilities-tours-banner {
+    background-image: url('../img/bann-comodidades-ecotours.jpg');
+}
+
 .restaurant-banner {
     background-image: url('../img/bann-comodidades-restaurante.jpg');
 }

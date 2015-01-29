@@ -8,7 +8,7 @@ class FacilitiesController extends BaseController
         $data = [
             'title' => 'Comodidades | Eco-Tours Malarrimo',
             'headerClass' => 'facilities-header',
-            'facilitiesBanner' => 'tours-banner',
+            'facilitiesBanner' => 'facilities-tours-banner',
         ];
 
         return View::make('facilities/tours', $data);
