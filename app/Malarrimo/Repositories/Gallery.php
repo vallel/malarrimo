@@ -10,6 +10,12 @@ class Gallery extends Base
         $this->entityName = 'Malarrimo\Entities\Gallery';
     }
 
+    public function getAll()
+    {
+        $class = $this->entityName;
+        return $class::paginate(15);
+    }
+
     public function getLastGalleries($limit)
     {
     	$class = $this->getEntity();

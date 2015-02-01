@@ -32,7 +32,7 @@ class AdminGalleriesController extends BaseController
 
     public function getList()
     {
-        $galleries = $this->repository->getAll(15);
+        $galleries = $this->repository->getAll();
         return View::make('admin/galleries')->with('galleries', $galleries);
     }
 
