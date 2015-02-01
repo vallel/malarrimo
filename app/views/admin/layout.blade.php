@@ -12,6 +12,8 @@
     {{ HTML::script('js/jquery-1.11.1.min.js') }}
     {{ HTML::script('js/bootstrap.min.js') }}
 
+    @yield('appendHead')
+
 </head>
 <body>
 
@@ -31,6 +33,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="{{Request::path() == 'admin/noticias' ? 'active' : '';}}"><a href="{{ route('admin.news') }}">Noticias</a></li>
+                    <li class="{{Request::path() == 'admin/galerias' ? 'active' : '';}}"><a href="{{ route('galleryList') }}">Galerias</a></li>
                     <li class="{{Request::path() == 'admin/usuarios' ? 'active' : '';}}"><a href="{{ route('users') }}">Usuarios</a></li>
                 </ul>
 
@@ -46,6 +49,8 @@
         @yield('content')
 
     </section>
+
+    @yield('appendScripts')
 
 </body>
 </html>

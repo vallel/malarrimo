@@ -2,6 +2,10 @@
 
 Route::pattern('id', '\d+');
 
+/* --------------------------
+ * Spanish routes
+ ---------------------------- */
+
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 Route::get('ubicacion', ['as' => 'location', 'uses' => 'LocationController@index']);
@@ -48,3 +52,14 @@ Route::get('admin/noticias/editar/{id}', ['as' => 'editNews', 'uses' => 'AdminNe
 Route::get('admin/noticias/borrar/{id}', ['as' => 'deleteNews', 'uses' => 'AdminNewsController@delete', 'before' => 'auth']);
 Route::post('admin/noticias/crear', ['as' => 'createPost', 'uses' => 'AdminNewsController@create', 'before' => 'auth']);
 Route::post('admin/noticias/editar/{id}', ['as' => 'updatePost', 'uses' => 'AdminNewsController@update', 'before' => 'auth']);
+
+// galleries administration
+Route::get('admin/galerias', ['as' => 'galleryList', 'uses' => 'AdminGalleriesController@getList', 'before' => 'auth']);
+Route::get('admin/galeria', ['as' => 'addGallery', 'uses' => 'AdminGalleriesController@add', 'before' => 'auth']);
+Route::get('admin/galeria/editar/{id}', ['as' => 'editGallery', 'uses' => 'AdminGalleriesController@edit', 'before' => 'auth']);
+Route::get('admin/galeria/borrar/{id}', ['as' => 'deleteGallery', 'uses' => 'AdminGalleriesController@delete', 'before' => 'auth']);
+Route::post('admin/galeria/crear', ['as' => 'createGallery', 'uses' => 'AdminGalleriesController@create', 'before' => 'auth']);
+Route::post('admin/galeria/editar/{id}', ['as' => 'updateGallery', 'uses' => 'AdminGalleriesController@update', 'before' => 'auth']);
+Route::post('admin/galeria/subir/{id}', ['as' => 'uploadGallery', 'uses' => 'AdminGalleriesController@uploadGallery', 'before' => 'auth']);
+Route::get('admin/galeria/fotos/{id}', ['as' => 'galleryPics', 'uses' => 'AdminGalleriesController@getPictures', 'before' => 'auth']);
+Route::delete('admin/galeria/foto/borrar/{id}', ['as' => 'deletePic', 'uses' => 'AdminGalleriesController@deletePicture', 'before' => 'auth']);

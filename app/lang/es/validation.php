@@ -124,5 +124,6 @@ return array(
 		'title' => 'Título',
 		'language' => 'de selección de idioma',
 		'content' => 'Contenido',
+		'date' => 'Fecha',
 	),
 );

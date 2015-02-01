@@ -49,4 +49,12 @@ class Base
         return $class::find($id)->delete();
     }
 
+    /**
+     * @return \Eloquent
+     */
+    protected function getEntity()
+    {
+        return $this->entityName;
+    }
+
 } 
