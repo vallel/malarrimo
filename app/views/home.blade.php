@@ -38,7 +38,7 @@
 
             <div class="home-page-galleries clearfix">
                 @foreach ($galleries as $i => $gallery)
-                    <a href="{{ $gallery->id.'/'.Str::slug($gallery->title) }}">
+                    <a href="{{ route('gallery', ['id' => $gallery->id, 'title' => Str::slug($gallery->title)]) }}">
                         <figure class="{{ $i == 0 ? 'home-galleries-big' : 'home-galleries-small' }}">
                             <img src="{{ asset('uploads/galleries/'.$gallery->id.'/'.$gallery->pictures[0]->file_name) }}" alt="{{ $gallery->title }}"/>
                         </figure>
