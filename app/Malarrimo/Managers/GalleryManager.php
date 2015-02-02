@@ -12,7 +12,7 @@ class GalleryManager extends ManagerBase
     {
         $rules = [
             'title' => 'required',
-            'date' => 'required',
+            'autor' => '',
         ];
 
         return $rules;

@@ -607,31 +607,39 @@ a.section-menu-item:hover {
 }
 
 /* carousel styles */
+.carousel-outer {
+    margin-bottom: 10px;
+}
+
 #carousel-custom {
     margin: 20px auto;
-    width: 600px;
+    width: 800px;
 }
 #carousel-custom .carousel-indicators {
-    margin: 10px 0 0;
-    overflow: auto;
+    margin: 10px 0 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
     position: static;
     text-align: left;
     white-space: nowrap;
     width: 100%;
-    height: 110px;
+    height: 90px;
 }
 #carousel-custom .carousel-indicators li {
     background-color: transparent;
     -webkit-border-radius: 0;
     border-radius: 0;
     display: inline-block;
-    height: auto;
     margin: 0 !important;
-    width: auto;
+    height: 70px;
+    width: 100px;
+    overflow: hidden;
 }
 #carousel-custom .carousel-indicators li img {
     display: block;
     opacity: 0.5;
+    width: 100px;
+    height: auto;
 }
 #carousel-custom .carousel-indicators li.active img {
     opacity: 1;

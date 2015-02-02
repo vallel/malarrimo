@@ -4,19 +4,28 @@
 
     <header class="section-header">
 
-        <h1>Galería de fotos</h1>
+        <h1>Galería de fotos | {{ $gallery->title }}</h1>
 
     </header>
 
     <div class="section-content">
 
         <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+            <!-- Indicators -->
+            <ol class='carousel-indicators mCustomScrollbar'>
+                @foreach ($gallery->pictures as $i => $picture)
+                    <li data-target='#carousel-custom' data-slide-to='{{ $i }}' class='{{ $i == 0 ? 'active' : '' }}'>
+                        <img src='{{ asset('uploads/galleries/' . $gallery->id . '/thumbnail/' . $picture->file_name) }}' alt='' />
+                    </li>
+                @endforeach
+            </ol>
+
             <div class='carousel-outer'>
                 <!-- Wrapper for slides -->
                 <div class='carousel-inner'>
-                    @foreach ($gallery->pictures as $i => $photo)
+                    @foreach ($gallery->pictures as $i => $picture)
                         <div class='item {{ $i == 0 ? 'active' : '' }}'>
-                            <img src='{{ asset('uploads/galleries/1/' . $photo) }}' alt='' />
+                            <img src='{{ asset('uploads/galleries/' . $gallery->id . '/' . $picture->file_name) }}' alt='' />
                         </div>
                     @endforeach
                 </div>
@@ -30,12 +39,12 @@
                 </a>
             </div>
 
-            <!-- Indicators -->
-            <ol class='carousel-indicators mCustomScrollbar'>
-                @foreach ($gallery->pictures as $i => $photo)
-                    <li data-target='#carousel-custom' data-slide-to='{{ $i }}' class='{{ $i == 0 ? 'active' : '' }}'><img src='{{ asset('uploads/galleries/1/thumbs/' . $photo) }}' alt='' /></li>
-                @endforeach
-            </ol>
+            @if (!empty($gallery->autor))
+                <p class="text-center small text-muted">
+                    Fotografía de: {{ $gallery->autor }}<br>
+                    Todos los derechos reservados
+                </p>
+            @endif
         </div>
 
     </div>

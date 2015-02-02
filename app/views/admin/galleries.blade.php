@@ -17,7 +17,7 @@
     <table class="table table-striped">
         <tr>
             <th>Galería</th>
-            <th>Fecha</th>
+            <th>Autor</th>
             <th>Fotos</th>
             <th width="100"></th>
         </tr>
@@ -27,7 +27,7 @@
 
             <tr>
                 <td>{{ $gallery->title }}</td>
-                <td>{{ $gallery->date }}</td>
+                <td>{{ $gallery->autor }}</td>
                 <td>{{ $gallery->pictures->count() }}</td>
                 <td>
                     <a href="{{ route('editGallery', ['id' => $gallery->id]) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>

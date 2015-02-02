@@ -14,16 +14,11 @@ class Gallery extends \Eloquent
     /**
      * @var array
      */
-    protected $fillable = array('title', 'date');
+    protected $fillable = array('title', 'autor');
 
     public function pictures()
     {
         return $this->hasMany('Malarrimo\Entities\Picture');
-    }
-
-    public function setDateAttribute($value)
-    {
-        $this->attributes['date'] = date('Y-m-d', strtotime($value));
     }
 
 }

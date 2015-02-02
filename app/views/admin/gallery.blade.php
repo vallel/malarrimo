@@ -28,7 +28,7 @@
 
         {{ Field::text('title', 'Título') }}
 
-        {{ Field::text('date', 'Fecha', null, ['class' => 'datepicker']) }}
+        {{ Field::text('autor', 'Autor') }}
 
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Guardar{{ !isset($gallery) ? ' y agregar fotos' : ''; }}</button>

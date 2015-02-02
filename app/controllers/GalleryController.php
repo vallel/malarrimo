@@ -28,4 +28,27 @@ class GalleryController extends BaseController
         return View::make('galleries/list', $data);
     }
 
+    public function show($id, $title)
+    {
+        if (empty($id))
+        {
+            return Redirect::route('galleries');
+        }
+
+        $gallery = $this->galleryRepo->getById($id);
+
+        if (empty($gallery))
+        {
+            return Redirect::route('galleries');
+        }
+
+        $data = array(
+            'title' => 'Galerías &raquo; ' . $title . ' | ',
+            'headerClass' => 'gallery-header',
+            'gallery' => $gallery,
+        );
+
+        return View::make('galleries/single', $data);
+    }
+
 }

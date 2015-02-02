@@ -33,4 +33,14 @@ class Gallery extends Base
             ->paginate($perPage);
     }
 
+    /**
+     * @param int $id
+     * @return \Illuminate\Database\Eloquent\Builder|static
+     */
+    public function getById($id)
+    {
+        $class = $this->getEntity();
+        return $class::find($id);
+    }
+
 } 

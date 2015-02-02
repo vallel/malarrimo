@@ -16,7 +16,7 @@ class CreateGalleriesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->text('title');
-			$table->date('date');
+			$table->text('autor');
 			$table->timestamps();
 		});
 	}

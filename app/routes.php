@@ -22,6 +22,7 @@ Route::get('tours', ['as' => 'tours', 'uses' => 'ToursController@index']);
 Route::get('noticias', ['as' => 'news', 'uses' => 'NewsController@index']);
 
 Route::get('galerias', ['as' => 'galleries', 'uses' => 'GalleryController@index']);
+Route::get('galeria/{id}/{title}', ['as' => 'gallery', 'uses' => 'GalleryController@show']);
 
 Route::get('contacto', ['as' => 'contact', 'uses' => 'ContactController@index']);
 Route::post('contacto/enviar', ['as' => 'contactMessage', 'uses' => 'ContactController@sendMessage']);
