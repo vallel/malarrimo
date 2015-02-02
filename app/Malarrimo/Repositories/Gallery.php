@@ -25,4 +25,12 @@ class Gallery extends Base
                     ->get();
     }
 
+    public function getLastGalleriesPaginated($perPage)
+    {
+        $class = $this->getEntity();
+        return $class::has('Pictures')
+            ->orderBy('id', 'DESC')
+            ->paginate($perPage);
+    }
+
 } 

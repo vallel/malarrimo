@@ -22,7 +22,7 @@ class GalleryController extends BaseController
         $data = array(
             'title' => 'Galerías | ',
             'headerClass' => 'gallery-header',
-            'galleries' => $this->galleryRepo->getLastGalleries(9),
+            'galleries' => $this->galleryRepo->getLastGalleriesPaginated(9),
         );
 
         return View::make('galleries/list', $data);

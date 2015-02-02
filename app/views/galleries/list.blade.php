@@ -10,7 +10,7 @@
 
     <div class="section-content">
 
-        <div class="galleries-list">
+        <div class="galleries-list clearfix">
             @foreach ($galleries as $gallery)
                 <article class="galleries-list--item">
                     <a href="{{ $gallery->id.'/'.Str::slug($gallery->title) }}">
@@ -22,6 +22,8 @@
                 </article>
             @endforeach
         </div>
+
+        {{ $galleries->links() }}
 
     </div>
 
