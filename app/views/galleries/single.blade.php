@@ -14,7 +14,7 @@
             <div class='carousel-outer'>
                 <!-- Wrapper for slides -->
                 <div class='carousel-inner'>
-                    @foreach ($gallery as $i => $photo)
+                    @foreach ($gallery->pictures as $i => $photo)
                         <div class='item {{ $i == 0 ? 'active' : '' }}'>
                             <img src='{{ asset('uploads/galleries/1/' . $photo) }}' alt='' />
                         </div>
@@ -32,7 +32,7 @@
 
             <!-- Indicators -->
             <ol class='carousel-indicators mCustomScrollbar'>
-                @foreach ($gallery as $i => $photo)
+                @foreach ($gallery->pictures as $i => $photo)
                     <li data-target='#carousel-custom' data-slide-to='{{ $i }}' class='{{ $i == 0 ? 'active' : '' }}'><img src='{{ asset('uploads/galleries/1/thumbs/' . $photo) }}' alt='' /></li>
                 @endforeach
             </ol>

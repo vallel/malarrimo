@@ -1,5 +1,6 @@
 <?php
 
+use Malarrimo\Repositories\Gallery;
 use Malarrimo\Repositories\News;
 
 class HomeController extends BaseController
@@ -10,25 +11,26 @@ class HomeController extends BaseController
 	 */
 	protected $newsRepo;
 
-	public function __construct(News $newsRepo)
+	/** @var  Gallery */
+	protected $galleryRepo;
+
+	/**
+	 * @param News $newsRepo
+	 * @param Gallery $galleryRepo
+	 */
+	public function __construct(News $newsRepo, Gallery $galleryRepo)
 	{
 		parent::__construct();
 		$this->newsRepo = $newsRepo;
+		$this->galleryRepo = $galleryRepo;
 	}
 
 	public function index()
 	{
-		$galleries = [
-			'Restaurante8.jpg',
-			'Restaurante9.jpg',
-			'Bar.jpg',
-			'Comedor.jpg',
-		];
-
 		$data = [
 			'headerClass' => 'home-header',
-			'galleries' => $galleries,
 			'lastNews' => $this->newsRepo->getLast(3),
+			'galleries' => $this->galleryRepo->getLastGalleries(4),
 		];
 
 		return View::make('home', $data);

@@ -13,7 +13,7 @@ class Gallery extends Base
     public function getAll()
     {
         $class = $this->entityName;
-        return $class::paginate(15);
+        return $class::orderBy('id', 'DESC')->paginate(15);
     }
 
     public function getLastGalleries($limit)
@@ -23,29 +23,6 @@ class Gallery extends Base
                     ->orderBy('id', 'DESC')
                     ->take($limit)
                     ->get();
-    }
-
-    public function getPaginatedGalleriesByCategory($categoryId, $galleriesPerPage = 10)
-    {
-        $class = $this->getEntity();
-        return $class::has('Pictures')
-            ->where('category_id', $categoryId)
-            ->orderBy('id', 'DESC')
-            ->paginate($galleriesPerPage);
-    }
-
-    /**
-     * @param int $categoryId
-     * @param int $limit
-     */
-    public function getLastFromCategory($categoryId = null, $limit = 4)
-    {
-    	$class = $this->getEntity();
-    	return $class::has('Pictures')
-            ->where('category_id', $categoryId)
-    		->orderBy('id', 'DESC')
-    		->take($limit)
-    		->get();
     }
 
 } 

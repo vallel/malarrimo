@@ -37,14 +37,16 @@
             <h1 class="section-content-title">Galerías de fotos</h1>
 
             <div class="home-page-galleries clearfix">
-                @foreach ($galleries as $i => $photo)
-                    <figure class="{{ $i == 0 ? 'home-galleries-big' : 'home-galleries-small' }}">
-                        <img src="{{ asset('uploads/galleries/1/' . $photo) }}" alt=""/>
-                    </figure>
+                @foreach ($galleries as $i => $gallery)
+                    <a href="{{ $gallery->id.'/'.Str::slug($gallery->title) }}">
+                        <figure class="{{ $i == 0 ? 'home-galleries-big' : 'home-galleries-small' }}">
+                            <img src="{{ asset('uploads/galleries/'.$gallery->id.'/'.$gallery->pictures[0]->file_name) }}" alt="{{ $gallery->title }}"/>
+                        </figure>
+                    </a>
                 @endforeach
             </div>
 
-            <a href="{{ route('gallery') }}" class="btn btn-info btn-lg more-galleries-btn">Ver más fotos</a>
+            <a href="{{ route('galleries') }}" class="btn btn-info btn-lg more-galleries-btn">Ver más fotos</a>
 
         </article>
 

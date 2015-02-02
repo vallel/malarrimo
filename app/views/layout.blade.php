@@ -59,8 +59,8 @@
                     <li {{ Route::currentRouteName() == 'news' ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('news') }}">Noticias</a>
                     </li>
-                    <li {{ Route::currentRouteName() == 'gallery' ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('gallery') }}">Galería</a>
+                    <li {{ Route::currentRouteName() == 'galleries' ? 'class="main-menu-active"' : '' }}>
+                        <a href="{{ route('galleries') }}">Galerías</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'contact' ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('contact') }}">Contacto</a>
