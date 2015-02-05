@@ -17,7 +17,12 @@ Route::get('comodidades/rvparking', ['as' => 'rvparking', 'uses' => 'FacilitiesC
 Route::get('comodidades/casaelviejocactus', ['as' => 'casaelviejocactus', 'uses' => 'FacilitiesController@casaelviejocactus']);
 Route::get('comodidades/deli', ['as' => 'deli', 'uses' => 'FacilitiesController@deli']);
 
-Route::get('tours', ['as' => 'tours', 'uses' => 'ToursController@index']);
+Route::get('tours/ballenas', ['as' => 'tours', 'uses' => 'ToursController@index']);
+Route::get('tours/equipo', ['as' => 'equipment', 'uses' => 'ToursController@equipment']);
+Route::get('tours/tarifas', ['as' => 'fees', 'uses' => 'ToursController@fees']);
+Route::get('ballena-gris', ['as' => 'whales', 'uses' => 'ToursController@whales']);
+Route::get('tours/otros', ['as' => 'otherTours', 'uses' => 'ToursController@other']);
+Route::get('tours/otros/tarifas', ['as' => 'otherFees', 'uses' => 'ToursController@otherFees']);
 
 Route::get('noticias', ['as' => 'news', 'uses' => 'NewsController@index']);
 

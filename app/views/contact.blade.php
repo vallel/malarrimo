@@ -46,7 +46,7 @@
 
             {{ Field::textarea('messageBody', 'Mensaje:') }}
 
-            <input type="submit" value="Enviar" class="btn btn-primary btn-lg contact-button">
+            <input type="submit" value="Enviar" class="btn btn-info btn-lg pull-right clearfix">
 
             {{ Form::close() }}
 

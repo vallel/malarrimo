@@ -77,8 +77,12 @@ body {
     background-color: #f3f7ff;
 }
 
-strong {
+strong, b {
     font-weight: bold;
+}
+
+em {
+    font-style: italic;
 }
 
 small {
@@ -211,6 +215,7 @@ small {
     width: 300px;
     float: left;
     margin-right: 40px;
+    margin-bottom: 20px;
 }
 
 .section-menu-item {
@@ -270,6 +275,7 @@ a.section-menu-item:hover {
     padding-top: 20px;
     margin-bottom: 10px;
     font-size: 1.5em;
+    color: #2e3192;
 }
 
 .section-content p {
@@ -437,6 +443,16 @@ a.section-menu-item:hover {
 
 .tours-banner {
     background-image: url('../img/bann-tours.png');
+}
+
+.fees-grid {
+    border-bottom: 1px dashed #000;
+    border-top: 1px dashed #000;
+}
+
+.whale-watching-grid td {
+    vertical-align: middle;
+    padding: 10px;
 }
 
 
