@@ -8,7 +8,7 @@
 
     </header>
 
-    <div class="section-banner tours-banner"></div>
+    <div class="section-banner {{ $toursBanner }}"></div>
 
     <div class="section-content">
 
@@ -24,7 +24,7 @@
                 </li>
                 <li><a href="{{ route('otherTours') }}" class="section-menu-item {{ Route::currentRouteName() == 'otherTours' ? 'section-menu-active' : '' }}">Otros Tours y Servicios</a>
                     <ul class="sub-section-menu">
-                        <li><a href="{{ route('otherFees') }}" class="section-menu-item {{ Route::currentRouteName() == 'otherFees' ? 'section-menu-active' : '' }}">Tarifas</a></li>
+                        <li><a href="{{ route('otherFees') }}" class="section-menu-item {{ Route::currentRouteName() == 'otherFees' ? 'section-menu-active' : '' }}">"Rutas cochimies" Excursiones a las Pinturas Rupestres</a></li>
                     </ul>
                 </li>
             </ul>

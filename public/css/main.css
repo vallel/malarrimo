@@ -286,7 +286,7 @@ a.section-menu-item:hover {
 .section-content-list {
     list-style: disc;
     margin-left: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .section-content-list li {
@@ -445,9 +445,22 @@ a.section-menu-item:hover {
     background-image: url('../img/bann-tours.png');
 }
 
+.whales-info-banner {
+    background-image: url('../img/bann-tours-infoballena.jpg');
+}
+
+.other-tours-banner {
+    background-image: url('../img/bann-tours-terrestre.jpg');
+}
+
+.cave-paintings-banner {
+    background-image: url('../img/bann-tours-pinturas.jpg');
+}
+
 .fees-grid {
     border-bottom: 1px dashed #000;
     border-top: 1px dashed #000;
+    margin-top: 15px;
 }
 
 .whale-watching-grid td {

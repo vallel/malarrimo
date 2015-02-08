@@ -2,7 +2,7 @@
 
 @section('toursContent')
 
-    <h1 class="section-content-title">Excursiones a las pinturas rupestres</h1>
+    <h1 class="section-content-title">Excursiones a las pinturas rupestres (Rutas cochimies)</h1>
 
     <p>Las desoladas montañas de la Sierra de San Francisco ofrecen una de las más grandes colecciones de arte rupestre
         en el mundo. En esta región se encuentran más de 300 sitios registrados ante el INAH (Instituto Nacional de

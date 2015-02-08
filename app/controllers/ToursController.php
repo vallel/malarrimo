@@ -8,6 +8,7 @@ class ToursController extends BaseController
         $data = [
             'title' => 'Tours &raquo; Avistamiento de ballenas | ',
             'headerClass' => 'tours-header',
+            'toursBanner' => 'tours-banner',
         ];
 
         return View::make('tours/tours', $data);
@@ -18,6 +19,7 @@ class ToursController extends BaseController
         $data = [
             'title' => 'Tours &raquo; Equipo recomendado | ',
             'headerClass' => 'tours-header',
+            'toursBanner' => 'tours-banner',
         ];
 
         return View::make('tours/equipment', $data);
@@ -28,6 +30,7 @@ class ToursController extends BaseController
         $data = [
             'title' => 'Tours &raquo; Tarifas | ',
             'headerClass' => 'tours-header',
+            'toursBanner' => 'tours-banner',
         ];
 
         return View::make('tours/fees', $data);
@@ -39,6 +42,7 @@ class ToursController extends BaseController
             'title' => 'Ballena gris | ',
             'headerClass' => 'tours-header',
             'sectionContentClass' => '',
+            'toursBanner' => 'whales-info-banner',
         ];
 
         return View::make('tours/whales', $data);
@@ -49,6 +53,7 @@ class ToursController extends BaseController
         $data = [
             'title' => 'Tours | ',
             'headerClass' => 'tours-header',
+            'toursBanner' => 'other-tours-banner',
         ];
 
         return View::make('tours/other', $data);
@@ -59,9 +64,10 @@ class ToursController extends BaseController
         $data = [
             'title' => 'Tours | ',
             'headerClass' => 'tours-header',
+            'toursBanner' => 'cave-paintings-banner',
         ];
 
-        return View::make('tours/other', $data);
+        return View::make('tours/otherFees', $data);
     }
 
 }

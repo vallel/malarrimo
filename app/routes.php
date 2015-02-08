@@ -22,7 +22,7 @@ Route::get('tours/equipo', ['as' => 'equipment', 'uses' => 'ToursController@equi
 Route::get('tours/tarifas', ['as' => 'fees', 'uses' => 'ToursController@fees']);
 Route::get('ballena-gris', ['as' => 'whales', 'uses' => 'ToursController@whales']);
 Route::get('tours/otros', ['as' => 'otherTours', 'uses' => 'ToursController@other']);
-Route::get('tours/otros/tarifas', ['as' => 'otherFees', 'uses' => 'ToursController@otherFees']);
+Route::get('tours/otros/pinturas-rupestres', ['as' => 'otherFees', 'uses' => 'ToursController@otherFees']);
 
 Route::get('noticias', ['as' => 'news', 'uses' => 'NewsController@index']);
 
