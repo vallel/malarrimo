@@ -505,6 +505,27 @@ a.section-menu-item:hover {
 
 
 /***********************************
+ --------- BOOKING PAGE -----------
+************************************/
+.booking-header {
+    background-image: url('../img/header-reservaciones.jpg');
+    background-color: #2E3192;
+}
+
+.booking-container {
+    margin-top: 10px;
+}
+
+.booking-form {
+    margin: auto;
+}
+
+.booking-summary {
+    padding-right: 5px;
+}
+
+
+/***********************************
  ----------- NEWS PAGE ------------
 ************************************/
 .news-header {

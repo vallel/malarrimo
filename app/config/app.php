@@ -124,6 +124,7 @@ return array(
 
         // vendor
 		'Way\Generators\GeneratorsServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
 
         // custom
         'Malarrimo\Components\FieldServiceProvider',
@@ -193,6 +194,9 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+		//vendor
+		'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
         // custom
         'Field'         => 'Malarrimo\Components\Field',

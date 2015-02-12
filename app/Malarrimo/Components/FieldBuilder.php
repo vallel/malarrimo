@@ -148,7 +148,7 @@ class FieldBuilder
      */
     public function buildTemplate($type)
     {
-        if ($this->file->exists('app/views/fields/' . $type . '.blade.php'))
+        if ($this->file->exists('../app/views/fields/' . $type . '.blade.php'))
         {
             return 'fields/' . $type;
         }
@@ -170,9 +170,12 @@ class FieldBuilder
         $this->buildCssClasses($type, $attributes);
         $control = $this->buildControl($type, $name, $value, $attributes, $options);
         $error = $this->buildError($name);
-        $template = $this->buildTemplate($type);
 
-        return $this->view->make($template, compact('name', 'label', 'control', 'error'));
+        $templateOption = isset($options['template']) ? $options['template'] : 'default';
+
+        $template = $this->buildTemplate($templateOption);
+
+        return $this->view->make($template, compact('name', 'label', 'control', 'error', 'options'));
     }
 
     /**

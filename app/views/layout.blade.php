@@ -54,7 +54,7 @@
                         <a href="{{ route('tours') }}">Tours</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'booking' ? 'class="main-menu-active"' : '' }}>
-                        <a href="">Reservaciones</a>
+                        <a href="{{ route('booking') }}">Reservaciones</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'news' ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('news') }}">Noticias</a>
@@ -89,7 +89,9 @@
             </div>
             <div class="column-3 column-whales">
                 <div class="column-icon whale-tail-icon"></div>
-                <img src="{{ URL::asset('img/bann-avistamiento.jpg') }}" alt="Avistamiento de ballena gris"/>
+                <a href="{{ route('booking') }}">
+                    <img src="{{ URL::asset('img/bann-avistamiento.jpg') }}" alt="Avistamiento de ballena gris"/>
+                </a>
             </div>
         </div>
 
