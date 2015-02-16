@@ -57,26 +57,26 @@
                 <legend class="section-content-subtitle">Hotel</legend>
 
                 <div class="form-group">
-                    {{ Form::label('checkin', 'Fecha de entrada:', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('hotelCheckIn', 'Fecha de entrada:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('checkin', null, ['class' => 'form-control', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('hotelCheckIn', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
 
-                    {{ Form::label('checkout', 'Fecha de salida:', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('hotelCheckOut', 'Fecha de salida:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('checkout', null, ['class' => 'form-control', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('hotelCheckOut', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
                 </div>
 
                 <div class="form-group">
-                    {{ Form::label('singleRooms', 'Habitaciones sencillas:', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('hotelSingleRooms', 'Habitaciones sencillas:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('singleRooms', null, ['class' => 'form-control']) }}
+                        {{ Form::text('hotelSingleRooms', null, ['class' => 'form-control']) }}
                     </div>
 
-                    {{ Form::label('doubleRooms', 'Habitaciones dobles:', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('hotelDoubleRooms', 'Habitaciones dobles:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('doubleRooms', null, ['class' => 'form-control']) }}
+                        {{ Form::text('hotelDoubleRooms', null, ['class' => 'form-control']) }}
                     </div>
                 </div>
 
@@ -101,12 +101,15 @@
                 <div class="form-group">
                     {{ Form::label('whalesDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('whalesDate', null, ['class' => 'form-control', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('whalesDate', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
 
                     {{ Form::label('whalesSchedule', 'Horario:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::select('whalesSchedule', ['8:00 a.m. - 12:00 p.m.', '11:00 a.m. - 3:00 p.m.'], null, ['class' => 'form-control']) }}
+                        {{ Form::select('whalesSchedule',
+                            ['8:00 a.m.' => '8:00 a.m. - 12:00 p.m.',
+                             '11:00 a.m.' => '11:00 a.m. - 3:00 p.m.'],
+                            null, ['class' => 'form-control']) }}
                     </div>
                 </div>
 
@@ -129,21 +132,21 @@
                 <legend class="section-content-subtitle">Tour Pinturas Rupestres</legend>
 
                 <div class="form-group">
-                    {{ Form::label('cavePaintDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('cavePaintingDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('cavePaintDate', null, ['class' => 'form-control', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('cavePaintingDate', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
                 </div>
 
                 <div class="form-group">
-                    {{ Form::label('cavePaintAdults', 'Adultos:', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('cavePaintingAdults', 'Adultos:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('cavePaintAdults', null, ['class' => 'form-control']) }}
+                        {{ Form::text('cavePaintingAdults', null, ['class' => 'form-control']) }}
                     </div>
 
-                    {{ Form::label('cavePaintChildren', 'Niños (hasta 11 años):', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('cavePaintingChildren', 'Niños (hasta 11 años):', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('cavePaintChildren', null, ['class' => 'form-control']) }}
+                        {{ Form::text('cavePaintingChildren', null, ['class' => 'form-control']) }}
                     </div>
                 </div>
             </fieldset>
@@ -153,21 +156,21 @@
                 <legend class="section-content-subtitle">Tour Salinas</legend>
 
                 <div class="form-group">
-                    {{ Form::label('saltDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('saltMineDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('saltDate', null, ['class' => 'form-control', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('saltMineDate', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
                 </div>
 
                 <div class="form-group">
-                    {{ Form::label('saltAdults', 'Adultos:', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('saltMineAdults', 'Adultos:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('saltAdults', null, ['class' => 'form-control']) }}
+                        {{ Form::text('saltMineAdults', null, ['class' => 'form-control']) }}
                     </div>
 
-                    {{ Form::label('saltChildren', 'Niños (hasta 11 años):', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('saltMineChildren', 'Niños (hasta 11 años):', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('saltChildren', null, ['class' => 'form-control']) }}
+                        {{ Form::text('saltMineChildren', null, ['class' => 'form-control']) }}
                     </div>
                 </div>
             </fieldset>
@@ -177,14 +180,14 @@
                 <legend class="section-content-subtitle">RV Parking</legend>
 
                 <div class="form-group">
-                    {{ Form::label('checkinRv', 'Fecha de entrada:', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('rvCheckIn', 'Fecha de entrada:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('checkinRv', null, ['class' => 'form-control', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('rvCheckIn', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
 
-                    {{ Form::label('checkoutRv', 'Fecha de salida:', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('rvCheckOut', 'Fecha de salida:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('checkoutRv', null, ['class' => 'form-control', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('rvCheckOut', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
                 </div>
 
@@ -202,16 +205,16 @@
 
                 <div class="form-group">
                     <label class="checkbox-inline col-sm-4 col-sm-push-1">
-                        {{ Form::checkbox('campingRv') }} Tienda de campaña
+                        {{ Form::checkbox('rvCamping') }} Tienda de campaña
                     </label>
                     <label class="checkbox-inline col-sm-2 col-sm-push-1">
-                        {{ Form::checkbox('vanRv') }} Van
+                        {{ Form::checkbox('rvVan') }} Van
                     </label>
                     <label class="checkbox-inline col-sm-2 col-sm-push-1">
-                        {{ Form::checkbox('camperRv') }} Camper
+                        {{ Form::checkbox('rvCamper') }} Camper
                     </label>
                     <label class="checkbox-inline col-sm-3 col-sm-push-1">
-                        {{ Form::checkbox('fifthWheelRv') }} Fifth wheel
+                        {{ Form::checkbox('rvFifthWheel') }} Fifth wheel
                     </label>
                 </div>
 
@@ -224,7 +227,7 @@
                 <div class="form-group">
                     {{ Form::label('banquetDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('banquetDate', null, ['class' => 'form-control', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('banquetDate', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
 
                     {{ Form::label('banquetSchedule', 'Horario:', ['class' => 'col-sm-2 control-label']) }}
@@ -259,4 +262,13 @@
 
     </div>
 
+@endsection
+
+@section('appendHead')
+    {{ HTML::style('css/datepicker.css') }}
+@endsection
+
+@section('scripts')
+    {{ HTML::script('js/bootstrap-datepicker.js') }}
+    {{ HTML::script('js/booking.js') }}
 @endsection
