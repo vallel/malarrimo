@@ -34,7 +34,8 @@ class CreateBookingsTable extends Migration {
 			$table->integer('hotelChildren');
 
 			// whale tours
-			$table->dateTime('whalesDateTime');
+			$table->date('whalesDate');
+			$table->text('whalesTime');
 			$table->integer('whalesAdults');
 			$table->integer('whalesChildren');
 
@@ -52,14 +53,15 @@ class CreateBookingsTable extends Migration {
 			$table->date('rvCheckIn');
 			$table->date('rvCheckOut');
 			$table->integer('rvAdults');
-			$table->date('rvChildren');
+			$table->integer('rvChildren');
 			$table->integer('rvCamping');
 			$table->integer('rvVan');
 			$table->integer('rvCamper');
 			$table->integer('rvFifthWheel');
 
 			// banquet
-			$table->dateTime('banquetDateTime');
+			$table->dateTime('banquetDate');
+			$table->text('banquetTime');
 			$table->integer('banquetPersons');
 
 			$table->char('status');

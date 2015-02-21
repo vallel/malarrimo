@@ -19,15 +19,15 @@
             <fieldset>
                 <legend class="section-content-subtitle">Datos generales:</legend>
 
-                {{ Field::text('name', 'Nombre:', null, ['placeholder' => 'Nombre'], ['template' => 'horizontal']) }}
+                {{ Field::text('name', 'Nombre:', null, ['placeholder' => 'Nombre', 'required' => ''], ['template' => 'horizontal']) }}
 
-                {{ Field::email('email', 'Correo electrónico:', null, ['placeholder' => 'Correo electrónico'], ['template' => 'horizontal']) }}
-                {{ Field::email('emailConfirmation', 'Confirmar correo electrónico:', null, ['placeholder' => 'Correo electrónico'], ['template' => 'horizontal']) }}
+                {{ Field::email('email', 'Correo electrónico:', null, ['placeholder' => 'Correo electrónico', 'required' => ''], ['template' => 'horizontal']) }}
+                {{ Field::email('email_confirmation', 'Confirmar correo electrónico:', null, ['placeholder' => 'Correo electrónico', 'required' => ''], ['template' => 'horizontal']) }}
 
                 <div class="form-group">
                     {{ Form::label('phone', 'Teléfono:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Teléfono']) }}
+                        {{ Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Teléfono', 'required' => '']) }}
                     </div>
 
                     {{ Form::label('fax', 'Fax:', ['class' => 'col-sm-2 control-label']) }}
@@ -36,17 +36,17 @@
                     </div>
                 </div>
 
-                {{ Field::email('address', 'Dirección:', null, ['placeholder' => 'Dirección'], ['template' => 'horizontal']) }}
+                {{ Field::text('address', 'Dirección:', null, ['placeholder' => 'Dirección', 'required' => ''], ['template' => 'horizontal']) }}
 
                 <div class="form-group">
                     {{ Form::label('city', 'Ciudad:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('city', null, ['class' => 'form-control', 'placeholder' => 'Ciudad']) }}
+                        {{ Form::text('city', null, ['class' => 'form-control', 'placeholder' => 'Ciudad', 'required' => '']) }}
                     </div>
 
                     {{ Form::label('country', 'País:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('country', null, ['class' => 'form-control', 'placeholder' => 'País']) }}
+                        {{ Form::text('country', null, ['class' => 'form-control', 'placeholder' => 'País', 'required' => '']) }}
                     </div>
                 </div>
 
@@ -104,9 +104,9 @@
                         {{ Form::text('whalesDate', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
 
-                    {{ Form::label('whalesSchedule', 'Horario:', ['class' => 'col-sm-2 control-label']) }}
+                    {{ Form::label('whalesTime', 'Horario:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::select('whalesSchedule',
+                        {{ Form::select('whalesTime',
                             ['8:00 a.m.' => '8:00 a.m. - 12:00 p.m.',
                              '11:00 a.m.' => '11:00 a.m. - 3:00 p.m.'],
                             null, ['class' => 'form-control']) }}

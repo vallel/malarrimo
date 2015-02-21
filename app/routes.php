@@ -26,6 +26,7 @@ Route::get('tours/otros/pinturas-rupestres', ['as' => 'otherFees', 'uses' => 'To
 
 Route::get('reservaciones', ['as' => 'booking', 'uses' => 'BookingController@index']);
 Route::post('reservaciones/enviar', ['as' => 'storeBooking', 'uses' => 'BookingController@store']);
+Route::get('reservaciones/enviada', ['as' => 'bookingConfirmation', 'uses' => 'BookingController@confirmation']);
 
 Route::get('noticias', ['as' => 'news', 'uses' => 'NewsController@index']);
 

@@ -125,5 +125,8 @@ return array(
 		'language' => 'de selección de idioma',
 		'content' => 'Contenido',
 		'date' => 'Fecha',
+		'address' => 'Dirección',
+		'city' => 'Ciudad',
+		'country' => 'País',
 	),
 );
