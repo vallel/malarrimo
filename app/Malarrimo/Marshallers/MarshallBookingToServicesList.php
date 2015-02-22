@@ -19,9 +19,10 @@ class MarshallBookingToServicesList implements Marshaller
 
         if (!empty($booking))
         {
-            $services[] = static::marshallHotel($booking);
             $services[] = static::marshallWhales($booking);
+            $services[] = static::marshallHotel($booking);
 
+            dd($services);
             $services = array_filter($services);
         }
 
@@ -35,19 +36,19 @@ class MarshallBookingToServicesList implements Marshaller
     protected static function marshallHotel($booking)
     {
         if ($booking->hotelCheckIn && $booking->hotelCheckOut &&
-            ($booking->hotelSingle || $booking->hotelDouble) &&
+            ($booking->hotelSingleRooms || $booking->hotelDoubleRooms) &&
             $booking->hotelAdults)
         {
             $description = '';
-            if ($booking->hotelDouble)
+            if ($booking->hotelDoubleRooms)
             {
-                $description .= $booking->hotelDouble . ' habitaciones dobles';
+                $description .= $booking->hotelDoubleRooms . ' habitaciones dobles';
             }
 
-            if ($booking->hotelSingle)
+            if ($booking->hotelSingleRooms)
             {
                 $description .= empty($description) ? '' : ' y ';
-                $description .= $booking->hotelDouble . ' habitaciones sencillas, ';
+                $description .= $booking->hotelSingleRooms . ' habitaciones sencillas, ';
             }
 
             $description .= $booking->hotelAdults . ' adultos';

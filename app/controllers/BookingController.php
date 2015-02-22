@@ -34,7 +34,7 @@ class BookingController extends BaseController
 
 		if ($manager->save())
 		{
-			return Redirect::route('bookingConfirmation')->with('booking', $booking);
+			return Redirect::route('bookingConfirmation');
 		}
 
 		return Redirect::back()->withInput()->withErrors($manager->getErrors());
@@ -42,16 +42,7 @@ class BookingController extends BaseController
 
 	public function confirmation()
 	{
-		if (!Session::has('booking'))
-		{
-			return Redirect::route('booking');
-		}
-
-		$booking = Session::get('booking');
-
-		$services = MarshallBookingToServicesList::marshall($booking);
-
-		return View::make('bookingConfirmation')->with('services', $services);
+		return View::make('bookingConfirmation', ['headerClass' => 'booking-header']);
 	}
 
 }

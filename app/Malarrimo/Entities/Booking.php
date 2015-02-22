@@ -11,12 +11,12 @@ class Booking extends \Eloquent
 	 */
 	protected $table = 'bookings';
 
-    public function setHotelCheckIn($value)
+    public function setHotelCheckInAttribute($value)
     {
         $this->setDateFieldValue('hotelCheckIn', $value);
     }
 
-    public function setHotelCheckOut($value)
+    public function setHotelCheckOutAttribute($value)
     {
         $this->setDateFieldValue('hotelCheckOut', $value);
     }

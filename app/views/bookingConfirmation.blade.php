@@ -19,31 +19,8 @@
                 o al teléfono <strong>+52 (615) 157 01 00</strong>.
             </p>
 
-            <h2 class="section-content-subtitle">Su reservación:</h2>
-            <table class="table">
-                <tr>
-                    <th>Servicio</th>
-                    <th>Fecha</th>
-                </tr>
-                @foreach ($services as $service)
-                    <tr>
-                        <td>{{ $service->getDescription() }}</td>
-                        <td>{{ $service->getDates() }}</td>
-                    </tr>
-                @endforeach
-            </table>
-
         </article>
 
     </div>
 
-@endsection
-
-@section('appendHead')
-    {{ HTML::style('css/datepicker.css') }}
-@endsection
-
-@section('scripts')
-    {{ HTML::script('js/bootstrap-datepicker.js') }}
-    {{ HTML::script('js/booking.js') }}
 @endsection
