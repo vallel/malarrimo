@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ $title or '' }}Malarrimo</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
     {{ HTML::style('css/bootstrap.min.css') }}
 	{{ HTML::style('css/main.css') }}
@@ -55,10 +55,12 @@
                     <li {{ Route::currentRouteName() == 'tours' ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('tours') }}">Tours</a>
                     </li>
-                    <li {{ Route::currentRouteName() == 'booking' ? 'class="main-menu-active"' : '' }}>
+                    <li {{ Route::currentRouteName() == 'booking' || Route::currentRouteName() == 'bookingConfirmation'
+                            ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('booking') }}">Reservaciones</a>
                     </li>
-                    <li {{ Route::currentRouteName() == 'news' ? 'class="main-menu-active"' : '' }}>
+                    <li {{ Route::currentRouteName() == 'news' || Route::currentRouteName() == 'post'
+                        ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('news') }}">Noticias</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'galleries' ? 'class="main-menu-active"' : '' }}>
@@ -105,6 +107,16 @@
     </footer>
 
     @yield('scripts')
+
+    <!-- Google plus script -->
+    <script type="text/javascript">
+        window.___gcfg = {lang: 'es-419'};
+        (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/platform.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+    </script>
 
     <!-- Facebook script -->
     <div id="fb-root"></div>

@@ -355,6 +355,26 @@ a.section-menu-item:hover {
     background-image: url('../img/3col-avistamiento.png');
 }
 
+/* Share icons */
+.post-meta-data {
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.social-icons {
+    float: right;
+}
+
+.social-icon {
+    float: left;
+}
+
+.post-tags {
+    margin-top: 20px;
+    color: #285e8e;
+    font-weight: bold;
+}
+
 
 
 /***********************************
@@ -545,7 +565,6 @@ a.section-menu-item:hover {
 
 .news--most-readed-title:hover {
     text-decoration: none;
-    color: #ddd;
 }
 
 .news--read-more {
@@ -614,6 +633,17 @@ a.section-menu-item:hover {
 .news-image {
     height: 150px;
     width: auto;
+}
+
+.post-image {
+    width: 540px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
 }
 
 

@@ -22,9 +22,9 @@
                 @foreach ($lastNews as $post)
                 <li class="section-menu-item">
                     <article class="news--most-readed">
-                        <a href="" class="news--most-readed-title"><h1>{{ $post->title }}</h1></a>
+                        <h1 class="news--most-readed-title">{{ $post->title }}</h1>
                         <p class="small">{{ Str::limit($post->content, 200) }}</p>
-                        <a href="{{ $post->id }}" class="news--read-more">Continuar leyendo</a>
+                        <a href="{{ route('post', ['id' => $post->id, 'title' => Str::slug($post->title)]) }}" class="news--read-more">Continuar leyendo</a>
                     </article>
                 </li>
                 @endforeach

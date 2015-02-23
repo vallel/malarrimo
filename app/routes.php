@@ -29,6 +29,7 @@ Route::post('reservaciones/enviar', ['as' => 'storeBooking', 'uses' => 'BookingC
 Route::get('reservaciones/enviada', ['as' => 'bookingConfirmation', 'uses' => 'BookingController@confirmation']);
 
 Route::get('noticias', ['as' => 'news', 'uses' => 'NewsController@index']);
+Route::get('noticias/{id}/{title}', ['as' => 'post', 'uses' => 'NewsController@get']);
 
 Route::get('galerias', ['as' => 'galleries', 'uses' => 'GalleryController@index']);
 Route::get('galeria/{id}/{title}', ['as' => 'gallery', 'uses' => 'GalleryController@show']);

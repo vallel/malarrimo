@@ -16,9 +16,9 @@
                 @foreach ($mostVisited as $visitedPost)
                 <li class="section-menu-item">
                     <article class="news--most-readed">
-                        <a href="" class="news--most-readed-title"><h2>{{ $visitedPost->title }}</h2></a>
+                        <h2 class="news--most-readed-title">{{ $visitedPost->title }}</h2>
                         <p class="small">{{ Str::limit($visitedPost->content, 200) }}</p>
-                        <a href="" class="news--read-more">Continuar leyendo</a>
+                        <a href="{{ route('post', ['id' => $visitedPost->id, 'title' => Str::slug($visitedPost->title)]) }}" class="news--read-more">Continuar leyendo</a>
                     </article>
                 </li>
                 @endforeach
@@ -39,7 +39,7 @@
                     <div class="post-item-content">
                         {{ Str::limit($post->content, 250) }}
                     </div>
-                    <a href="{{ $post->id }}" class="post-item--read-more">Continuar leyendo</a>
+                    <a href="{{ route('post', ['id' => $post->id, 'title' => Str::slug($post->title)]) }}" class="post-item--read-more">Continuar leyendo</a>
                 </article>
             @endforeach
             </div>

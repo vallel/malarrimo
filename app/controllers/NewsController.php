@@ -28,4 +28,28 @@ class NewsController extends BaseController
         return View::make('news', $data);
     }
 
+    public function get($id, $title)
+    {
+        if (empty($id))
+        {
+            return Redirect::route('news');
+        }
+
+        $post = $this->newsRepo->find($id);
+
+        if (empty($post))
+        {
+            return Redirect::route('news');
+        }
+
+        $data = array(
+            'title' => $post->title . ' &raquo; Noticias | ',
+            'headerClass' => 'news-header',
+            'mostVisited' => $this->newsRepo->getMostVisited(),
+            'post' => $post,
+        );
+
+        return View::make('post', $data);
+    }
+
 }
