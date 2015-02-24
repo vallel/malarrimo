@@ -30,7 +30,7 @@
 
         {{ Field::file('image', 'Imagen') }}
 
-        {{ Field::textarea('content', 'Contenido') }}
+        {{ Field::textarea('content', 'Contenido', null, ['class' => 'tinymce']) }}
 
         {{ Field::text('keywords', 'Etiquetas (separadas por comas, ej. ballenas, tours, eco-tours)') }}
 
@@ -39,4 +39,9 @@
         </div>
     {{ Form::close() }}
 
+@endsection
+
+@section('appendScripts')
+    {{ HTML::script('js/vendor/tinymce/tinymce.min.js') }}
+    {{ HTML::script('js/admin.post.js') }}
 @endsection
