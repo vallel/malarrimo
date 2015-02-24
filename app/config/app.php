@@ -125,6 +125,7 @@ return array(
         // vendor
 		'Way\Generators\GeneratorsServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 
         // custom
         'Malarrimo\Components\FieldServiceProvider',
@@ -197,6 +198,7 @@ return array(
 
 		//vendor
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
+		'Image' => 'Intervention\Image\Facades\Image',
 
         // custom
         'Field'         => 'Malarrimo\Components\Field',

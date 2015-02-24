@@ -4,6 +4,7 @@ namespace Malarrimo\Managers;
 
 
 use Input;
+use Intervention\Image\Facades\Image;
 use Str;
 
 class NewsManager extends ManagerBase
@@ -49,11 +50,14 @@ class NewsManager extends ManagerBase
         $file = Input::file($fieldName);
         if ($file)
         {
-            $fileName = Str::slug($file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
+            $fileName = uniqid('news_') . '.' . $file->getClientOriginalExtension();
             $img = $file->move('uploads/news', $fileName);
 
             if ($img)
             {
+                Image::make(sprintf('uploads/news/%s', $img->getFilename()))->fit(540, 250, function ($constraint) {
+                    $constraint->upsize();
+                })->save();
                 $this->data['image'] = $img->getFilename();
             }
         }
