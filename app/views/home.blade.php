@@ -23,7 +23,7 @@
                 <li class="section-menu-item">
                     <article class="news--most-readed">
                         <h1 class="news--most-readed-title">{{ $post->title }}</h1>
-                        <p class="small">{{ Str::limit($post->content, 200) }}</p>
+                        <div class="small">{{ Str::limit(strip_tags($post->content), 200) }}</div>
                         <a href="{{ route('post', ['id' => $post->id, 'title' => Str::slug($post->title)]) }}" class="news--read-more">Continuar leyendo</a>
                     </article>
                 </li>

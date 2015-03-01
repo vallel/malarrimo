@@ -25,7 +25,7 @@
             </ul>
         </nav>
 
-        <section>
+        <section class="section-content-article post">
 
             <h1 class="section-content-title">{{ $post->title }}</h1>
 
@@ -51,7 +51,9 @@
                 </figure>
             @endif
 
-            {{ $post->content }}
+            <div class="post-content">
+                {{ $post->content }}
+            </div>
 
             <p class="post-tags">{{ $post->keywords }}</p>
 

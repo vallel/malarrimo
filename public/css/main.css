@@ -89,6 +89,16 @@ small {
     font-size: 0.8em;
 }
 
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
 .content {
     width: 960px;
     margin: auto;
@@ -140,6 +150,7 @@ small {
 }
 
 .language-switch:hover {
+    color: #fff;
     text-decoration: underline;
 }
 
@@ -635,6 +646,10 @@ a.section-menu-item:hover {
     width: auto;
 }
 
+.post {
+    width: 540px;
+}
+
 .post-image {
     width: 540px;
     overflow: hidden;
@@ -644,6 +659,16 @@ a.section-menu-item:hover {
 .post-image img {
     width: 100%;
     height: auto;
+}
+
+.post-content p {
+    margin: 10px 0;
+}
+
+.post-content ul {
+    margin: 10px 0;
+    padding-left: 40px;
+    list-style: disc;
 }
 
 

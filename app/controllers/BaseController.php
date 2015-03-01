@@ -1,5 +1,7 @@
 <?php
 
+use Malarrimo\Libraries\WeatherService;
+
 class BaseController extends Controller
 {
 
@@ -8,7 +10,11 @@ class BaseController extends Controller
 		$currentDateTime = new DateTime('now', new DateTimeZone('America/Denver'));
 		$currentTime = $currentDateTime->format('g:i A');
 
+		$weatherService = new WeatherService();
+		$currentTemp = $weatherService->getCurrentTemp();
+
 		View::share('currentTime', $currentTime);
+		View::share('currentTemp', $currentTemp);
 	}
 
 	/**

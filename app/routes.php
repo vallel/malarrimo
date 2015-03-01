@@ -74,3 +74,6 @@ Route::post('admin/galeria/editar/{id}', ['as' => 'updateGallery', 'uses' => 'Ad
 Route::post('admin/galeria/subir/{id}', ['as' => 'uploadGallery', 'uses' => 'AdminGalleriesController@uploadGallery', 'before' => 'auth']);
 Route::get('admin/galeria/fotos/{id}', ['as' => 'galleryPics', 'uses' => 'AdminGalleriesController@getPictures', 'before' => 'auth']);
 Route::delete('admin/galeria/foto/borrar/{id}', ['as' => 'deletePic', 'uses' => 'AdminGalleriesController@deletePicture', 'before' => 'auth']);
+
+// booking administration
+Route::get('admin/reservaciones', ['as' => 'adminBooking', 'uses' => 'AdminBookingController@getList', 'before' => 'auth']);
