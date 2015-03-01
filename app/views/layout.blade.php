@@ -47,7 +47,7 @@
                 <li>-</li>
                 <li><time datetime="">{{ $currentTime }}</time></li>
                 <li>-</li>
-                <li><span class="weather">70°F / 30°C</span></li>
+                <li><span class="weather">{{ $currentTemp->getTempFahrenheit() }}°F / {{ $currentTemp->getTempCelsius() }}°C</span></li>
                 <li><a href="" class="top-icon fb-top-icon"></a></li>
                 <li><a href="https://twitter.com/EtoursMalarrimo" class="top-icon tw-top-icon" target="_blank"></a></li>
                 <li><a href="" class="language-switch">Eng</a></li>
