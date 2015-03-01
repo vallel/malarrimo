@@ -37,8 +37,8 @@
                 <td>{{ $booking->status }}</td>
                 <td>
                     <a href="" class="btn btn-default" title="Ver detalles"><span class="glyphicon glyphicon-zoom-in"></span></a>
-                    <a href="" class="btn btn-danger" title="Cancelar"><span class="glyphicon glyphicon-remove-circle"></span></a>
-                    <a href="" class="btn btn-success" title="Confirmar"><span class="glyphicon glyphicon-ok-circle"></span></a>
+                    <a href="" class="btn btn-default" title="Cancelar"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                    <a href="" class="btn btn-default" title="Confirmar"><span class="glyphicon glyphicon-ok-circle"></span></a>
                 </td>
             </tr>
 

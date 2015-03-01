@@ -26,8 +26,8 @@
             <td>{{ $post->user->user_name }}</td>
             <td>{{ $post->visits }}</td>
             <td>
-                <a href="{{ route('editNews', [$post->id]) }}" class="btn" title="Editar noticia"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="{{ route('deleteNews', [$post->id]) }}" class="btn delete-post-btn" title="Eliminar noticia"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="{{ route('editNews', [$post->id]) }}" class="btn btn-default" title="Editar noticia"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="{{ route('deleteNews', [$post->id]) }}" class="btn btn-default delete-post-btn" title="Eliminar noticia"><span class="glyphicon glyphicon-trash"></span></a>
             </td>
         </tr>
         @endforeach
