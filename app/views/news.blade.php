@@ -32,7 +32,7 @@
                 <article class="post-item {{ $i%2 == 0 ? '' : 'clearfix' }}">
                     @if (!empty($post->image))
                     <figure class="news-image-container">
-                        <img class="news-image" src="{{ asset('uploads/news/' . $post->image) }}" alt="{{ $post->title }}"/>
+                        <img class="news-image" src="{{ asset('uploads/news/thumb/' . $post->image) }}" alt="{{ $post->title }}"/>
                     </figure>
                     @endif
                     <h1 class="post-item-title">{{ $post->title }}</h1>
