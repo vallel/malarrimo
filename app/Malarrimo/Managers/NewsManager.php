@@ -75,20 +75,27 @@ class NewsManager extends ManagerBase
                 }
                 catch(Exception $ex)
                 {
-                    $imagePaths = array(
-                        public_path() . '/uploads/news/' . $img->getFileName(),
-                        public_path() . '/uploads/news/thumb/' . $img->getFileName(),
-                    );
-                    foreach ($imagePaths as $file)
-                    {
-                        if (file_exists($file))
-                        {
-                            unlink($file);
-                        }
-                    }
-
+                    $this->deletePostImages($img->getFileName());
                     throw $ex;
                 }
+            }
+        }
+    }
+
+    /**
+     * @param string $image
+     */
+    public function deletePostImages($image)
+    {
+        $imagePaths = array(
+            public_path() . '/uploads/news/' . $image,
+            public_path() . '/uploads/news/thumb/' . $image,
+        );
+        foreach ($imagePaths as $file)
+        {
+            if (file_exists($file))
+            {
+                unlink($file);
             }
         }
     }
