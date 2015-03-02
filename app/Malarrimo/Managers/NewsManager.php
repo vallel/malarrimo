@@ -3,9 +3,9 @@
 namespace Malarrimo\Managers;
 
 
+use Exception;
 use Input;
 use Intervention\Image\Facades\Image;
-use Str;
 
 class NewsManager extends ManagerBase
 {
@@ -21,7 +21,7 @@ class NewsManager extends ManagerBase
             'language' => 'required',
             'user_id' => 'required',
             'keywords' => '',
-            'image' => 'image|max:1000',
+            'image' => 'image|max:2048',
         ];
 
         return $rules;
@@ -44,6 +44,7 @@ class NewsManager extends ManagerBase
 
     /**
      * @param string $fieldName
+     * @throws Exception
      */
     public function uploadImage($fieldName)
     {
@@ -55,10 +56,39 @@ class NewsManager extends ManagerBase
 
             if ($img)
             {
-                Image::make(sprintf('uploads/news/%s', $img->getFilename()))->fit(540, 250, function ($constraint) {
-                    $constraint->upsize();
-                })->save();
-                $this->data['image'] = $img->getFilename();
+                try
+                {
+                    $image = Image::make(sprintf('uploads/news/%s', $img->getFilename()));
+
+                    // resize original image
+                    $image->fit(540, 250, function ($constraint) {
+                        $constraint->upsize();
+                    })->save();
+
+                    // create thumbnail
+                    $thumbDir = public_path() . '/uploads/news/thumb/';
+                    $image->fit(250, 150, function ($constraint) {
+                        $constraint->upsize();
+                    })->save($thumbDir . $img->getFilename());
+
+                    $this->data['image'] = $img->getFilename();
+                }
+                catch(Exception $ex)
+                {
+                    $imagePaths = array(
+                        public_path() . '/uploads/news/' . $img->getFileName(),
+                        public_path() . '/uploads/news/thumb/' . $img->getFileName(),
+                    );
+                    foreach ($imagePaths as $file)
+                    {
+                        if (file_exists($file))
+                        {
+                            unlink($file);
+                        }
+                    }
+
+                    throw $ex;
+                }
             }
         }
     }
