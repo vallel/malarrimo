@@ -28,7 +28,14 @@
             </div>
         </div>
 
-        {{ Field::file('image', 'Imagen') }}
+        @if (isset($post) && !empty($post->image))
+            <figure>
+                <img src="{{ asset('uploads/news/thumb/' . $post->image) }}" alt=""/>
+                <figcaption><a href="{{ route('deletePostImage', ['id' => $post->id]) }}">Borrar imagen</a></figcaption>
+            </figure>
+        @else
+            {{ Field::file('image', 'Imagen') }}
+        @endif
 
         {{ Field::textarea('content', 'Contenido', null, ['class' => 'tinymce']) }}
 

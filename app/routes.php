@@ -61,6 +61,7 @@ Route::get('admin/noticias', ['as' => 'admin.news', 'uses' => 'AdminNewsControll
 Route::get('admin/noticias/agregar', ['as' => 'addNews', 'uses' => 'AdminNewsController@add', 'before' => 'auth']);
 Route::get('admin/noticias/editar/{id}', ['as' => 'editNews', 'uses' => 'AdminNewsController@edit', 'before' => 'auth']);
 Route::get('admin/noticias/borrar/{id}', ['as' => 'deleteNews', 'uses' => 'AdminNewsController@delete', 'before' => 'auth']);
+Route::get('admin/noticias/borrar-imagen/{id}', ['as' => 'deletePostImage', 'uses' => 'AdminNewsController@deletePostImage', 'before' => 'auth']);
 Route::post('admin/noticias/crear', ['as' => 'createPost', 'uses' => 'AdminNewsController@create', 'before' => 'auth']);
 Route::post('admin/noticias/editar/{id}', ['as' => 'updatePost', 'uses' => 'AdminNewsController@update', 'before' => 'auth']);
 

@@ -90,4 +90,20 @@ class AdminNewsController extends BaseController
         }
     }
 
+    public function deletePostImage($id)
+    {
+        $post = $this->repository->find($id);
+
+        if (!empty($post) && !empty($post->image))
+        {
+            $manager = new NewsManager($this->repository, $post->toArray());
+            $manager->deletePostImages($post->image);
+
+            $post->image = null;
+            $post->save();
+        }
+
+        return Redirect::route('editNews', [$post->id])->with('msg', '<p class="alert alert-success">La noticia ha sido actualizada.</p>');
+    }
+
 } 
