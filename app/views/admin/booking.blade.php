@@ -52,4 +52,8 @@
 
     </table>
 
+    @if (isset($bookingList))
+        {{ $bookingList->links() }}
+    @endif
+
 @endsection

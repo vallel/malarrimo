@@ -11,4 +11,10 @@ class Booking extends Base
         $this->entityName = 'Malarrimo\Entities\Booking';
     }
 
+    public function getList($perPage = 15)
+    {
+        $entity = $this->getEntity();
+        return $entity::orderBy('id', 'desc')->paginate($perPage);
+    }
+
 }

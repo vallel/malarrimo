@@ -20,7 +20,7 @@ class AdminBookingController extends BaseController
 
     public function getList()
     {
-        $bookingList = $this->repository->getAll();
+        $bookingList = $this->repository->getList();
         return View::make('admin/booking')->with('bookingList', $bookingList);
     }
 
