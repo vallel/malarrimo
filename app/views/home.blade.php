@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <header class="section-header">
+    <header class="section-header home-section-header">
 
         <h1>Bienvenidos a <strong>Malarrimo</strong></h1>
         <p>Cada año miles de ballenas grises migran casi 10,000 kilómetros desde las aguas frías de los mares de

@@ -107,6 +107,7 @@ h2 {
 
 .site-header {
     height: 270px;
+    margin-bottom: -80px;
     color: #fff;
     background-repeat: no-repeat;
     background-position: center;
@@ -190,10 +191,6 @@ h2 {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-}
-
-.main-content {
-    margin-top: -228px;
 }
 
 .section-header {
@@ -395,7 +392,12 @@ a.section-menu-item:hover {
     background-image: url('../img/header-home.jpg');
     background-repeat: repeat-x;
     height: 460px;
-    margin-bottom: -150px;
+    margin-bottom: 0;
+}
+
+.home-section-header {
+    height: 230px;
+    margin-top: -230px;
 }
 
 .home-galleries-big {
