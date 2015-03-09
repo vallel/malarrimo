@@ -14,6 +14,11 @@
 
     @yield('appendHead')
 
+    <!--[if lt IE 9]>
+    {{ HTML::script('js/html5shiv.min.js') }}
+    {{ HTML::script('js/html5shiv-printshiv.min.js') }}
+    <![endif]-->
+
 </head>
 <body>
 
