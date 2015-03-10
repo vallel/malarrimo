@@ -36,8 +36,11 @@ class WeatherService
     protected function getAndCacheWeather()
     {
         $weather = $this->getWeatherApiResponse();
-        $weather->responseTime = strtotime('now');
-        Cache::add(static::CACHE_KEY, $weather, 720);
+        if (!empty($weather))
+        {
+            $weather->responseTime = strtotime('now');
+            Cache::add(static::CACHE_KEY, $weather, 720);
+        }
 
         return $weather;
     }
