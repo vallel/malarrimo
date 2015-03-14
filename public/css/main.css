@@ -705,6 +705,10 @@ a.section-menu-item:hover {
     color: #1b1464;
 }
 
+.galleries-list--item a:hover {
+    text-decoration: none;
+}
+
 .galleries-list--item:nth-child(3n) {
     margin-right: 0;
 }
@@ -714,6 +718,14 @@ a.section-menu-item:hover {
     height: 200px;
     margin-bottom: 10px;
     overflow: hidden;
+}
+
+.galleries-list--item:hover .galleries-list--item--picture,.galleries-list--item:hover .galleries-list--item--title {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";/* IE 8 */
+    filter: alpha(opacity=70);/* IE 5-7 */
+    -moz-opacity: 0.7;/* Netscape */
+    -khtml-opacity: 0.7;/* Safari 1.x */
+    opacity: 0.7;/* Good browsers */
 }
 
 .galleries-list--item--picture img {
