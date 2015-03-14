@@ -3,6 +3,7 @@
 namespace Malarrimo\Libraries;
 
 
+use Exception;
 use Illuminate\Support\Facades\Cache;
 use Malarrimo\Dto\Temperature;
 
@@ -19,15 +20,23 @@ class WeatherService
     {
         $apiUrl = 'http://api.openweathermap.org/data/2.5/weather?id=4021858&lang=es&APPID=' . static::API_KEY . '&units=metric';
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $apiUrl);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        try
+        {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $apiUrl);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT_MS, 3000);
 
-        $response = curl_exec($ch);
+            $response = curl_exec($ch);
 
-        curl_close ($ch);
+            curl_close ($ch);
 
-        return json_decode($response);
+            return json_decode($response);
+        }
+        catch(Exception $ex)
+        {
+            error_log($ex->getMessage());
+        }
     }
 
     /**

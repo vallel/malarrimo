@@ -10,8 +10,11 @@
     <header class="section-header">
 
         <h1>Ubicación</h1>
-        <p>Localizadoa 720 kilómetros al sur de la frontera con Estados Unidos (Tijuana), Guerrero Negro es la entrada
-        norteña [paralelo 28°] del estado de Baja California Sur.</p>
+        <p>Localizado a 720 kilómetros al sur de la frontera con Estados Unidos (Tijuana), Guerrero Negro es la
+            entrada norteña (paralelo 28&deg;) del estado de Baja California Sur. En automóvil, es un recorrido de
+            aproximadamente 12 &frac12; horas desde Los Ángeles, 10 &frac12; horas de San Diego, 10 horas de Tijuana,
+            ú 8 &frac12; horas de Ensenada. De sur a norte en automóvil, La Paz se encuentra a 10 horas y Loreto a 5
+            horas de camino respectivamente.</p>
 
     </header>
 
@@ -27,19 +30,13 @@
                 <li><a href="#flights" class="section-menu-item"><span class="location-icon flight-icon"></span> Vuelos comerciales</a></li>
                 <li><a href="#bus" class="section-menu-item"><span class="location-icon bus-icon"></span> Autobuses</a></li>
                 <li><a href="#boat" class="section-menu-item"><span class="location-icon boat-icon"></span> Barco</a></li>
+                <li><a href="" class="section-menu-item">Guerrero Negro - <small>Breve historia</small></a></li>
             </ul>
         </nav>
 
         <!-- Dinamic content -->
         <article class="section-content-article">
-            <h1 class="section-content-title">Guerrero Negro - Localización</h1>
-
-            <p>Localizado a 720 kilómetros al sur de la frontera con Estados Unidos (Tijuana), Guerrero Negro es la
-                entrada norteña (paralelo 28&deg;) del estado de Baja California Sur. En automóvil, es un recorrido de
-                aproximadamente 12 &frac12; horas desde Los Ángeles, 10 &frac12; horas de San Diego, 10 horas de Tijuana,
-                ú 8 &frac12; horas de Ensenada. De sur a norte en automóvil, La Paz se encuentra a 10 horas y Loreto a 5
-                horas de camino respectivamente.</p>
-
+            <h1 class="section-content-title">Cómo llegar a Guerrero Negro</h1>
 
             <h2 id="flights" class="section-content-subtitle">Vuelos comerciales</h2>
 

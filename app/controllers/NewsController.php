@@ -25,21 +25,21 @@ class NewsController extends BaseController
             'mostVisited' => $this->newsRepo->getMostVisited(),
         );
 
-        return View::make('news', $data);
+        return View::make('news/news', $data);
     }
 
     public function get($id, $title)
     {
         if (empty($id))
         {
-            return Redirect::route('news');
+            return Redirect::route('news/news');
         }
 
         $post = $this->newsRepo->find($id);
 
         if (empty($post))
         {
-            return Redirect::route('news');
+            return Redirect::route('news/news');
         }
 
         $data = array(
@@ -49,7 +49,7 @@ class NewsController extends BaseController
             'post' => $post,
         );
 
-        return View::make('post', $data);
+        return View::make('news/post', $data);
     }
 
 }

@@ -27,7 +27,7 @@ class Temperature
      */
     public function getTempCelsius()
     {
-        return (int)$this->tempCelsius;
+        return $this->tempCelsius ? (int)$this->tempCelsius : null;
     }
 
     /**
@@ -43,7 +43,7 @@ class Temperature
      */
     public function getTempFahrenheit()
     {
-        return (int)$this->tempFahrenheit;
+        return $this->tempFahrenheit ? (int)$this->tempFahrenheit : null;
     }
 
     /**

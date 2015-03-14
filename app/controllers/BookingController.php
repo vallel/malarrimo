@@ -24,7 +24,7 @@ class BookingController extends BaseController
 			'headerClass' => 'booking-header',
 		];
 
-		return View::make('booking', $data);
+		return View::make('booking/booking', $data);
 	}
 
 	public function store()
@@ -34,7 +34,7 @@ class BookingController extends BaseController
 
 		if ($manager->save())
 		{
-			return Redirect::route('bookingConfirmation');
+			return Redirect::route('booking/bookingConfirmation');
 		}
 
 		return Redirect::back()->withInput()->withErrors($manager->getErrors());
@@ -42,7 +42,7 @@ class BookingController extends BaseController
 
 	public function confirmation()
 	{
-		return View::make('bookingConfirmation', ['headerClass' => 'booking-header']);
+		return View::make('booking/bookingConfirmation', ['headerClass' => 'booking-header']);
 	}
 
 }
