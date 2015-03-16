@@ -9,6 +9,7 @@ Route::pattern('id', '\d+');
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 Route::get('ubicacion', ['as' => 'location', 'uses' => 'LocationController@index']);
+Route::get('guerrero-negro-breve-historia', ['as' => 'briefHistory', 'uses' => 'LocationController@briefHistory']);
 
 Route::get('comodidades', ['as' => 'facilities', 'uses' => 'FacilitiesController@tours']);
 Route::get('comodidades/restaurante', ['as' => 'restaurant', 'uses' => 'FacilitiesController@restaurant']);

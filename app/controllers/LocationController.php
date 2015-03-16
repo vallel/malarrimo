@@ -10,7 +10,17 @@ class LocationController extends BaseController
 			'headerClass' => 'location-header',
 		];
 
-		return View::make('location', $data);
+		return View::make('location/location', $data);
+	}
+
+	public function briefHistory()
+	{
+		$data = [
+			'title' => 'Breve historia de Guerrero Negro | ',
+			'headerClass' => 'location-header',
+		];
+
+		return View::make('location/briefHistory', $data);
 	}
 
 }
