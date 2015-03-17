@@ -3,6 +3,17 @@
 class FacilitiesController extends BaseController
 {
 
+    public function malarrimo()
+    {
+        $data = [
+            'title' => 'Comodidades | Malarrimo',
+            'headerClass' => 'facilities-header',
+            'facilitiesBanner' => 'facilities-malarrimo-banner',
+        ];
+
+        return View::make('facilities/malarrimo', $data);
+    }
+
     public function tours()
     {
         $data = [

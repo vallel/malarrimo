@@ -11,7 +11,8 @@ Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 Route::get('ubicacion', ['as' => 'location', 'uses' => 'LocationController@index']);
 Route::get('guerrero-negro-breve-historia', ['as' => 'briefHistory', 'uses' => 'LocationController@briefHistory']);
 
-Route::get('comodidades', ['as' => 'facilities', 'uses' => 'FacilitiesController@tours']);
+Route::get('comodidades/malarrimo', ['as' => 'malarrimo', 'uses' => 'FacilitiesController@malarrimo']);
+Route::get('comodidades/eco-tours', ['as' => 'ecoTours', 'uses' => 'FacilitiesController@tours']);
 Route::get('comodidades/restaurante', ['as' => 'restaurant', 'uses' => 'FacilitiesController@restaurant']);
 Route::get('comodidades/motel', ['as' => 'motel', 'uses' => 'FacilitiesController@motel']);
 Route::get('comodidades/rvparking', ['as' => 'rvparking', 'uses' => 'FacilitiesController@rvparking']);

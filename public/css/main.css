@@ -440,6 +440,10 @@ a.section-menu-item:hover {
     background-color: #65536d;
 }
 
+.facilities-malarrimo-banner {
+    background-image: url('../img/bann-comodidades-malarrimo.jpg');
+}
+
 .facilities-tours-banner {
     background-image: url('../img/bann-comodidades-ecotours.jpg');
 }
@@ -475,7 +479,7 @@ a.section-menu-item:hover {
 }
 
 .tours-banner {
-    background-image: url('../img/bann-tours.png');
+    background-image: url('../img/bann-tours.jpg');
 }
 
 .whales-info-banner {

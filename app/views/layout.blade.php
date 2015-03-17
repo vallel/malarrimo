@@ -63,11 +63,11 @@
                     <li {{ Route::currentRouteName() == 'location' ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('location') }}">Ubicación</a>
                     </li>
-                    <li {{ Route::currentRouteName() == 'facilities' || Route::currentRouteName() == 'restaurant'
+                    <li {{ Route::currentRouteName() == 'malarrimo' || Route::currentRouteName() == 'restaurant'
                             || Route::currentRouteName() == 'motel' || Route::currentRouteName() == 'rvparking'
                             || Route::currentRouteName() == 'casaelviejocactus' || Route::currentRouteName() == 'deli'
                             ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('facilities') }}">Comodidades</a>
+                        <a href="{{ route('malarrimo') }}">Comodidades</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'tours' ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('tours') }}">Tours</a>
