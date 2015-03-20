@@ -30,7 +30,7 @@ class Booking extends \Eloquent
         switch ($this->attributes['status'])
         {
             case 'C':
-                return 'label-warning';
+                return 'label-danger';
             case 'A':
                 return 'label-success';
             case 'P':
