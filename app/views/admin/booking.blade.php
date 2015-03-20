@@ -34,11 +34,11 @@
                 <td>{{ $booking->phone }}</td>
                 <td>{{ $booking->fax }}</td>
                 <td>{{ $booking->city . ', ' . $booking->country }}</td>
-                <td>{{ $booking->status }}</td>
+                <td><span class="label {{ $booking->statusLabel }}">{{ $booking->fullStatus }}</span></td>
                 <td>
                     <a href="" class="btn btn-default" title="Ver detalles"><span class="glyphicon glyphicon-zoom-in"></span></a>
-                    <a href="" class="btn btn-default" title="Cancelar"><span class="glyphicon glyphicon-remove-circle"></span></a>
-                    <a href="" class="btn btn-default" title="Confirmar"><span class="glyphicon glyphicon-ok-circle"></span></a>
+                    <a href="{{ route('changeBookingStatus', ['id' => $booking->id, 'status' => 'C']) }}" class="btn btn-default" title="Cancelar"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                    <a href="{{ route('changeBookingStatus', ['id' => $booking->id, 'status' => 'A']) }}" class="btn btn-default" title="Confirmar"><span class="glyphicon glyphicon-ok-circle"></span></a>
                 </td>
             </tr>
 

@@ -30,11 +30,12 @@ class BookingController extends BaseController
 	public function store()
 	{
 		$booking = $this->bookingRepo->newInstance();
+		$booking->status = 'P';
 		$manager = new BookingManager($booking, Input::all());
 
 		if ($manager->save())
 		{
-			return Redirect::route('booking/bookingConfirmation');
+			return Redirect::route('bookingConfirmation');
 		}
 
 		return Redirect::back()->withInput()->withErrors($manager->getErrors());

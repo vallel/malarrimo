@@ -11,6 +11,34 @@ class Booking extends \Eloquent
 	 */
 	protected $table = 'bookings';
 
+    public function getFullStatusAttribute()
+    {
+        switch ($this->attributes['status'])
+        {
+            case 'C':
+                return 'Cancelada';
+            case 'A':
+                return 'Confirmada';
+            case 'P':
+            default:
+                return 'Pendiente';
+        }
+    }
+
+    public function getStatusLabelAttribute()
+    {
+        switch ($this->attributes['status'])
+        {
+            case 'C':
+                return 'label-warning';
+            case 'A':
+                return 'label-success';
+            case 'P':
+            default:
+                return 'label-default';
+        }
+    }
+
     public function setHotelCheckInAttribute($value)
     {
         $this->setDateFieldValue('hotelCheckIn', $value);
