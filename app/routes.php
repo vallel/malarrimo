@@ -81,3 +81,4 @@ Route::delete('admin/galeria/foto/borrar/{id}', ['as' => 'deletePic', 'uses' => 
 // booking administration
 Route::get('admin/reservaciones', ['as' => 'adminBooking', 'uses' => 'AdminBookingController@getList', 'before' => 'auth']);
 Route::get('admin/reservaciones/cambiar-estatus/{id}/{status}', ['as' => 'changeBookingStatus', 'uses' => 'AdminBookingController@changeStatus', 'before' => 'auth']);
+Route::get('admin/reservaciones/detalles/{id}', ['as' => 'getBookingDetails', 'uses' => 'AdminBookingController@getDetails', 'before' => 'auth']);

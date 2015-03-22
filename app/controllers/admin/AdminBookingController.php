@@ -45,4 +45,17 @@ class AdminBookingController extends BaseController
         return Redirect::route('adminBooking')->with('msg', '<p class="alert alert-success">Reservación actualizada</p>');
     }
 
+    public function getDetails($id)
+    {
+        if (!empty($id))
+        {
+            $booking = $this->repository->find($id);
+
+            if (!empty($booking))
+            {
+                return View::make('admin/bookingDetails', ['data' => $booking]);
+            }
+        }
+    }
+
 } 

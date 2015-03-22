@@ -20,3 +20,12 @@
     margin-bottom: 15px;
     margin-top: 10px;
 }
+
+.booking-details legend {
+	margin-bottom: 0;
+}
+
+.table-label {
+	width: 135px;
+	text-align: right;
+}
