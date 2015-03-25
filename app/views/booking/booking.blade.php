@@ -11,7 +11,7 @@
 
     <div class="section-content">
 
-        <article class="booking-container">
+        <article class="booking-container clearfix">
 
             {{ Form::open(['route' => 'storeBooking', 'role' => 'form', 'class' => ' col-sm-8 form-horizontal booking-form']) }}
 
@@ -253,7 +253,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Tu reservación</div>
                     <div class="panel-body">
-                        Panel content
+
                     </div>
                 </div>
             </aside>

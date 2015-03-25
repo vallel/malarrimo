@@ -551,6 +551,7 @@ a.section-menu-item:hover {
 
 .booking-container {
     margin-top: 10px;
+    position: relative;
 }
 
 .booking-form {
@@ -560,6 +561,13 @@ a.section-menu-item:hover {
 .booking-summary {
     padding-right: 5px;
     margin-top: 20px;
+    width: 320px;
+}
+
+.fixed-booking-summary {
+    position: fixed;
+    top: 0;
+    margin-left: 640px;
 }
 
 
