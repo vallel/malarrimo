@@ -101,7 +101,7 @@
                 <div class="form-group">
                     {{ Form::label('whalesDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('whalesDate', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('whalesDate', null, ['class' => 'form-control datepicker whales-input', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
 
                     {{ Form::label('whalesTime', 'Horario:', ['class' => 'col-sm-2 control-label']) }}
@@ -109,19 +109,19 @@
                         {{ Form::select('whalesTime',
                             ['8:00 a.m.' => '8:00 a.m. - 12:00 p.m.',
                              '11:00 a.m.' => '11:00 a.m. - 3:00 p.m.'],
-                            null, ['class' => 'form-control']) }}
+                            null, ['class' => 'form-control whales-input']) }}
                     </div>
                 </div>
 
                 <div class="form-group">
                     {{ Form::label('whalesAdults', 'Adultos:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('whalesAdults', null, ['class' => 'form-control']) }}
+                        {{ Form::text('whalesAdults', null, ['class' => 'form-control whales-input']) }}
                     </div>
 
                     {{ Form::label('whalesChildren', 'Niños (hasta 11 años):', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('whalesChildren', null, ['class' => 'form-control']) }}
+                        {{ Form::text('whalesChildren', null, ['class' => 'form-control whales-input']) }}
                     </div>
                 </div>
 
@@ -253,7 +253,12 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Tu reservación</div>
                     <div class="panel-body">
-
+                        <article class="booking-summary-hotel"></article>
+                        <article class="booking-summary-whales"></article>
+                        <article class="booking-summary-paintings"></article>
+                        <article class="booking-summary-salt"></article>
+                        <article class="booking-summary-rv"></article>
+                        <article class="booking-summary-restaurant"></article>
                     </div>
                 </div>
             </aside>
