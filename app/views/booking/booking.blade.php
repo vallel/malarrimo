@@ -59,36 +59,36 @@
                 <div class="form-group">
                     {{ Form::label('hotelCheckIn', 'Fecha de entrada:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelCheckIn', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('hotelCheckIn', null, ['class' => 'form-control datepicker hotel-input', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
 
                     {{ Form::label('hotelCheckOut', 'Fecha de salida:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelCheckOut', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('hotelCheckOut', null, ['class' => 'form-control datepicker hotel-input', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
                 </div>
 
                 <div class="form-group">
                     {{ Form::label('hotelSingleRooms', 'Habitaciones sencillas:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelSingleRooms', null, ['class' => 'form-control']) }}
+                        {{ Form::text('hotelSingleRooms', null, ['class' => 'form-control hotel-input']) }}
                     </div>
 
                     {{ Form::label('hotelDoubleRooms', 'Habitaciones dobles:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelDoubleRooms', null, ['class' => 'form-control']) }}
+                        {{ Form::text('hotelDoubleRooms', null, ['class' => 'form-control hotel-input']) }}
                     </div>
                 </div>
 
                 <div class="form-group">
                     {{ Form::label('hotelAdults', 'Adultos:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelAdults', null, ['class' => 'form-control']) }}
+                        {{ Form::text('hotelAdults', null, ['class' => 'form-control hotel-input']) }}
                     </div>
 
                     {{ Form::label('hotelChildren', 'Niños:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelChildren', null, ['class' => 'form-control']) }}
+                        {{ Form::text('hotelChildren', null, ['class' => 'form-control hotel-input']) }}
                     </div>
                 </div>
 

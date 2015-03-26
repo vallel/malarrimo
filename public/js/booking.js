@@ -19,14 +19,66 @@ var malarrimo = malarrimo || {};
             // assign scroll event listener
             $(window).scroll(scrollSummary);
 
-            $('input').change(bookingUpdate);
+            $('input, select').change(bookingUpdate);
+        },
+
+        isHotelValid: function() {
+            return $('#hotelAdults').val() &&
+                ($('#hotelCheckIn').val() && $('#hotelCheckOut').val()) &&
+                ($('#hotelSingleRooms').val() || $('#hotelDoubleRooms').val());
+        },
+
+        isWhalesValid: function() {
+            return $('#whalesDate').val() && $('#whalesAdults').val();
         }
 
     };
 
     function bookingUpdate() {
         var $input = $(this);
+        updateHotel($input);
         updateWhales($input);
+    }
+
+    function updateHotel($input) {
+        var classType = 'hotel';
+        // if input is a hotel input
+        if ($input.hasClass('hotel-input')) {
+            var $checkInField = $('#hotelCheckIn'),
+                $checkOutField = $('#hotelCheckOut'),
+                $singleRoomsField = $('#hotelSingleRooms'),
+                $doubleRoomsField = $('#hotelDoubleRooms'),
+                $adultsField = $('#hotelAdults');
+
+            // if inputs for date and adults has values
+            if (malarrimo.booking.isHotelValid()) {
+
+                var $childrenField = $('#hotelChildren'),
+                    description = '';
+
+                if ($singleRoomsField.val()) {
+                    description += $singleRoomsField.val() + ' ' + $('label[for="hotelSingleRooms"]').text().replace(':', '');
+                }
+
+                if ($doubleRoomsField.val()) {
+                    description += description.length > 0 ? ', ' : '';
+                    description += $singleRoomsField.val() + ' ' + $('label[for="hotelDoubleRooms"]').text().replace(':', '');
+                }
+
+                description += '<br>' + $adultsField.val() + ' ' + $('label[for="hotelAdults"]').text().replace(':', '');
+
+                if ($childrenField.val()) {
+                    description += ', ' + $childrenField.val() + ' ' + $('label[for="hotelChildren"]').text().replace(':', '');
+                }
+
+                description += '<br>' + $checkInField.val() + ' - ' + $checkOutField.val();
+
+                addSummaryElement(classType, $input, description);
+            }
+            else {
+                removeSummaryElement(classType);
+            }
+        }
     }
 
     /**
@@ -41,7 +93,7 @@ var malarrimo = malarrimo || {};
                 $adultsField = $('#whalesAdults');
 
             // if inputs for date and adults has values
-            if ($dateField.val() && $adultsField.val()) {
+            if (malarrimo.booking.isWhalesValid()) {
 
                 var $childrenField = $('#whalesChildren'),
                     description = $adultsField.val() + ' ' + $('label[for="whalesAdults"]').text().replace(':', '');
