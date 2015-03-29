@@ -134,19 +134,19 @@
                 <div class="form-group">
                     {{ Form::label('cavePaintingDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('cavePaintingDate', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('cavePaintingDate', null, ['class' => 'form-control datepicker cave-painting-input', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
                 </div>
 
                 <div class="form-group">
                     {{ Form::label('cavePaintingAdults', 'Adultos:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('cavePaintingAdults', null, ['class' => 'form-control']) }}
+                        {{ Form::text('cavePaintingAdults', null, ['class' => 'form-control cave-painting-input']) }}
                     </div>
 
                     {{ Form::label('cavePaintingChildren', 'Niños (hasta 11 años):', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('cavePaintingChildren', null, ['class' => 'form-control']) }}
+                        {{ Form::text('cavePaintingChildren', null, ['class' => 'form-control cave-painting-input']) }}
                     </div>
                 </div>
             </fieldset>
@@ -255,8 +255,8 @@
                     <div class="panel-body">
                         <article class="booking-summary-hotel"></article>
                         <article class="booking-summary-whales"></article>
-                        <article class="booking-summary-paintings"></article>
-                        <article class="booking-summary-salt"></article>
+                        <article class="booking-summary-cave-painting"></article>
+                        <article class="booking-summary-salt-mine"></article>
                         <article class="booking-summary-rv"></article>
                         <article class="booking-summary-restaurant"></article>
                     </div>

@@ -30,6 +30,14 @@ var malarrimo = malarrimo || {};
 
         isWhalesValid: function() {
             return $('#whalesDate').val() && $('#whalesAdults').val();
+        },
+
+        isCavePaintingValid: function() {
+            return $('#cavePaintingDate').val() && $('#cavePaintingAdults').val();
+        },
+
+        isSaltMineValid: function() {
+            return $('#saltMineDate').val() && $('#saltMineAdults').val();
         }
 
     };
@@ -38,6 +46,7 @@ var malarrimo = malarrimo || {};
         var $input = $(this);
         updateHotel($input);
         updateWhales($input);
+        updateCavePainting($input);
     }
 
     function updateHotel($input) {
@@ -103,6 +112,35 @@ var malarrimo = malarrimo || {};
                 }
 
                 description += '<br>' + $dateField.val() + ' ' + $('#whalesTime').val();
+
+                addSummaryElement(classType, $input, description);
+            }
+            else {
+                removeSummaryElement(classType);
+            }
+        }
+    }
+
+    /**
+     * Validate and update cave painting section in the booking summary control
+     * @param {jQuery} $input
+     */
+    function updateCavePainting($input) {
+        var classType = 'cave-painting';
+        // if input is a whales input
+        if ($input.hasClass('cave-painting-input')) {
+            // if inputs for date and adults has values
+            if (malarrimo.booking.isCavePaintingValid()) {
+                var adults = $('#cavePaintingAdults').val(),
+                    children = $('#cavePaintingChildren').val(),
+                    date = $('#cavePaintingDate').val(),
+                    description = adults + ' ' + $('label[for="cavePaintingAdults"]').text().replace(':', '');
+
+                if (children) {
+                    description += ', ' + children + ' ' + $('label[for="cavePaintingChildren"]').text().replace(':', '');
+                }
+
+                description += '<br>' + date;
 
                 addSummaryElement(classType, $input, description);
             }
