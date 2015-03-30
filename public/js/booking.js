@@ -8,7 +8,7 @@ var malarrimo = malarrimo || {};
 
         init: function() {
             $('.datepicker').datepicker({
-                format: 'dd-mm-yyyy',
+                format: 'dd/mm/yyyy',
                 language: 'es',
                 autoclose: true
             })
@@ -47,6 +47,7 @@ var malarrimo = malarrimo || {};
         updateHotel($input);
         updateWhales($input);
         updateCavePainting($input);
+        updateSaltMine($input);
     }
 
     function updateHotel($input) {
@@ -138,6 +139,35 @@ var malarrimo = malarrimo || {};
 
                 if (children) {
                     description += ', ' + children + ' ' + $('label[for="cavePaintingChildren"]').text().replace(':', '');
+                }
+
+                description += '<br>' + date;
+
+                addSummaryElement(classType, $input, description);
+            }
+            else {
+                removeSummaryElement(classType);
+            }
+        }
+    }
+
+    /**
+     * Validate and update salt mine section in the booking summary control
+     * @param {jQuery} $input
+     */
+    function updateSaltMine($input) {
+        var classType = 'salt-mine';
+        // if input is a whales input
+        if ($input.hasClass('salt-mine-input')) {
+            // if inputs for date and adults has values
+            if (malarrimo.booking.isSaltMineValid()) {
+                var adults = $('#saltMineAdults').val(),
+                    children = $('#saltMineChildren').val(),
+                    date = $('#saltMineDate').val(),
+                    description = adults + ' ' + $('label[for="saltMineAdults"]').text().replace(':', '');
+
+                if (children) {
+                    description += ', ' + children + ' ' + $('label[for="saltMineChildren"]').text().replace(':', '');
                 }
 
                 description += '<br>' + date;

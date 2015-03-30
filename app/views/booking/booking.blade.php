@@ -158,19 +158,19 @@
                 <div class="form-group">
                     {{ Form::label('saltMineDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('saltMineDate', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('saltMineDate', null, ['class' => 'form-control datepicker salt-mine-input', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
                 </div>
 
                 <div class="form-group">
                     {{ Form::label('saltMineAdults', 'Adultos:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('saltMineAdults', null, ['class' => 'form-control']) }}
+                        {{ Form::text('saltMineAdults', null, ['class' => 'form-control salt-mine-input']) }}
                     </div>
 
                     {{ Form::label('saltMineChildren', 'Niños (hasta 11 años):', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('saltMineChildren', null, ['class' => 'form-control']) }}
+                        {{ Form::text('saltMineChildren', null, ['class' => 'form-control salt-mine-input']) }}
                     </div>
                 </div>
             </fieldset>
