@@ -7,11 +7,25 @@ var malarrimo = malarrimo || {};
         summaryFixTop: 0,
 
         init: function() {
+            var currentDate = new Date();
+
             $('.datepicker').datepicker({
                 format: 'dd/mm/yyyy',
                 language: 'es',
                 autoclose: true
-            })
+            });
+
+            $('.start-date').datepicker('setStartDate', currentDate)
+                .on('changeDate', function(selected) {
+                    var endDate = $(this).data('end');
+                    $('#' + endDate).datepicker('setStartDate', addDays(selected.date, 1));
+                });
+
+            $('.end-date').datepicker('setStartDate', addDays(currentDate, 1)).
+                on('changeDate', function(selected) {
+                    var startDate = $(this).data('start');
+                    $('#' + startDate).datepicker('setEndDate', addDays(selected.date, -1));
+                });
 
             // get initial position of the element
             this.summaryFixTop = $('.booking-container').offset().top;
@@ -215,6 +229,17 @@ var malarrimo = malarrimo || {};
         } else {
             $bookingSummary.removeClass('fixed-booking-summary');
         }
+    }
+
+    /**
+     * Adds a number of days to the given Date object. Negative integer should be passed as second parameter
+     * to substract a number of days to the given Date.
+     * @param {Date} theDate
+     * @param {int} days
+     * @returns {Date}
+     */
+    function addDays(theDate, days) {
+        return new Date(theDate.getTime() + days*24*60*60*1000);
     }
 
 })($);

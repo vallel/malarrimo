@@ -59,12 +59,20 @@
                 <div class="form-group">
                     {{ Form::label('hotelCheckIn', 'Fecha de entrada:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelCheckIn', null, ['class' => 'form-control datepicker hotel-input', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('hotelCheckIn', null, [
+                            'class' => 'form-control datepicker start-date hotel-input',
+                            'placeholder' => 'dd/mm/aaaa',
+                            'data-end' => 'hotelCheckOut'
+                        ]) }}
                     </div>
 
                     {{ Form::label('hotelCheckOut', 'Fecha de salida:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelCheckOut', null, ['class' => 'form-control datepicker hotel-input', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('hotelCheckOut', null, [
+                            'class' => 'form-control datepicker end-date hotel-input',
+                            'placeholder' => 'dd/mm/aaaa',
+                            'data-start' => 'hotelCheckIn'
+                        ]) }}
                     </div>
                 </div>
 
@@ -101,7 +109,9 @@
                 <div class="form-group">
                     {{ Form::label('whalesDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('whalesDate', null, ['class' => 'form-control datepicker whales-input', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('whalesDate', null,
+                            ['class' => 'form-control datepicker start-date whales-input',
+                            'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
 
                     {{ Form::label('whalesTime', 'Horario:', ['class' => 'col-sm-2 control-label']) }}
@@ -134,7 +144,8 @@
                 <div class="form-group">
                     {{ Form::label('cavePaintingDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('cavePaintingDate', null, ['class' => 'form-control datepicker cave-painting-input', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('cavePaintingDate', null, [
+                            'class' => 'form-control datepicker start-date cave-painting-input', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
                 </div>
 
@@ -158,7 +169,7 @@
                 <div class="form-group">
                     {{ Form::label('saltMineDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('saltMineDate', null, ['class' => 'form-control datepicker salt-mine-input', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('saltMineDate', null, ['class' => 'form-control datepicker start-date salt-mine-input', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
                 </div>
 
@@ -182,12 +193,20 @@
                 <div class="form-group">
                     {{ Form::label('rvCheckIn', 'Fecha de entrada:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('rvCheckIn', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('rvCheckIn', null, [
+                            'class' => 'form-control datepicker start-date',
+                            'placeholder' => 'dd/mm/aaaa',
+                            'data-end' => 'rvCheckOut'
+                        ]) }}
                     </div>
 
                     {{ Form::label('rvCheckOut', 'Fecha de salida:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('rvCheckOut', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('rvCheckOut', null, [
+                            'class' => 'form-control datepicker end-date',
+                            'placeholder' => 'dd/mm/aaaa',
+                            'data-start' => 'rvCheckIn'
+                        ]) }}
                     </div>
                 </div>
 
@@ -227,7 +246,7 @@
                 <div class="form-group">
                     {{ Form::label('banquetDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('banquetDate', null, ['class' => 'form-control datepicker', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('banquetDate', null, ['class' => 'form-control datepicker start-date', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
 
                     {{ Form::label('banquetSchedule', 'Horario:', ['class' => 'col-sm-2 control-label']) }}
