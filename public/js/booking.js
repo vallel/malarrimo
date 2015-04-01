@@ -21,8 +21,8 @@ var malarrimo = malarrimo || {};
                     $('#' + endDate).datepicker('setStartDate', addDays(selected.date, 1));
                 });
 
-            $('.end-date').datepicker('setStartDate', addDays(currentDate, 1)).
-                on('changeDate', function(selected) {
+            $('.end-date').datepicker('setStartDate', addDays(currentDate, 1))
+                .on('changeDate', function(selected) {
                     var startDate = $(this).data('start');
                     $('#' + startDate).datepicker('setEndDate', addDays(selected.date, -1));
                 });
