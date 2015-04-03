@@ -246,19 +246,19 @@
                 <div class="form-group">
                     {{ Form::label('banquetDate', 'Fecha:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('banquetDate', null, ['class' => 'form-control datepicker start-date', 'placeholder' => 'dd/mm/aaaa']) }}
+                        {{ Form::text('banquetDate', null, ['class' => 'form-control datepicker start-date banquet-input', 'placeholder' => 'dd/mm/aaaa']) }}
                     </div>
 
                     {{ Form::label('banquetSchedule', 'Horario:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('banquetSchedule', null, ['class' => 'form-control', 'placeholder' => 'hh:mm']) }}
+                        {{ Form::text('banquetSchedule', null, ['class' => 'form-control banquet-input', 'placeholder' => 'hh:mm']) }}
                     </div>
                 </div>
 
                 <div class="form-group">
                     {{ Form::label('banquetPersons', 'Número de personas:', ['class' => 'col-sm-8 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('banquetPersons', null, ['class' => 'form-control']) }}
+                        {{ Form::text('banquetPersons', null, ['class' => 'form-control banquet-input']) }}
                     </div>
                 </div>
 

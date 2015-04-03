@@ -56,6 +56,10 @@ var malarrimo = malarrimo || {};
 
         isRvValid: function() {
             return $('#rvCheckIn').val() && $('#rvAdults').val();
+        },
+
+        isBanquetValid: function() {
+            return $('#banquetDate').val() && $('#banquetPersons').val();
         }
 
     };
@@ -67,6 +71,7 @@ var malarrimo = malarrimo || {};
         updateCavePainting($input);
         updateSaltMine($input);
         updateRv($input);
+        updateBanquet($input);
     }
 
     /**
@@ -238,6 +243,31 @@ var malarrimo = malarrimo || {};
                 vehicles = vehicles ? '<br>' + vehicles : '';
 
                 description += vehicles;
+
+                addSummaryElement(classType, $input, description);
+            }
+            else {
+                removeSummaryElement(classType);
+            }
+        }
+    }
+
+    /**
+     * Validate and update banquet section in the booking summary control
+     * @param {jQuery} $input
+     */
+    function updateBanquet($input) {
+        var classType = 'restaurant';
+        // if input is a banquet input
+        if ($input.hasClass('banquet-input')) {
+            // if inputs for date and adults has values
+            if (malarrimo.booking.isBanquetValid()) {
+                var date = $('#banquetDate').val(),
+                    time = $('#banquetSchedule').val(),
+                    persons = $('#banquetPersons').val(),
+                    description = persons + ' ' + $('label[for="banquetPersons"]').text().replace(':', '');
+
+                description += '<br>' + date + ' ' + time;
 
                 addSummaryElement(classType, $input, description);
             }
