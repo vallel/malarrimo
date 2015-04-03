@@ -100,7 +100,7 @@ var malarrimo = malarrimo || {};
 
                 if ($doubleRoomsField.val()) {
                     description += description.length > 0 ? ', ' : '';
-                    description += $singleRoomsField.val() + ' ' + $('label[for="hotelDoubleRooms"]').text().replace(':', '');
+                    description += $doubleRoomsField.val() + ' ' + $('label[for="hotelDoubleRooms"]').text().replace(':', '');
                 }
 
                 description += '<br>' + $adultsField.val() + ' ' + $('label[for="hotelAdults"]').text().replace(':', '');
