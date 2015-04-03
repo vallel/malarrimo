@@ -52,6 +52,10 @@ var malarrimo = malarrimo || {};
 
         isSaltMineValid: function() {
             return $('#saltMineDate').val() && $('#saltMineAdults').val();
+        },
+
+        isRvValid: function() {
+            return $('#rvCheckIn').val() && $('#rvAdults').val();
         }
 
     };
@@ -62,8 +66,13 @@ var malarrimo = malarrimo || {};
         updateWhales($input);
         updateCavePainting($input);
         updateSaltMine($input);
+        updateRv($input);
     }
 
+    /**
+     * Validate and update hotel section in the booking summary control
+     * @param {jQuery} $input
+     */
     function updateHotel($input) {
         var classType = 'hotel';
         // if input is a hotel input
@@ -185,6 +194,50 @@ var malarrimo = malarrimo || {};
                 }
 
                 description += '<br>' + date;
+
+                addSummaryElement(classType, $input, description);
+            }
+            else {
+                removeSummaryElement(classType);
+            }
+        }
+    }
+
+    /**
+     * Validate and update RV section in the booking summary control
+     * @param {jQuery} $input
+     */
+    function updateRv($input) {
+        var classType = 'rv';
+        // if input is a rv input
+        if ($input.hasClass('rv-input')) {
+            // if inputs for date and adults has values
+            if (malarrimo.booking.isRvValid()) {
+                var adults = $('#rvAdults').val(),
+                    children = $('#rvChildren').val(),
+                    checkIn = $('#rvCheckIn').val(),
+                    checkOut = $('#rvCheckOut').val(),
+                    vehicleFiels = ['rvCamping', 'rvVan', 'rvCamper', 'rvFifthWheel'],
+                    description = adults + ' ' + $('label[for="rvAdults"]').text().replace(':', '');
+
+                if (children) {
+                    description += ', ' + children + ' ' + $('label[for="rvChildren"]').text().replace(':', '');
+                }
+
+                description += '<br>' + checkIn + ' - ' + checkOut;
+
+                var vehicles = '';
+                $.each(vehicleFiels, function(i, id) {
+                    var $vehicleField = $('#' + id);
+                    if ($vehicleField.is(':checked')) {
+                        var label = $vehicleField.parent().text().trim();
+                        vehicles += label + ', ';
+                    }
+                });
+                vehicles = vehicles.trim().replace(/,+$/,'');
+                vehicles = vehicles ? '<br>' + vehicles : '';
+
+                description += vehicles;
 
                 addSummaryElement(classType, $input, description);
             }

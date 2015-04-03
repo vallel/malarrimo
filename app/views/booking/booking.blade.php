@@ -194,7 +194,7 @@
                     {{ Form::label('rvCheckIn', 'Fecha de entrada:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
                         {{ Form::text('rvCheckIn', null, [
-                            'class' => 'form-control datepicker start-date',
+                            'class' => 'form-control datepicker start-date rv-input',
                             'placeholder' => 'dd/mm/aaaa',
                             'data-end' => 'rvCheckOut'
                         ]) }}
@@ -203,7 +203,7 @@
                     {{ Form::label('rvCheckOut', 'Fecha de salida:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
                         {{ Form::text('rvCheckOut', null, [
-                            'class' => 'form-control datepicker end-date',
+                            'class' => 'form-control datepicker end-date rv-input',
                             'placeholder' => 'dd/mm/aaaa',
                             'data-start' => 'rvCheckIn'
                         ]) }}
@@ -213,27 +213,27 @@
                 <div class="form-group">
                     {{ Form::label('rvAdults', 'Adultos:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('rvAdults', null, ['class' => 'form-control']) }}
+                        {{ Form::text('rvAdults', null, ['class' => 'form-control rv-input']) }}
                     </div>
 
                     {{ Form::label('rvChildren', 'Niños:', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('rvChildren', null, ['class' => 'form-control']) }}
+                        {{ Form::text('rvChildren', null, ['class' => 'form-control rv-input']) }}
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="checkbox-inline col-sm-4 col-sm-push-1">
-                        {{ Form::checkbox('rvCamping') }} Tienda de campaña
+                        {{ Form::checkbox('rvCamping', 1, null, ['id' => 'rvCamping', 'class' => 'rv-input']) }} Tienda de campaña
                     </label>
                     <label class="checkbox-inline col-sm-2 col-sm-push-1">
-                        {{ Form::checkbox('rvVan') }} Van
+                        {{ Form::checkbox('rvVan', 1, null, ['id' => 'rvVan', 'class' => 'rv-input']) }} Van
                     </label>
                     <label class="checkbox-inline col-sm-2 col-sm-push-1">
-                        {{ Form::checkbox('rvCamper') }} Camper
+                        {{ Form::checkbox('rvCamper', 1, null, ['id' => 'rvCamper', 'class' => 'rv-input']) }} Camper
                     </label>
                     <label class="checkbox-inline col-sm-3 col-sm-push-1">
-                        {{ Form::checkbox('rvFifthWheel') }} Fifth wheel
+                        {{ Form::checkbox('rvFifthWheel', 1, null, ['id' => 'rvFifthWheel', 'class' => 'rv-input']) }} Fifth wheel
                     </label>
                 </div>
 
