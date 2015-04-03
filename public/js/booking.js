@@ -290,7 +290,7 @@ var malarrimo = malarrimo || {};
         html += '<h1 class="booking-summary-element-title">' + title + '</h1>';
         html += '<p class="booking-summary-element-description">' + description + '</p>';
 
-        $('.booking-summary').find('.booking-summary-' + elementClass).html(html);
+        $('.booking-summary').find('.booking-summary-' + elementClass).html(html).show();
     }
 
     /**
@@ -298,7 +298,7 @@ var malarrimo = malarrimo || {};
      * @param {string} elementClass
      */
     function removeSummaryElement(elementClass) {
-        $('.booking-summary').find('.booking-summary-' + elementClass).html('');
+        $('.booking-summary').find('.booking-summary-' + elementClass).html('').hide();
     }
 
     function scrollSummary() {

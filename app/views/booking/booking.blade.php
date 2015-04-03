@@ -272,12 +272,12 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Tu reservación</div>
                     <div class="panel-body">
-                        <article class="booking-summary-hotel"></article>
-                        <article class="booking-summary-whales"></article>
-                        <article class="booking-summary-cave-painting"></article>
-                        <article class="booking-summary-salt-mine"></article>
-                        <article class="booking-summary-rv"></article>
-                        <article class="booking-summary-restaurant"></article>
+                        <article class="booking-summary-element booking-summary-hotel"></article>
+                        <article class="booking-summary-element booking-summary-whales"></article>
+                        <article class="booking-summary-element booking-summary-cave-painting"></article>
+                        <article class="booking-summary-element booking-summary-salt-mine"></article>
+                        <article class="booking-summary-element booking-summary-rv"></article>
+                        <article class="booking-summary-element booking-summary-restaurant"></article>
                     </div>
                 </div>
             </aside>
