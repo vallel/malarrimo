@@ -265,7 +265,7 @@ var malarrimo = malarrimo || {};
                 var date = $('#banquetDate').val(),
                     time = $('#banquetSchedule').val(),
                     persons = $('#banquetPersons').val(),
-                    description = persons + ' ' + $('label[for="banquetPersons"]').text().replace(':', '');
+                    description = $('label[for="banquetPersons"]').text() + ' ' + persons;
 
                 description += '<br>' + date + ' ' + time;
 
