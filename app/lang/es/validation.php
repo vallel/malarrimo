@@ -128,5 +128,6 @@ return array(
 		'address' => 'Dirección',
 		'city' => 'Ciudad',
 		'country' => 'País',
+		'banquetDate' => 'Fecha del banquete',
 	),
 );

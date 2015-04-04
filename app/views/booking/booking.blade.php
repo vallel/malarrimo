@@ -13,6 +13,14 @@
 
         <article class="booking-container clearfix">
 
+            @if ($errors->any())
+                <ul class="alert alert-danger">
+                @foreach ($errors->all('<li>:message</li>') as $message)
+                    {{ $message }}
+                @endforeach
+                </ul>
+            @endif
+
             {{ Form::open(['route' => 'storeBooking', 'role' => 'form', 'class' => ' col-sm-8 form-horizontal booking-form']) }}
 
             {{-- General data --}}

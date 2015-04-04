@@ -2,6 +2,8 @@
 
 namespace Malarrimo\Entities;
 
+use DateTime;
+
 class Booking extends \Eloquent
 {
 
@@ -91,7 +93,8 @@ class Booking extends \Eloquent
      */
     protected function setDateFieldValue($field, $value)
     {
-        $this->attributes[$field] = date('Y-m-d', strtotime($value));
+        $date = DateTime::createFromFormat('d/m/Y', $value);
+        $this->attributes[$field] = $date->format('Y-m-d');
     }
 
 }
