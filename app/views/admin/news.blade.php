@@ -23,7 +23,7 @@
         <tr>
             <td>{{ $post->title }}</td>
             <td>{{ date('d/m/Y h:j:s a', strtotime($post->created_at)) }}</td>
-            <td>{{ $post->user->user_name }}</td>
+            <td>{{ $post->User->user_name }}</td>
             <td>{{ $post->visits }}</td>
             <td>
                 <a href="{{ route('editNews', [$post->id]) }}" class="btn btn-default" title="Editar noticia"><span class="glyphicon glyphicon-pencil"></span></a>

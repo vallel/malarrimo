@@ -17,7 +17,7 @@ class Picture extends Base
     public function getGalleryPictures($galleryId)
     {
     	$class = $this->getEntity();
-    	return $class::where('gallery_id', $galleryId)->get();
+    	return $class::with('Gallery')->where('gallery_id', $galleryId)->get();
     }
 
 } 

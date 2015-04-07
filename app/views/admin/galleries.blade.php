@@ -28,7 +28,7 @@
             <tr>
                 <td>{{ $gallery->title }}</td>
                 <td>{{ $gallery->autor }}</td>
-                <td>{{ $gallery->pictures->count() }}</td>
+                <td>{{ $gallery->Pictures->count() }}</td>
                 <td>
                     <a href="{{ route('editGallery', ['id' => $gallery->id]) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
                     <a href="{{ route('deleteGallery', ['id' => $gallery->id]) }}" class="btn btn-default delete-gallery"><span class="glyphicon glyphicon-trash"></span></a>

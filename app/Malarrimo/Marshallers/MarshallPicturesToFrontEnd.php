@@ -29,9 +29,9 @@ class MarshallPicturesToFrontEnd implements Marshaller
 		$response->deleteUrl = route('deletePic', ['id' => $picture->id]);
 		$response->name = $picture->file_name;
 		$response->size = 0;
-		$response->thumbnailUrl = asset('uploads/galleries/' . $picture->gallery->id . '/thumbnail/' . $picture->file_name);
+		$response->thumbnailUrl = asset('uploads/galleries/' . $picture->Gallery->id . '/thumbnail/' . $picture->file_name);
 		$response->type = '';
-		$response->url = asset('uploads/galleries/' . $picture->gallery->id . '/' . $picture->file_name);
+		$response->url = asset('uploads/galleries/' . $picture->Gallery->id . '/' . $picture->file_name);
 
 		return $response;
 	}

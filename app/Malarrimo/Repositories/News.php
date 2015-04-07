@@ -18,7 +18,7 @@ class News extends Base
     public function getAll($perPage = 15)
     {
         $class = $this->entityName;
-        return $class::orderBy('id', 'desc')->paginate($perPage);
+        return $class::with('User')->orderBy('id', 'desc')->paginate($perPage);
     }
 
     /**
