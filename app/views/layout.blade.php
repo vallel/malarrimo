@@ -60,7 +60,8 @@
                     <li {{ Route::currentRouteName() == 'home' ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('home') }}">Inicio</a>
                     </li>
-                    <li {{ Route::currentRouteName() == 'location' ? 'class="main-menu-active"' : '' }}>
+                    <li {{ Route::currentRouteName() == 'location' || Route::currentRouteName() == 'briefHistory'
+                            ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('location') }}">Ubicación</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'malarrimo' || Route::currentRouteName() == 'restaurant'
