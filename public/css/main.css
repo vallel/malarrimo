@@ -704,6 +704,7 @@ a.section-menu-item:hover {
 
 .post-content p {
     margin: 10px 0;
+    word-wrap: break-word;
 }
 
 .post-content ul {
