@@ -53,6 +53,10 @@ return array(
 	*/
 
 	'locale' => 'es',
+	// List of alternative languages (not including the one specified as 'locale')
+	'alt_langs' => array ('en'),
+	// Prefix of selected locale  - leave empty (set in runtime)
+	'locale_prefix' => '',
 
 	/*
 	|--------------------------------------------------------------------------

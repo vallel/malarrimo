@@ -50,9 +50,9 @@
                 <li><span class="weather">{{ $currentTemp->getTempFahrenheit() }}°F / {{ $currentTemp->getTempCelsius() }}°C</span></li>
                 <li><a href="" class="top-icon fb-top-icon"></a></li>
                 <li><a href="https://twitter.com/EtoursMalarrimo" class="top-icon tw-top-icon" target="_blank"></a></li>
-                <li><a href="" class="language-switch">Eng</a></li>
+                <li><a href="/en" class="language-switch {{ $language == 'en' ? 'active-language' : '' }}">Eng</a></li>
                 <li>|</li>
-                <li><a href="" class="language-switch active-language">Esp</a></li>
+                <li><a href="/" class="language-switch {{ $language == 'es' ? 'active-language' : '' }}">Esp</a></li>
             </ul>
 
             <nav>

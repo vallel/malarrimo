@@ -1,43 +1,66 @@
 <?php
 
+/*
+ *  Set up locale and locale_prefix if other language is selected
+ */
+if (in_array(Request::segment(1), Config::get('app.alt_langs')))
+{
+ App::setLocale(Request::segment(1));
+ Config::set('app.locale_prefix', Request::segment(1));
+}
+
+/*
+ * Set up route patterns - patterns will have to be the same as in translated route for current language
+ */
+foreach(Lang::get('routes') as $k => $v)
+{
+ Route::pattern($k, $v);
+}
+
 Route::pattern('id', '\d+');
 
+
 /* --------------------------
- * Spanish routes
+ * Website routes
  ---------------------------- */
 
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::group(array('prefix' => Config::get('app.locale_prefix')), function()
+{
 
-Route::get('ubicacion', ['as' => 'location', 'uses' => 'LocationController@index']);
-Route::get('guerrero-negro-breve-historia', ['as' => 'briefHistory', 'uses' => 'LocationController@briefHistory']);
+ Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-Route::get('comodidades/malarrimo', ['as' => 'malarrimo', 'uses' => 'FacilitiesController@malarrimo']);
-Route::get('comodidades/eco-tours', ['as' => 'ecoTours', 'uses' => 'FacilitiesController@tours']);
-Route::get('comodidades/restaurante', ['as' => 'restaurant', 'uses' => 'FacilitiesController@restaurant']);
-Route::get('comodidades/motel', ['as' => 'motel', 'uses' => 'FacilitiesController@motel']);
-Route::get('comodidades/rvparking', ['as' => 'rvparking', 'uses' => 'FacilitiesController@rvparking']);
-Route::get('comodidades/casaelviejocactus', ['as' => 'casaelviejocactus', 'uses' => 'FacilitiesController@casaelviejocactus']);
-Route::get('comodidades/deli', ['as' => 'deli', 'uses' => 'FacilitiesController@deli']);
+ Route::get(Lang::get('routes.location'), ['as' => 'location', 'uses' => 'LocationController@index']);
+ Route::get(Lang::get('routes.briefHistory'), ['as' => 'briefHistory', 'uses' => 'LocationController@briefHistory']);
 
-Route::get('tours/ballenas', ['as' => 'tours', 'uses' => 'ToursController@index']);
-Route::get('tours/equipo', ['as' => 'equipment', 'uses' => 'ToursController@equipment']);
-Route::get('tours/tarifas', ['as' => 'fees', 'uses' => 'ToursController@fees']);
-Route::get('ballena-gris', ['as' => 'whales', 'uses' => 'ToursController@whales']);
-Route::get('tours/otros', ['as' => 'otherTours', 'uses' => 'ToursController@other']);
-Route::get('tours/otros/pinturas-rupestres', ['as' => 'otherFees', 'uses' => 'ToursController@otherFees']);
+ Route::get(Lang::get('routes.malarrimo'), ['as' => 'malarrimo', 'uses' => 'FacilitiesController@malarrimo']);
+ Route::get(Lang::get('routes.ecoTours'), ['as' => 'ecoTours', 'uses' => 'FacilitiesController@tours']);
+ Route::get(Lang::get('routes.restaurant'), ['as' => 'restaurant', 'uses' => 'FacilitiesController@restaurant']);
+ Route::get(Lang::get('routes.motel'), ['as' => 'motel', 'uses' => 'FacilitiesController@motel']);
+ Route::get(Lang::get('routes.rvparking'), ['as' => 'rvparking', 'uses' => 'FacilitiesController@rvparking']);
+ Route::get(Lang::get('routes.casaelviejocactus'), ['as' => 'casaelviejocactus', 'uses' => 'FacilitiesController@casaelviejocactus']);
+ Route::get(Lang::get('routes.deli'), ['as' => 'deli', 'uses' => 'FacilitiesController@deli']);
 
-Route::get('reservaciones', ['as' => 'booking', 'uses' => 'BookingController@index']);
-Route::post('reservaciones/enviar', ['as' => 'storeBooking', 'uses' => 'BookingController@store']);
-Route::get('reservaciones/enviada', ['as' => 'bookingConfirmation', 'uses' => 'BookingController@confirmation']);
+ Route::get(Lang::get('routes.tours'), ['as' => 'tours', 'uses' => 'ToursController@index']);
+ Route::get(Lang::get('routes.equipment'), ['as' => 'equipment', 'uses' => 'ToursController@equipment']);
+ Route::get(Lang::get('routes.fees'), ['as' => 'fees', 'uses' => 'ToursController@fees']);
+ Route::get(Lang::get('routes.whales'), ['as' => 'whales', 'uses' => 'ToursController@whales']);
+ Route::get(Lang::get('routes.otherTours'), ['as' => 'otherTours', 'uses' => 'ToursController@other']);
+ Route::get(Lang::get('routes.otherFees'), ['as' => 'otherFees', 'uses' => 'ToursController@otherFees']);
 
-Route::get('noticias', ['as' => 'news', 'uses' => 'NewsController@index']);
-Route::get('noticias/{id}/{title}', ['as' => 'post', 'uses' => 'NewsController@get']);
+ Route::get(Lang::get('routes.booking'), ['as' => 'booking', 'uses' => 'BookingController@index']);
+ Route::post(Lang::get('routes.storeBooking'), ['as' => 'storeBooking', 'uses' => 'BookingController@store']);
+ Route::get(Lang::get('routes.bookingConfirmation'), ['as' => 'bookingConfirmation', 'uses' => 'BookingController@confirmation']);
 
-Route::get('galerias', ['as' => 'galleries', 'uses' => 'GalleryController@index']);
-Route::get('galeria/{id}/{title}', ['as' => 'gallery', 'uses' => 'GalleryController@show']);
+ Route::get(Lang::get('routes.news'), ['as' => 'news', 'uses' => 'NewsController@index']);
+ Route::get(Lang::get('routes.post'), ['as' => 'post', 'uses' => 'NewsController@get']);
 
-Route::get('contacto', ['as' => 'contact', 'uses' => 'ContactController@index']);
-Route::post('contacto/enviar', ['as' => 'contactMessage', 'uses' => 'ContactController@sendMessage']);
+ Route::get(Lang::get('routes.galleries'), ['as' => 'galleries', 'uses' => 'GalleryController@index']);
+ Route::get(Lang::get('routes.gallery'), ['as' => 'gallery', 'uses' => 'GalleryController@show']);
+
+ Route::get(Lang::get('routes.contact'), ['as' => 'contact', 'uses' => 'ContactController@index']);
+ Route::post(Lang::get('routes.contactMessage'), ['as' => 'contactMessage', 'uses' => 'ContactController@sendMessage']);
+
+});
 
 
 

@@ -13,6 +13,10 @@ class BaseController extends Controller
 		$weatherService = new WeatherService();
 		$currentTemp = $weatherService->getCurrentTemp();
 
+		$language = App::getLocale();
+
+		View::share('language', $language);
+
 		View::share('currentTime', $currentTime);
 		View::share('currentTemp', $currentTemp);
 	}
