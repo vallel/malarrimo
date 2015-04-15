@@ -58,34 +58,34 @@
             <nav>
                 <ul class="main-menu">
                     <li {{ Route::currentRouteName() == 'home' ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('home') }}">Inicio</a>
+                        <a href="{{ route('home') }}">{{ Lang::get('menu.home') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'location' || Route::currentRouteName() == 'briefHistory'
                             ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('location') }}">Ubicación</a>
+                        <a href="{{ route('location') }}">{{ Lang::get('menu.location') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'malarrimo' || Route::currentRouteName() == 'restaurant'
                             || Route::currentRouteName() == 'motel' || Route::currentRouteName() == 'rvparking'
                             || Route::currentRouteName() == 'casaelviejocactus' || Route::currentRouteName() == 'deli'
                             ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('malarrimo') }}">Comodidades</a>
+                        <a href="{{ route('malarrimo') }}">{{ Lang::get('menu.facilities') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'tours' ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('tours') }}">Tours</a>
+                        <a href="{{ route('tours') }}">{{ Lang::get('menu.tours') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'booking' || Route::currentRouteName() == 'bookingConfirmation'
                             ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('booking') }}">Reservaciones</a>
+                        <a href="{{ route('booking') }}">{{ Lang::get('menu.booking') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'news' || Route::currentRouteName() == 'post'
                         ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('news') }}">Noticias</a>
+                        <a href="{{ route('news') }}">{{ Lang::get('menu.news') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'galleries' ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('galleries') }}">Galerías</a>
+                        <a href="{{ route('galleries') }}">{{ Lang::get('menu.galleries') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'contact' ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('contact') }}">Contacto</a>
+                        <a href="{{ route('contact') }}">{{ Lang::get('menu.contact') }}</a>
                     </li>
                 </ul>
             </nav>
