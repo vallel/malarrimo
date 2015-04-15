@@ -9,4 +9,8 @@ return array(
     'news' => 'Noticias',
     'galleries' => 'Galerías',
     'contact' => 'Contacto',
+
+    'twitterSays' => 'dice',
+
+    'copyright' => 'Todos los derechos reservados',
 );

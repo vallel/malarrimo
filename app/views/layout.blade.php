@@ -58,34 +58,34 @@
             <nav>
                 <ul class="main-menu">
                     <li {{ Route::currentRouteName() == 'home' ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('home') }}">{{ Lang::get('menu.home') }}</a>
+                        <a href="{{ route('home') }}">{{ Lang::get('layout.home') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'location' || Route::currentRouteName() == 'briefHistory'
                             ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('location') }}">{{ Lang::get('menu.location') }}</a>
+                        <a href="{{ route('location') }}">{{ Lang::get('layout.location') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'malarrimo' || Route::currentRouteName() == 'restaurant'
                             || Route::currentRouteName() == 'motel' || Route::currentRouteName() == 'rvparking'
                             || Route::currentRouteName() == 'casaelviejocactus' || Route::currentRouteName() == 'deli'
                             ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('malarrimo') }}">{{ Lang::get('menu.facilities') }}</a>
+                        <a href="{{ route('malarrimo') }}">{{ Lang::get('layout.facilities') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'tours' ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('tours') }}">{{ Lang::get('menu.tours') }}</a>
+                        <a href="{{ route('tours') }}">{{ Lang::get('layout.tours') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'booking' || Route::currentRouteName() == 'bookingConfirmation'
                             ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('booking') }}">{{ Lang::get('menu.booking') }}</a>
+                        <a href="{{ route('booking') }}">{{ Lang::get('layout.booking') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'news' || Route::currentRouteName() == 'post'
                         ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('news') }}">{{ Lang::get('menu.news') }}</a>
+                        <a href="{{ route('news') }}">{{ Lang::get('layout.news') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'galleries' ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('galleries') }}">{{ Lang::get('menu.galleries') }}</a>
+                        <a href="{{ route('galleries') }}">{{ Lang::get('layout.galleries') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'contact' ? 'class="main-menu-active"' : '' }}>
-                        <a href="{{ route('contact') }}">{{ Lang::get('menu.contact') }}</a>
+                        <a href="{{ route('contact') }}">{{ Lang::get('layout.contact') }}</a>
                     </li>
                 </ul>
             </nav>
@@ -102,7 +102,7 @@
         <div class="content clearfix">
             <div class="column-3 column-twitter">
                 <div class="column-icon tw-widget-icon"></div>
-                <a class="twitter-timeline" href="https://twitter.com/Vallel" data-widget-id="537854074742255616">@Malarrimo dice:</a>
+                <a class="twitter-timeline" href="https://twitter.com/Vallel" data-widget-id="537854074742255616">@Malarrimo {{ Lang::get('layout.twitterSays') }}:</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div>
             <div class="column-3 column-facebook">
@@ -119,7 +119,7 @@
 
         <div class="bottom-bar">
             <div class="content">
-                <small>Malarrimo &centerdot; Todos los derechos reservados</small>
+                <small>Malarrimo &centerdot; {{ Lang::get('layout.copyright') }}</small>
             </div>
         </div>
     </footer>
