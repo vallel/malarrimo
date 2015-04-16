@@ -22,13 +22,14 @@ class News extends Base
     }
 
     /**
+     * @param string $lang
      * @param int $perPage
      * @return mixed
      */
-    public function getLast($perPage = 6)
+    public function getLast($lang, $perPage = 6)
     {
         $class = $this->entityName;
-        return $class::orderBy('id', 'DESC')->simplePaginate($perPage);
+        return $class::where('language', $lang)->orderBy('id', 'DESC')->simplePaginate($perPage);
     }
 
     /**

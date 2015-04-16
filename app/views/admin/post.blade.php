@@ -18,10 +18,10 @@
 
         <div class="clearfix">
             <div class="form-group pull-left">
-                {{ Form::label('esp', 'Español') }}
-                {{ Form::radio('language', 'esp', true) }}
-                {{ Form::label('eng', 'Ingles') }}
-                {{ Form::radio('language', 'eng') }}
+                {{ Form::label('es', 'Español') }}
+                {{ Form::radio('language', 'es', true) }}
+                {{ Form::label('en', 'Ingles') }}
+                {{ Form::radio('language', 'en') }}
                 @if ($errors->has('language'))
                     <p class="text-danger">{{ $errors->first('language') }}</p>
                 @endif

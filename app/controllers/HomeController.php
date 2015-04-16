@@ -27,13 +27,15 @@ class HomeController extends BaseController
 
 	public function index()
 	{
+		$lang = App::getLocale();
+
 		$data = [
 			'headerClass' => 'home-header',
-			'lastNews' => $this->newsRepo->getLast(3),
+			'lastNews' => $this->newsRepo->getLast($lang, 3),
 			'galleries' => $this->galleryRepo->getLastGalleries(4),
 		];
 
-		return View::make('home', $data);
+		return View::make($lang . '/home', $data);
 	}
 
 }
