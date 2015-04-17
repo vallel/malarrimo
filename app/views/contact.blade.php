@@ -4,7 +4,7 @@
 
     <header class="section-header">
 
-        <h1>Contacto</h1>
+        <h1>{{ Lang::get('contact.contact') }}</h1>
 
     </header>
 
@@ -14,15 +14,15 @@
             <ul>
                 <li class="section-menu-item">
                     <p>
-                        Télefono/Fax:<br>
+                        {{ Lang::get('contact.phoneFax') }}:<br>
                         (615) 157-01-00
                     </p>
                     <p>
-                        Correo electrónico:<br>
+                        {{ Lang::get('contact.email') }}:<br>
                         info@malarrimo.com
                     </p>
                     <p>
-                        Dirección:<br>
+                        {{ Lang::get('contact.address') }}:<br>
                         Blvd. Emiliano Zapata S/N<br>
                         Fundo Legal, C.P. 23940<br>
                         Guerrero Negro, Baja California Sur
@@ -40,13 +40,13 @@
                 {{ Session::get('msg') }}
             @endif
 
-            {{ Field::text('name', 'Nombre:') }}
+            {{ Field::text('name', Lang::get('contact.name') . ':') }}
 
-            {{ Field::text('email', 'Correo electrónico:') }}
+            {{ Field::text('email', Lang::get('contact.email') . ':') }}
 
-            {{ Field::textarea('messageBody', 'Mensaje:') }}
+            {{ Field::textarea('messageBody', Lang::get('contact.message') . ':') }}
 
-            <input type="submit" value="Enviar" class="btn btn-info btn-lg pull-right clearfix">
+            <input type="submit" value="{{ Lang::get('contact.send') }}" class="btn btn-info btn-lg pull-right clearfix">
 
             {{ Form::close() }}
 

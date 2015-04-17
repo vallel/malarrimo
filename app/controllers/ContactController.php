@@ -6,7 +6,7 @@ class ContactController extends BaseController
 	public function index()
 	{
 		$data = [
-			'title' => 'Contacto | ',
+			'title' => Lang::get('contact.contact') . ' | ',
 			'headerClass' => 'contact-header',
 		];
 
@@ -40,13 +40,13 @@ class ContactController extends BaseController
 						->subject('Contacto Malarrimo');
 				});
 
-				return Redirect::route('contact')->with('msg', '<p class="alert alert-success" role="alert">Su mensaje ha sido enviado.</p>');
+				return Redirect::route('contact')->with('msg', '<p class="alert alert-success" role="alert">' . Lang::get('contact.success') . '</p>');
 			}
 			catch(Exception $ex)
 			{
 				Log::error($ex);
 				return Redirect::route('contact')
-					->with('msg', '<p class="alert alert-danger" role="alert">Lo sentimos, ocurrió un error al enviar su mensaje. Por favor intente más tarde.</p>')
+					->with('msg', '<p class="alert alert-danger" role="alert">' . Lang::get('contact.error') . '</p>')
 					->withInput();
 			}
 		}
