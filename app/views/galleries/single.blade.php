@@ -4,7 +4,7 @@
 
     <header class="section-header">
 
-        <h1>Galería de fotos | {{ $gallery->title }}</h1>
+        <h1>{{ Lang::get('galleries.galleries') }} | {{ $gallery->title }}</h1>
 
     </header>
 
@@ -41,8 +41,8 @@
 
             @if (!empty($gallery->autor))
                 <p class="text-center small text-muted">
-                    Fotografía de: {{ $gallery->autor }}<br>
-                    Todos los derechos reservados
+                    {{ Lang::get('galleries.galleryAuthor') }}: {{ $gallery->autor }}<br>
+                    {{ Lang::get('layout.copyright') }}
                 </p>
             @endif
         </div>

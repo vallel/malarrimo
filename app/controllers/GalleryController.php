@@ -20,7 +20,7 @@ class GalleryController extends BaseController
     public function index()
     {
         $data = array(
-            'title' => 'Galerías | ',
+            'title' => Lang::get('galleries.galleries') . ' | ',
             'headerClass' => 'gallery-header',
             'galleries' => $this->galleryRepo->getLastGalleriesPaginated(9),
         );
@@ -43,7 +43,7 @@ class GalleryController extends BaseController
         }
 
         $data = array(
-            'title' => 'Galerías &raquo; ' . $title . ' | ',
+            'title' => Lang::get('galleries.galleries') . ' &raquo; ' . $title . ' | ',
             'headerClass' => 'gallery-header',
             'gallery' => $gallery,
         );

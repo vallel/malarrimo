@@ -4,7 +4,7 @@
 
     <header class="section-header">
 
-        <h1>Galerías de fotos</h1>
+        <h1>{{ Lang::get('galleries.galleries') }}</h1>
 
     </header>
 
@@ -19,7 +19,7 @@
                         </figure>
                         <h1 class="galleries-list--item--title">{{ $gallery->title }}</h1>
                         @if (!empty($gallery->autor))
-                            <p class="small text-muted">Autor: {{ $gallery->autor }}</p>
+                            <p class="small text-muted">{{ Lang::get('galleries.author') }}: {{ $gallery->autor }}</p>
                         @endif
                     </a>
                 </article>
