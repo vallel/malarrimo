@@ -18,11 +18,12 @@ class NewsController extends BaseController
 
     public function index()
     {
+        $lang = Lang::getLocale();
         $data = array(
-            'title' => 'Noticias | ',
+            'title' => Lang::get('news.news') . ' | ',
             'headerClass' => 'news-header',
-            'news' => $this->newsRepo->getLast(),
-            'mostVisited' => $this->newsRepo->getMostVisited(),
+            'news' => $this->newsRepo->getLast($lang),
+            'mostVisited' => $this->newsRepo->getMostVisited($lang),
         );
 
         return View::make('news/news', $data);
@@ -43,9 +44,9 @@ class NewsController extends BaseController
         }
 
         $data = array(
-            'title' => $post->title . ' &raquo; Noticias | ',
+            'title' => $post->title . ' &raquo; ' . Lang::get('news.news') . ' | ',
             'headerClass' => 'news-header',
-            'mostVisited' => $this->newsRepo->getMostVisited(),
+            'mostVisited' => $this->newsRepo->getMostVisited(Lang::getLocale()),
             'post' => $post,
         );
 

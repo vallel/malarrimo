@@ -33,13 +33,14 @@ class News extends Base
     }
 
     /**
+     * @param string $lang
      * @param int $limit
      * @return mixed
      */
-    public function getMostVisited($limit = 3)
+    public function getMostVisited($lang, $limit = 3)
     {
         $class = $this->entityName;
-        return $class::orderBy('visits', 'DESC')->take($limit)->get();
+        return $class::where('language', $lang)->orderBy('visits', 'DESC')->take($limit)->get();
     }
 
 } 

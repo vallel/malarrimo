@@ -35,7 +35,7 @@ class HomeController extends BaseController
 			'galleries' => $this->galleryRepo->getLastGalleries(4),
 		];
 
-		return View::make($lang . '/home', $data);
+		return View::make('home', $data);
 	}
 
 }

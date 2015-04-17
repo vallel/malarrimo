@@ -4,7 +4,7 @@
 
     <header class="section-header">
 
-        <h1>Noticias</h1>
+        <h1>{{ Lang::get('news.news') }}</h1>
 
     </header>
 
@@ -12,13 +12,13 @@
 
         <nav class="section-sidebar">
             <ul>
-                <li class="section-menu-item"><h1 class="section-menu-title">Las más leidas</h1></li>
+                <li class="section-menu-item"><h1 class="section-menu-title">{{ Lang::get('news.mostPopular') }}</h1></li>
                 @foreach ($mostVisited as $visitedPost)
                 <li class="section-menu-item">
                     <article class="news--most-readed">
                         <h2 class="news--most-readed-title">{{ $visitedPost->title }}</h2>
                         <p class="small">{{ Str::limit($visitedPost->content, 200) }}</p>
-                        <a href="{{ route('post', ['id' => $visitedPost->id, 'title' => Str::slug($visitedPost->title)]) }}" class="news--read-more">Continuar leyendo</a>
+                        <a href="{{ route('post', ['id' => $visitedPost->id, 'title' => Str::slug($visitedPost->title)]) }}" class="news--read-more">{{ Lang::get('news.readMore') }}</a>
                     </article>
                 </li>
                 @endforeach
