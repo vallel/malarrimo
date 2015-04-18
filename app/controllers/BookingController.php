@@ -21,6 +21,7 @@ class BookingController extends BaseController
 	public function index()
 	{
 		$data = [
+			'title' => Lang::get('booking.booking') . ' | ',
 			'headerClass' => 'booking-header',
 		];
 
@@ -43,7 +44,12 @@ class BookingController extends BaseController
 
 	public function confirmation()
 	{
-		return View::make('booking/bookingConfirmation', ['headerClass' => 'booking-header']);
+		$data = [
+			'title' => Lang::get('booking.booking') . ' | ',
+			'headerClass' => 'booking-header'
+		];
+
+		return View::make('booking/bookingConfirmation', $data);
 	}
 
 }
