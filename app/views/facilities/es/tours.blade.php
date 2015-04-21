@@ -1,4 +1,4 @@
-@extends('facilities/layout')
+@extends('facilities.layout')
 
 @section('facilities.content')
 

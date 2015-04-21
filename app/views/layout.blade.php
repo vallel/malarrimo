@@ -64,9 +64,10 @@
                             ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('location') }}">{{ Lang::get('layout.location') }}</a>
                     </li>
-                    <li {{ Route::currentRouteName() == 'malarrimo' || Route::currentRouteName() == 'restaurant'
-                            || Route::currentRouteName() == 'motel' || Route::currentRouteName() == 'rvparking'
-                            || Route::currentRouteName() == 'casaelviejocactus' || Route::currentRouteName() == 'deli'
+                    <li {{ Route::currentRouteName() == 'malarrimo' || Route::currentRouteName() == 'ecoTours'
+                            || Route::currentRouteName() == 'restaurant' || Route::currentRouteName() == 'motel'
+                            || Route::currentRouteName() == 'rvparking' || Route::currentRouteName() == 'casaelviejocactus'
+                            || Route::currentRouteName() == 'deli'
                             ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('malarrimo') }}">{{ Lang::get('layout.facilities') }}</a>
                     </li>

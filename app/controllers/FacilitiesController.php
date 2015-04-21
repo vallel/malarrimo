@@ -6,78 +6,78 @@ class FacilitiesController extends BaseController
     public function malarrimo()
     {
         $data = [
-            'title' => 'Comodidades | Malarrimo',
+            'title' => Lang::get('facilities.facilities') . ' | Malarrimo',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'facilities-malarrimo-banner',
         ];
 
-        return View::make('facilities/malarrimo', $data);
+        return View::make('facilities/' . Lang::getLocale() . '/malarrimo', $data);
     }
 
     public function tours()
     {
         $data = [
-            'title' => 'Comodidades | Eco-Tours Malarrimo',
+            'title' => Lang::get('facilities.facilities') . ' | Eco-Tours Malarrimo',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'facilities-tours-banner',
         ];
 
-        return View::make('facilities/tours', $data);
+        return View::make('facilities/' . Lang::getLocale() . '/tours', $data);
     }
 
     public function restaurant()
     {
         $data = [
-            'title' => 'Comodidades | Restaurante Malarrimo',
+            'title' => Lang::get('facilities.facilities') . ' | Restaurante Malarrimo',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'restaurant-banner',
         ];
 
-        return View::make('facilities/restaurant', $data);
+        return View::make('facilities/' . Lang::getLocale() . '/restaurant', $data);
     }
 
     public function motel()
     {
         $data = [
-            'title' => 'Comodidades | Motel Malarrimo',
+            'title' => Lang::get('facilities.facilities') . ' | Motel Malarrimo',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'motel-banner',
         ];
 
-        return View::make('facilities/motel', $data);
+        return View::make('facilities/' . Lang::getLocale() . '/motel', $data);
     }
 
     public function rvparking()
     {
         $data = [
-            'title' => 'Comodidades | RV Parking',
+            'title' => Lang::get('facilities.facilities') . ' | RV Parking',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'rvparking-banner',
         ];
 
-        return View::make('facilities/rvparking', $data);
+        return View::make('facilities/' . Lang::getLocale() . '/rvparking', $data);
     }
 
     public function casaelviejocactus()
     {
         $data = [
-            'title' => 'Comodidades | Casa El Viejo Cactus',
+            'title' => Lang::get('facilities.facilities') . ' | Casa El Viejo Cactus',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'cevc-banner',
         ];
 
-        return View::make('facilities/casaelviejocactus', $data);
+        return View::make('facilities/' . Lang::getLocale() . '/casaelviejocactus', $data);
     }
 
     public function deli()
     {
         $data = [
-            'title' => 'Comodidades | Malarrimo Deli',
+            'title' => Lang::get('facilities.facilities') . ' | Malarrimo Deli',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'deli-banner',
         ];
 
-        return View::make('facilities/deli', $data);
+        return View::make('facilities/' . Lang::getLocale() . '/deli', $data);
     }
 
 }
