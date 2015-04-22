@@ -1,4 +1,4 @@
-@extends('location/layout')
+@extends('location.layout')
 
 @section('locationSection')
     <h1 class="section-content-title">Cómo llegar a Guerrero Negro</h1>
@@ -18,7 +18,8 @@
     <h2 id="bus" class="section-content-subtitle">Autobuses</h2>
 
     <p>Por autobús de Tijuana o La Paz; tomar autobuses <a href="http://www.abc.com.mx" target="_blank">ABC</a>
-        o Águila (recomendamos tomarlos de noche para arribar a Guerrero Negro por la mañana).</p>
+        o <a href="http://www.autobusesaguila.com/" target="_blank">Águila</a> (recomendamos tomarlos de noche para
+        arribar a Guerrero Negro por la mañana).</p>
 
 
     <h2 id="boat" class="section-content-subtitle">Barco</h2>

@@ -6,21 +6,21 @@ class LocationController extends BaseController
 	public function index()
 	{
 		$data = [
-			'title' => 'Ubicación | ',
+			'title' => Lang::get('location.location') . ' | ',
 			'headerClass' => 'location-header',
 		];
 
-		return View::make('location/location', $data);
+		return View::make('location/' . Lang::getLocale() . '/location', $data);
 	}
 
 	public function briefHistory()
 	{
 		$data = [
-			'title' => 'Breve historia de Guerrero Negro | ',
+			'title' => Lang::get('location.briefHistory') . ' | ',
 			'headerClass' => 'location-header',
 		];
 
-		return View::make('location/briefHistory', $data);
+		return View::make('location/' . Lang::getLocale() . '/briefHistory', $data);
 	}
 
 }

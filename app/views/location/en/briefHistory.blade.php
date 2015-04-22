@@ -1,4 +1,4 @@
-@extends('location/layout')
+@extends('location.layout')
 
 @section('locationSection')
     <h1 class="section-content-title">Breve historia de Guerrero Negro</h1>
