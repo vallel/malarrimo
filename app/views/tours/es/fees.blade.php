@@ -1,4 +1,4 @@
-@extends('tours/layout')
+@extends('tours.layout')
 
 @section('toursContent')
 
