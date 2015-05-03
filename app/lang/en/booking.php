@@ -37,7 +37,7 @@ return array(
 
     'cavePainting' => 'For Cave Paintings',
 
-    'saltMint' => 'For Salt Mines',
+    'saltMine' => 'For Salt Mines',
 
     'rv' => 'RV Parking',
     'camping' => 'Tent',

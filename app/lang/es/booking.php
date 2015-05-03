@@ -38,7 +38,7 @@ return array(
 
     'cavePainting' => 'Tour Pinturas Rupestres',
 
-    'saltMint' => 'Tour Salinas',
+    'saltMine' => 'Tour Salinas',
 
     'rv' => 'RV Parking',
     'camping' => 'Tienda de campaña',

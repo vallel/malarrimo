@@ -36,6 +36,7 @@ class BookingController extends BaseController
 
 		if ($manager->save())
 		{
+			$manager->sendMail();
 			return Redirect::route('bookingConfirmation');
 		}
 

@@ -93,8 +93,11 @@ class Booking extends \Eloquent
      */
     protected function setDateFieldValue($field, $value)
     {
-        $date = DateTime::createFromFormat('d/m/Y', $value);
-        $this->attributes[$field] = $date->format('Y-m-d');
+        if (!empty($value))
+        {
+            $date = DateTime::createFromFormat('d/m/Y', $value);
+            $this->attributes[$field] = $date->format('Y-m-d');
+        }
     }
 
 }

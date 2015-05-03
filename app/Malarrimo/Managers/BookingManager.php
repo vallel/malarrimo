@@ -2,6 +2,9 @@
 
 namespace Malarrimo\Managers;
 
+use Config;
+use Mail;
+
 class BookingManager extends ManagerBase
 {
 
@@ -65,6 +68,17 @@ class BookingManager extends ManagerBase
         $this->entity->save();
 
         return true;
+    }
+
+    public function sendMail()
+    {
+        $data = $this->data;
+        Mail::send('emails/booking  ', array('data' => $this->entity), function($message) use ($data)
+        {
+            $message->from($data['email'], $data['name']);
+            $message->to(Config::get('mail.bookingEmail'), 'Malarrimo')
+                ->subject('Una nueva reservación ha sido registrada');
+        });
     }
 
     protected function fillEntityData()

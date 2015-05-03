@@ -12,26 +12,6 @@
 
 <body bgcolor="#FFFFFF">
 
-<!-- HEADER -->
-<table class="head-wrap" bgcolor="#999999">
-    <tr>
-        <td></td>
-        <td class="header container" >
-
-            <div class="content">
-                <table bgcolor="#999999">
-                    <tr>
-                        <td><img src="{{ asset('img/logo.png') }}" /></td>
-                        <td align="right"></td>
-                    </tr>
-                </table>
-            </div>
-
-        </td>
-        <td></td>
-    </tr>
-</table><!-- /HEADER -->
-
 
 <!-- BODY -->
 <table class="body-wrap">
@@ -50,32 +30,20 @@
                                 <tr>
                                     <td>
 
-                                        <!-- column 1 -->
                                         <table align="left" class="column">
                                             <tr>
-                                                <td>
-
-                                                    <h5 class="">Nombre:</h5>
-                                                    <h5 class="">Email:</h5>
-                                                    <h5 class="">Mensaje:</h5>
-
-
-                                                </td>
+                                                <td><h5 class="">Nombre:</h5></td>
+                                                <td><p>{{ $name }}</p></td>
                                             </tr>
-                                        </table><!-- /column 1 -->
-
-                                        <!-- column 2 -->
-                                        <table align="left" class="column">
                                             <tr>
-                                                <td>
-
-                                                    <p>{{ $name }}</p>
-                                                    <p>{{ $email }}</p>
-                                                    <p>{{ $messageBody }}</p>
-
-                                                </td>
+                                                <td><h5 class="">Email:</h5></td>
+                                                <td><p>{{ $email }}</p></td>
                                             </tr>
-                                        </table><!-- /column 2 -->
+                                            <tr>
+                                                <td><h5 class="">Mensaje:</h5></td>
+                                                <td><p>{{ $messageBody }}</p></td>
+                                            </tr>
+                                        </table>
 
                                         <span class="clear"></span>
 
