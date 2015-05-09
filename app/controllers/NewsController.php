@@ -43,6 +43,8 @@ class NewsController extends BaseController
             return Redirect::route('news/news');
         }
 
+        Event::fire('posts.view', $post);
+
         $data = array(
             'title' => $post->title . ' &raquo; ' . Lang::get('news.news') . ' | ',
             'headerClass' => 'news-header',

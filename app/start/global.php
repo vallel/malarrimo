@@ -79,3 +79,6 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+
+Event::listen('posts.view', 'Malarrimo\Events\ViewPostHandler');
