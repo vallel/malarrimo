@@ -276,7 +276,7 @@
 
             {{ Form::close() }}
 
-            <aside class="col-sm-4 booking-summary">
+            <aside class="col-sm-4 col-sm booking-summary">
                 <div class="panel panel-default">
                     <div class="panel-heading">{{ Lang::get('booking.yourBooking') }}</div>
                     <div class="panel-body">

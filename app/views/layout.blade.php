@@ -38,15 +38,12 @@
 
     <header class="site-header {{ $headerClass or '' }}">
         <div class="content">
-            <a href="{{ route('home') }}" title="Malarrimo" class="logo">
-                <img src="{{ URL::asset('img/logo.png') }}" width="150" height="150" alt="Malarrimo">
-            </a>
 
             <ul class="top-bar clearfix">
-                <li>Guerrero Negro B.C.S México</li>
-                <li>-</li>
-                <li><time datetime="">{{ $currentTime }}</time></li>
-                <li>-</li>
+                <li class="top-bar-hidden">Guerrero Negro B.C.S México</li>
+                <li class="top-bar-hidden">-</li>
+                <li class="top-bar-hidden"><time datetime="">{{ $currentTime }}</time></li>
+                <li class="top-bar-hidden">-</li>
                 <li><span class="weather">{{ $currentTemp->getTempFahrenheit() }}°F / {{ $currentTemp->getTempCelsius() }}°C</span></li>
                 <li><a href="" class="top-icon fb-top-icon"></a></li>
                 <li><a href="https://twitter.com/EtoursMalarrimo" class="top-icon tw-top-icon" target="_blank"></a></li>
@@ -55,7 +52,12 @@
                 <li><a href="/" class="language-switch {{ $language == 'es' ? 'active-language' : '' }}">Esp</a></li>
             </ul>
 
+            <a href="{{ route('home') }}" title="Malarrimo" class="logo">
+                <img src="{{ URL::asset('img/logo.png') }}" width="150" height="150" alt="Malarrimo">
+            </a>
+
             <nav>
+                <!--<a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>-->
                 <ul class="main-menu">
                     <li {{ Route::currentRouteName() == 'home' ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('home') }}">{{ Lang::get('layout.home') }}</a>
@@ -89,6 +91,7 @@
                         <a href="{{ route('contact') }}">{{ Lang::get('layout.contact') }}</a>
                     </li>
                 </ul>
+
             </nav>
         </div>
     </header>

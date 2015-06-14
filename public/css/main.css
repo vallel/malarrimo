@@ -408,7 +408,7 @@ a.section-menu-item:hover {
 }
 
 .home-galleries-big img {
-    width: 600px;
+    width: 100%;
     height: auto;
 }
 
@@ -428,7 +428,7 @@ a.section-menu-item:hover {
 .more-galleries-btn {
     text-transform: uppercase;
     margin-top: 20px;
-    width: 600px;
+    width: 100%;
 }
 
 
@@ -561,13 +561,12 @@ a.section-menu-item:hover {
 .booking-summary {
     padding-right: 5px;
     margin-top: 20px;
-    width: 320px;
 }
 
 .fixed-booking-summary {
     position: fixed;
     top: 0;
-    margin-left: 640px;
+    margin-left: 63%;
 }
 
 .booking-summary-element {
@@ -604,6 +603,8 @@ a.section-menu-item:hover {
 }
 
 .news--most-readed-content {
+    font-size: 1em;
+    line-height: 1.2em;
     -ms-word-break: break-all;
     word-break: break-all; /* Be VERY careful with this, breaks normal words wh_erever */
     word-break: break-word; /* Non standard for webkit */
@@ -719,7 +720,6 @@ a.section-menu-item:hover {
 ************************************/
 .galleries-list--item {
     float: left;
-    width: 300px;
     margin-right: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -727,6 +727,7 @@ a.section-menu-item:hover {
 
 .galleries-list--item a {
     color: #1b1464;
+    display: block;
 }
 
 .galleries-list--item a:hover {
@@ -833,4 +834,195 @@ a.section-menu-item:hover {
 .contact-button {
     background-color: #2e3192;
     border-color: #2e3192;
+}
+
+
+
+/*******************************
+ ------- MEDIA QUERIES --------
+********************************/
+@media (max-width: 960px) {
+    .content {
+        width: 98%;
+    }
+
+    .main-menu, .logo, .top-bar {
+        float: none;
+    }
+
+    .top-bar {
+        margin: auto;
+        width: 580px;
+    }
+
+    .logo {
+        margin: auto;
+        display: block;
+        height: 150px;
+        width: 150px;
+    }
+
+    .main-menu {
+        margin: auto;
+    }
+
+    .section-header {
+        padding: 25px;
+    }
+
+    .section-menu, .section-sidebar {
+        width: 30%;
+        margin-right: 2%;
+    }
+
+    .section-menu-title {
+        font-size: 1.3em;
+    }
+
+    .section-content-article {
+        width: 68%;
+    }
+
+    .home-galleries-small {
+        width: 33%;
+        margin-right: .333%;
+    }
+
+    .section-content-title {
+        font-size: 1.6em;
+        padding-top: 10px;
+    }
+
+    .home-galleries-big {
+        width: 100%;
+        height: auto;
+        margin-bottom: .333%;
+    }
+
+    .column-3 {
+        width: 30%;
+        margin-right: 3%;
+        margin-top: 20px;
+    }
+
+    .column-icon {
+        display: none;
+    }
+
+    .bottom-bar {
+        margin-top: 10px;
+    }
+
+    .site-header {
+        margin-bottom: -55px;
+    }
+
+    .home-header {
+        margin: 0;
+    }
+
+    .section-banner {
+        width: 100%;
+        height: 320px;
+    }
+
+    .galleries-list--item {
+        margin-right: 3%;
+        margin-top: 10;
+        margin-bottom: 10px;
+        width: 31%;
+        position: relative;
+    }
+    
+    .galleries-list--item--picture {
+        width: 100%;
+    }
+}
+
+@media (max-width: 864px) {
+    .section-header h1 {
+        font-size: 1.8em;
+    }
+
+    .main-menu li a {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 0.9em;
+    }
+
+    .galleries-list--item--title {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 800px) {
+    #carousel-custom {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .booking-summary {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .section-menu, .section-content-article, .section-sidebar {
+        float: none;
+        width: 100%;
+    }
+
+    .column-whales {
+        display: none;
+    }
+
+    .column-3 {
+        width: 45%;
+    }
+    
+    .logo, .logo img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 620px) {
+    .top-bar {
+        width: 260px;
+    }
+
+    .top-bar-hidden {
+        display: none;
+    }
+
+    .post-item {
+        float: none;
+        width: 100%;
+    }
+
+    .galleries-list--item {
+        margin-right: 0;
+        width: 100%;
+        float: none;
+    }
+}
+
+@media (max-width: 565px) {
+
+    .section-header {
+        padding: 15px;
+        font-size: 0.9em
+    }
+
+    .section-header h1 {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+
+    .column-3 {
+        float: none;
+        width: 80%;
+        margin: auto;
+    }
 }
