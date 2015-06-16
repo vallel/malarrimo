@@ -1013,6 +1013,9 @@ a.section-menu-item:hover {
     .section-header {
         padding: 15px;
         font-size: 0.9em
+    }
+
+    .section-header p {
         line-height: 1.2em;
     }
 
