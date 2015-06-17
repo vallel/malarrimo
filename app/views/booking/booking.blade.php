@@ -87,24 +87,24 @@
                 <div class="form-group">
                     {{ Form::label('hotelSingleRooms', Lang::get('booking.singleRooms').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelSingleRooms', null, ['class' => 'form-control hotel-input']) }}
+                        {{ Form::text('hotelSingleRooms', null, ['class' => 'form-control hotel-input numeric-input']) }}
                     </div>
 
                     {{ Form::label('hotelDoubleRooms', Lang::get('booking.doubleRooms').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelDoubleRooms', null, ['class' => 'form-control hotel-input']) }}
+                        {{ Form::text('hotelDoubleRooms', null, ['class' => 'form-control hotel-input numeric-input']) }}
                     </div>
                 </div>
 
                 <div class="form-group">
                     {{ Form::label('hotelAdults', Lang::get('booking.adults').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelAdults', null, ['class' => 'form-control hotel-input']) }}
+                        {{ Form::text('hotelAdults', null, ['class' => 'form-control hotel-input numeric-input']) }}
                     </div>
 
                     {{ Form::label('hotelChildren', Lang::get('booking.children').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('hotelChildren', null, ['class' => 'form-control hotel-input']) }}
+                        {{ Form::text('hotelChildren', null, ['class' => 'form-control hotel-input numeric-input']) }}
                     </div>
                 </div>
 
@@ -134,12 +134,12 @@
                 <div class="form-group">
                     {{ Form::label('whalesAdults', Lang::get('booking.adults').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('whalesAdults', null, ['class' => 'form-control whales-input']) }}
+                        {{ Form::text('whalesAdults', null, ['class' => 'form-control whales-input numeric-input']) }}
                     </div>
 
                     {{ Form::label('whalesChildren', Lang::get('booking.children').' '.Lang::get('booking.childrenAge').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('whalesChildren', null, ['class' => 'form-control whales-input']) }}
+                        {{ Form::text('whalesChildren', null, ['class' => 'form-control whales-input numeric-input']) }}
                     </div>
                 </div>
 
@@ -160,12 +160,12 @@
                 <div class="form-group">
                     {{ Form::label('cavePaintingAdults', Lang::get('booking.adults').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('cavePaintingAdults', null, ['class' => 'form-control cave-painting-input']) }}
+                        {{ Form::text('cavePaintingAdults', null, ['class' => 'form-control cave-painting-input numeric-input']) }}
                     </div>
 
                     {{ Form::label('cavePaintingChildren', Lang::get('booking.children').' '.Lang::get('booking.childrenAge').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('cavePaintingChildren', null, ['class' => 'form-control cave-painting-input']) }}
+                        {{ Form::text('cavePaintingChildren', null, ['class' => 'form-control cave-painting-input numeric-input']) }}
                     </div>
                 </div>
             </fieldset>
@@ -184,12 +184,12 @@
                 <div class="form-group">
                     {{ Form::label('saltMineAdults', Lang::get('booking.adults').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('saltMineAdults', null, ['class' => 'form-control salt-mine-input']) }}
+                        {{ Form::text('saltMineAdults', null, ['class' => 'form-control salt-mine-input numeric-input']) }}
                     </div>
 
                     {{ Form::label('saltMineChildren', Lang::get('booking.children').' '.Lang::get('booking.childrenAge').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('saltMineChildren', null, ['class' => 'form-control salt-mine-input']) }}
+                        {{ Form::text('saltMineChildren', null, ['class' => 'form-control salt-mine-input numeric-input']) }}
                     </div>
                 </div>
             </fieldset>
@@ -221,12 +221,12 @@
                 <div class="form-group">
                     {{ Form::label('rvAdults', Lang::get('booking.adults').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('rvAdults', null, ['class' => 'form-control rv-input']) }}
+                        {{ Form::text('rvAdults', null, ['class' => 'form-control rv-input numeric-input']) }}
                     </div>
 
                     {{ Form::label('rvChildren', Lang::get('booking.children').':', ['class' => 'col-sm-2 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('rvChildren', null, ['class' => 'form-control rv-input']) }}
+                        {{ Form::text('rvChildren', null, ['class' => 'form-control rv-input numeric-input']) }}
                     </div>
                 </div>
 
@@ -266,7 +266,7 @@
                 <div class="form-group">
                     {{ Form::label('banquetPersons', Lang::get('booking.numberPersons').':', ['class' => 'col-sm-8 control-label']) }}
                     <div class="col-sm-4">
-                        {{ Form::text('banquetPersons', null, ['class' => 'form-control banquet-input']) }}
+                        {{ Form::text('banquetPersons', null, ['class' => 'form-control banquet-input numeric-input']) }}
                     </div>
                 </div>
 
