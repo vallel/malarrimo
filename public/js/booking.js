@@ -306,7 +306,7 @@ var malarrimo = malarrimo || {};
     function scrollSummary() {
         // get current scroll position
         var currentScroll = $(window).scrollTop(),
-            $bookingSummary = $('.booking-summary'),
+            $bookingSummary = $('.booking-summary-panel'),
             limitBottom = $('.main-footer').offset().top - $bookingSummary.height();
 
         if (currentScroll >= malarrimo.booking.summaryFixTop && currentScroll <= limitBottom) {
