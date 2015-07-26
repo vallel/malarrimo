@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('Vallel-PC', 'DELL-Vallel'),
+	'local' => array('Vallel-PC', 'DELL-Vallel', 'vallel-Inspiron-5447'),
 
 ));
 
