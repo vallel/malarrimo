@@ -13,7 +13,7 @@ class FeesTableSeeder extends Seeder {
 		foreach($this->getConcepts() as $concept)
 		{
 			Fee::create(array(
-                'id_concept' => $concept->id,
+                'concept_id' => $concept->id,
                 'pesos_fee' => 0,
                 'dollars_fee' => 0,
             ));

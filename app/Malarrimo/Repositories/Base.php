@@ -10,6 +10,11 @@ class Base
      */
     protected $entityName;
 
+    public function __construct()
+    {
+        $this->entityName = 'Malarrimo\Entities\\' . get_class();
+    }
+
     /**
      * @param $id
      * @return \Illuminate\Support\Collection|static
