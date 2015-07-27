@@ -2,6 +2,8 @@
 
 namespace Malarrimo\Repositories;
 
+use ReflectionClass;
+
 class Base
 {
 
@@ -12,7 +14,8 @@ class Base
 
     public function __construct()
     {
-        $this->entityName = 'Malarrimo\Entities\\' . get_class();
+        $reflection = new ReflectionClass($this);
+        $this->entityName = 'Malarrimo\Entities\\' . $reflection->getShortName();
     }
 
     /**
