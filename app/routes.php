@@ -108,4 +108,4 @@ Route::get('admin/reservaciones/detalles/{id}', ['as' => 'getBookingDetails', 'u
 
 // fees administration
 Route::get('admin/tarifas', ['as' => 'admin.fees', 'uses' => 'AdminFeesController@getList', 'before' => 'auth']);
-Route::get('admin/tarifas/guardar', ['as' => 'updateFees', 'uses' => 'AdminFeesController@update', 'before' => 'auth']);
+Route::post('admin/tarifas/guardar', ['as' => 'updateFees', 'uses' => 'AdminFeesController@update', 'before' => 'auth']);

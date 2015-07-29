@@ -91,4 +91,12 @@ abstract class ManagerBase
         return true;
     }
 
+    /**
+     * @return \Eloquent
+     */
+    public function getEntity()
+    {
+        return $this->entity;
+    }
+
 } 
