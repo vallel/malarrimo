@@ -1,5 +1,9 @@
 @extends('admin/layout')
 
+@section('appendScripts')
+    {{ HTML::script('js/admin.fees.js') }}
+@endsection
+
 @section('content')
 
     <h1 class="page-header">Tarifas</h1>
@@ -21,13 +25,13 @@
                 <td>
                     <div class="input-group col-xs-4">
                         <div class="input-group-addon">$</div>
-                        <input type="text" name="pesos_fee-{{$fee->id}}" value="{{$fee->pesos_fee}}" class="form-control">
+                        <input type="text" name="pesos_fee-{{$fee->id}}" value="{{$fee->pesos_fee}}" class="form-control numeric-input">
                     </div>
                 </td>
                 <td>
                     <div class="input-group col-xs-4">
                         <div class="input-group-addon">$</div>
-                        <input type="text" name="dollars_fee-{{$fee->id}}" value="{{$fee->dollars_fee}}" class="form-control">
+                        <input type="text" name="dollars_fee-{{$fee->id}}" value="{{$fee->dollars_fee}}" class="form-control numeric-input">
                     </div>
                 </td>
             </tr>
