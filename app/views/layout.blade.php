@@ -106,7 +106,7 @@
         <div class="content clearfix">
             <div class="column-3 column-twitter">
                 <div class="column-icon tw-widget-icon"></div>
-                <a class="twitter-timeline" href="https://twitter.com/Vallel" data-widget-id="537854074742255616">@Malarrimo {{ Lang::get('layout.twitterSays') }}:</a>
+                <a class="twitter-timeline" href="https://twitter.com/EtoursMalarrimo" data-widget-id="627722589570363393">@Malarrimo {{ Lang::get('layout.twitterSays') }}:</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div>
             <div class="column-3 column-facebook">
