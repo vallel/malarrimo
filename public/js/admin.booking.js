@@ -5,6 +5,27 @@ var malarrimo = malarrimo || {};
     malarrimo.bookingAdmin = {
 
         init: function() {
+            // init datatable
+            $('.booking-table').dataTable({
+                'pageLength': 20,
+                'info': false,
+                'lengthChange': false,
+                'columnDefs': [
+                    { 'targets': 6, 'orderable': false, 'searchable': false },
+                ],
+                'language': {
+                    'search': 'Buscar:',
+                    'paginate': {
+                        'first': '&laquo;',
+                        'last': '&raquo;',
+                        'next': '&rsaquo;',
+                        'previous': '&lsaquo;'
+                    },
+                    'zeroRecords': '',
+                    'emptyTable': 'No hay reservaciones registradas'
+                }
+            });
+
             $('.change-status-btn').click(function() {
                 return confirm('¿Esta seguro de cambiar el estatus de la reservación seleccionada?');
             });

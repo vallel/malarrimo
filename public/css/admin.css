@@ -29,3 +29,11 @@
 	width: 135px;
 	text-align: right;
 }
+
+.dataTables_wrapper {
+	clear: both;
+}
+
+.actions-column {
+	width: 125px;
+}

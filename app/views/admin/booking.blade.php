@@ -1,6 +1,12 @@
 @extends('admin/layout')
 
+@section('appendHead')
+    {{ HTML::style('css/dataTables.bootstrap.css') }}
+@endsection
+
 @section('appendScripts')
+    {{ HTML::script('js/vendor/jquery.dataTables.min.js') }}
+    {{ HTML::script('js/vendor/dataTables.bootstrap.js') }}
     {{ HTML::script('js/admin.booking.js') }}
 @endsection
 
@@ -14,17 +20,20 @@
 
     <a href="" class="btn btn-primary tool-btn pull-right"><span class="glyphicon glyphicon-plus"></span> Registrar reservación</a>
 
-    <table class="table table-striped">
-        <tr>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Teléfono</th>
-            <th>Fax</th>
-            <th>Origen</th>
-            <th>Estatus</th>
-            <th style="width: 150px;"></th>
-        </tr>
+    <table class="table table-striped booking-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Fax</th>
+                <th>Origen</th>
+                <th>Estatus</th>
+                <th class="actions-column"></th>
+            </tr>
+        </thead>
 
+        <tbody>
         @if (isset($bookingList) && $bookingList->count() > 0)
             @foreach ($bookingList as $booking)
 
@@ -43,12 +52,8 @@
             </tr>
 
             @endforeach
-
-        @else
-            <tr>
-                <td colspan="5" class="text-center">No hay reservaciones registradas</td>
-            </tr>
         @endif
+        </tbody>
 
     </table>
 

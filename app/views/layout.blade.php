@@ -45,7 +45,7 @@
                 <li class="top-bar-hidden"><time datetime="">{{ $currentTime }}</time></li>
                 <li class="top-bar-hidden">-</li>
                 <li><span class="weather">{{ $currentTemp->getTempFahrenheit() }}°F / {{ $currentTemp->getTempCelsius() }}°C</span></li>
-                <li><a href="" class="top-icon fb-top-icon"></a></li>
+                <li><a href="https://www.facebook.com/pages/wwwmalarrimocom/250015779122" class="top-icon fb-top-icon" target="_blank"></a></li>
                 <li><a href="https://twitter.com/EtoursMalarrimo" class="top-icon tw-top-icon" target="_blank"></a></li>
                 <li><a href="/en" class="language-switch {{ $language == 'en' ? 'active-language' : '' }}">Eng</a></li>
                 <li>|</li>
@@ -111,7 +111,7 @@
             </div>
             <div class="column-3 column-facebook">
                 <div class="column-icon fb-widget-icon"></div>
-                <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-width="220" data-height="446" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+                <div class="fb-like-box" data-href="https://www.facebook.com/pages/wwwmalarrimocom/250015779122" data-width="220" data-height="446" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
             </div>
             <div class="column-3 column-whales">
                 <div class="column-icon whale-tail-icon"></div>
