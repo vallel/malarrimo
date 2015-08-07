@@ -23,6 +23,8 @@
 
 	<title>{{ $title or '' }}Malarrimo</title>
 
+    <meta name="description" content="{{ $description or '' }}">
+
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
     {{ HTML::style('css/bootstrap.min.css') }}

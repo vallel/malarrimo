@@ -33,6 +33,7 @@ class HomeController extends BaseController
 			'headerClass' => 'home-header',
 			'lastNews' => $this->newsRepo->getLast($lang, 3),
 			'galleries' => $this->galleryRepo->getLastGalleries(4),
+			'description' => strip_tags(Lang::get('home.welcomeMessage')),
 		];
 
 		return View::make('home', $data);

@@ -8,6 +8,7 @@ class LocationController extends BaseController
 		$data = [
 			'title' => Lang::get('location.location') . ' | ',
 			'headerClass' => 'location-header',
+			'description' => Lang::get('location.headerText'),
 		];
 
 		return View::make('location/' . Lang::getLocale() . '/location', $data);
@@ -18,6 +19,7 @@ class LocationController extends BaseController
 		$data = [
 			'title' => Lang::get('location.briefHistory') . ' | ',
 			'headerClass' => 'location-header',
+			'description' => Lang::get('location.headerText'),
 		];
 
 		return View::make('location/' . Lang::getLocale() . '/briefHistory', $data);
