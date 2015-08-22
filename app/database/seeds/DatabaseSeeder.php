@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder {
     {
         return array(
             'UserTableSeeder',
+            'FeeConceptGroupsTableSeeder',
             'FeeConceptsTableSeeder',
             'FeesTableSeeder',
         );

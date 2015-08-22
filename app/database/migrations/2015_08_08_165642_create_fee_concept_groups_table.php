@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateFeeConceptsTable extends Migration {
+class CreateFeeConceptGroupsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,13 @@ class CreateFeeConceptsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('fee_concepts', function(Blueprint $table)
+		Schema::create('fee_concept_groups', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('group_id');
 			$table->string('name');
 			$table->string('short_name')->unique();
+			$table->boolean('high_season_fees');
+			$table->boolean('by_person_number_fees');
 		});
 	}
 
@@ -29,7 +30,7 @@ class CreateFeeConceptsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('fee_concepts');
+		Schema::drop('fee_concept_groups');
 	}
 
 }

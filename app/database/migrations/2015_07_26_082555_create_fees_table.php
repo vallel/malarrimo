@@ -16,8 +16,12 @@ class CreateFeesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('concept_id');
+			$table->integer('min_person_number');
+			$table->integer('max_person_number');
 			$table->decimal('pesos_fee');
 			$table->decimal('dollars_fee');
+			$table->decimal('pesos_fee_high');
+			$table->decimal('dollars_fee_high');
 			$table->timestamps();
 		});
 	}
