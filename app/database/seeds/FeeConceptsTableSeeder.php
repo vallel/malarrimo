@@ -78,22 +78,22 @@ class FeeConceptsTableSeeder extends Seeder {
                 'group_id' => $groups[FeeConceptGroup::HOTEL],
             ),
             array(
-                'name' => 'RV - motor home',
+                'name' => 'Motor home',
                 'short_name' => 'motor_home',
                 'group_id' => $groups[FeeConceptGroup::RV],
             ),
             array(
-                'name' => 'RV - fifth wheel',
+                'name' => 'Fifth wheel',
                 'short_name' => FeeConcept::RV_FIFTH_WHEEL,
                 'group_id' => $groups[FeeConceptGroup::RV],
             ),
             array(
-                'name' => 'RV - camper o van',
+                'name' => 'Camper o van',
                 'short_name' => FeeConcept::RV_CAMPER_VAN,
                 'group_id' => $groups[FeeConceptGroup::RV],
             ),
             array(
-                'name' => 'RV - camping',
+                'name' => 'Camping',
                 'short_name' => FeeConcept::RV_CAMPING,
                 'group_id' => $groups[FeeConceptGroup::RV],
             ),

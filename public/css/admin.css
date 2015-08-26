@@ -37,3 +37,18 @@
 .actions-column {
 	width: 125px;
 }
+
+.table-headers {
+	background-color: #ddd;
+}
+
+.fee-group-name-row {
+	background-color: #3071a9;
+	color: #fff;
+	font-weight: bold;
+}
+
+.fee-field {
+	margin: auto;
+	width: 120px;
+}

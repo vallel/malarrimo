@@ -16,4 +16,9 @@ class Fee extends \Eloquent
         return $this->belongsTo('Malarrimo\Entities\FeeConcept', 'concept_id');
     }
 
+    public function getName()
+    {
+        return $this->feeConcept->group->name . ' - ' . $this->feeConcept->name;
+    }
+
 }

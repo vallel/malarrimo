@@ -1,6 +1,7 @@
 <?php
 
 use Malarrimo\Managers\FeeManager;
+use Malarrimo\Marshallers\MarshallFeesToFrontEnd;
 use Malarrimo\Repositories\Fee;
 
 class AdminFeesController extends BaseController
@@ -25,7 +26,8 @@ class AdminFeesController extends BaseController
     public function getList()
     {
         $fees = $this->getFeesRepository()->getAll();
-        return View::make('admin/fees')->with('fees', $fees);
+        $feeGroups = MarshallFeesToFrontEnd::marshall($fees);
+        return View::make('admin/fees')->with('fees', $feeGroups);
     }
 
     public function update()
