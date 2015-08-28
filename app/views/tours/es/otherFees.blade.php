@@ -20,18 +20,12 @@
     </ul>
 
     <table class="table fees-grid">
-        <tr>
-            <td>2 Personas</td>
-            <td>$900.00 pesos x Persona</td>
-        </tr>
-        <tr>
-            <td>3-4 Personas</td>
-            <td>$750.00 pesos x Persona</td>
-        </tr>
-        <tr>
-            <td>5-8 Personas</td>
-            <td>$700.00 pesos x Persona</td>
-        </tr>
+        @foreach($fees as $fee)
+            <tr>
+                <td>{{$fee->min_person_number.' - '.$fee->max_person_number.' '.$fee->name}}</td>
+                <td>${{$fee->pesos_fee}} pesos x Persona</td>
+            </tr>
+        @endforeach
     </table>
 
 
@@ -51,18 +45,12 @@
     </ul>
 
     <table class="table fees-grid">
-        <tr>
-            <td>2 Personas</td>
-            <td>$900.00 pesos x Persona</td>
-        </tr>
-        <tr>
-            <td>3-4 Personas</td>
-            <td>$750.00 pesos x Persona</td>
-        </tr>
-        <tr>
-            <td>5-8 Personas</td>
-            <td>$700.00 pesos x Persona</td>
-        </tr>
+        @foreach($fees as $fee)
+            <tr>
+                <td>{{$fee->min_person_number.' - '.$fee->max_person_number.' '.$fee->name}}</td>
+                <td>${{$fee->pesos_fee}} pesos x Persona</td>
+            </tr>
+        @endforeach
     </table>
 
 

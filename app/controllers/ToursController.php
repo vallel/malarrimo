@@ -1,7 +1,24 @@
 <?php
 
+use Malarrimo\Entities\FeeConceptGroup;
+use Malarrimo\Repositories\Fee;
+
 class ToursController extends BaseController
 {
+
+    /**
+     * @var Fee
+     */
+    private $feesRepository;
+
+    /**
+     * @param Fee $feesRepository
+     */
+    public function __construct(Fee $feesRepository)
+    {
+        parent::__construct();
+        $this->setFeesRepository($feesRepository);
+    }
 
     public function index()
     {
@@ -27,10 +44,14 @@ class ToursController extends BaseController
 
     public function fees()
     {
+        $fees = $this->getFeesRepository()->getByGroup(FeeConceptGroup::WHALES);
+        $season = date('Y', strtotime($fees[0]->updated_at));
         $data = [
             'title' => 'Tours &raquo; ' . Lang::get('tours.fees') . ' | ',
             'headerClass' => 'tours-header',
             'toursBanner' => 'tours-banner',
+            'fees' => $fees,
+            'feesSeason' => $season.' - '.($season+1),
         ];
 
         return View::make('tours/' . Lang::getLocale() . '/fees', $data);
@@ -65,9 +86,28 @@ class ToursController extends BaseController
             'title' => 'Tours | ',
             'headerClass' => 'tours-header',
             'toursBanner' => 'cave-paintings-banner',
+            'fees' => $this->getFeesRepository()->getByGroup(FeeConceptGroup::CAVE_PAINTING),
         ];
 
         return View::make('tours/' . Lang::getLocale() . '/otherFees', $data);
+    }
+
+    /**
+     * @return Fee
+     */
+    public function getFeesRepository()
+    {
+        return $this->feesRepository;
+    }
+
+    /**
+     * @param Fee $feesRepository
+     * @return static
+     */
+    public function setFeesRepository($feesRepository)
+    {
+        $this->feesRepository = $feesRepository;
+        return $this;
     }
 
 }

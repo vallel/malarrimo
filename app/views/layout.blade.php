@@ -75,7 +75,10 @@
                             ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('malarrimo') }}">{{ Lang::get('layout.facilities') }}</a>
                     </li>
-                    <li {{ Route::currentRouteName() == 'tours' ? 'class="main-menu-active"' : '' }}>
+                    <li {{ Route::currentRouteName() == 'tours' || Route::currentRouteName() == 'equipment'
+                            || Route::currentRouteName() == 'fees' || Route::currentRouteName() == 'whales'
+                            || Route::currentRouteName() == 'otherTours' || Route::currentRouteName() == 'otherFees'
+                            ? 'class="main-menu-active"' : '' }}>
                         <a href="{{ route('tours') }}">{{ Lang::get('layout.tours') }}</a>
                     </li>
                     <li {{ Route::currentRouteName() == 'booking' || Route::currentRouteName() == 'bookingConfirmation'

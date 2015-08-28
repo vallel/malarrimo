@@ -11,23 +11,15 @@
         <li>Children under 6 year will not be permitted on tour without signed waiver from parent.</li>
     </ul>
 
-    <h2 class="section-content-subtitle">The rates for the next whale-whatching season 2010-2011 are:</h2>
+    <h2 class="section-content-subtitle">The rates for the next whale-whatching season {{$feesSeason}} are:</h2>
 
     <table class="table fees-grid">
-        <tr>
-            <td>
-                Adult<br>
-                <small>*National Park Fee</small>
-            </td>
-            <td>$45.00 USD + *$4.00 USD = $49.00 USD</td>
-        </tr>
-        <tr>
-            <td>
-                Children until 11 years old<br>
-                <small>*National Park Fee</small>
-            </td>
-            <td>$35.00 USD + *$4.00 USD = $39.00 USD</td>
-        </tr>
+        @foreach($fees as $fee)
+            <tr>
+                <td>{{Lang::get('fees.'.$fee->name)}}</td>
+                <td>${{$fee->dollars_fee or $fee->pesos_fee}} <span class="small">(*plus National Park Fee)</span></td>
+            </tr>
+        @endforeach
     </table>
 
     <p>Dated on November 10, 2005, the Mexican Government have apply the new National Park Fee in $40.00 ps. for most
