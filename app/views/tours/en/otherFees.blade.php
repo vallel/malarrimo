@@ -19,18 +19,12 @@
     </ul>
 
     <table class="table fees-grid">
-        <tr>
-            <td>2 Pax</td>
-            <td>$900.00 pesos x Person</td>
-        </tr>
-        <tr>
-            <td>3-4 Pax</td>
-            <td>$750.00 pesos x Person</td>
-        </tr>
-        <tr>
-            <td>5-13 Pax</td>
-            <td>$700.00 pesos x Person</td>
-        </tr>
+        @foreach($fees as $fee)
+            <tr>
+                <td>{{Lang::get('fees.'.$fee->name).' '.$fee->min_person_number.' - '.$fee->max_person_number.' Pax'}}</td>
+                <td>${{$fee->dollars_fee > 0 ? $fee->dollars_fee.' dlls' : $fee->pesos_fee.' pesos'}} x Person</td>
+            </tr>
+        @endforeach
     </table>
 
 
@@ -50,18 +44,12 @@
     </ul>
 
     <table class="table fees-grid">
-        <tr>
-            <td>2 Pax</td>
-            <td>$900.00 pesos x Person</td>
-        </tr>
-        <tr>
-            <td>3-4 Pax</td>
-            <td>$750.00 pesos x Person</td>
-        </tr>
-        <tr>
-            <td>5-13 Pax</td>
-            <td>$700.00 pesos x Person</td>
-        </tr>
+        @foreach($fees as $fee)
+            <tr>
+                <td>{{Lang::get('fees.'.$fee->name).' '.$fee->min_person_number.' - '.$fee->max_person_number.' Pax'}}</td>
+                <td>${{$fee->dollars_fee > 0 ? $fee->dollars_fee.' dlls' : $fee->pesos_fee.' pesos'}} x Person</td>
+            </tr>
+        @endforeach
     </table>
 
 
