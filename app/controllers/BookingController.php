@@ -1,7 +1,7 @@
 <?php
 
 use Malarrimo\Managers\BookingManager;
-use Malarrimo\Marshallers\MarshallFeesToDto;
+use Malarrimo\Marshallers\MarshallFeesToFrontEnd;
 use Malarrimo\Repositories\Booking;
 use Malarrimo\Repositories\Fee;
 
@@ -19,15 +19,16 @@ class BookingController extends BaseController
 	private $feesRepo;
 
 	/**
-	 * @var MarshallFeesToDto
+	 * @var MarshallFeesToFrontEnd
 	 */
 	private $marshaller;
 
-	public function __construct(Booking $bookingRepo, Fee $feesRepo, MarshallFeesToDto $marshaller)
+	public function __construct(Booking $bookingRepo, Fee $feesRepo, MarshallFeesToFrontEnd $marshaller)
 	{
 		parent::__construct();
 		$this->bookingRepo = $bookingRepo;
 		$this->setFeesRepo($feesRepo);
+		$this->marshaller = $marshaller;
 	}
 
 	public function index()
