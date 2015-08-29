@@ -1,8 +1,9 @@
 <?php
 
 use Malarrimo\Managers\BookingManager;
-use Malarrimo\Marshallers\MarshallBookingToServicesList;
+use Malarrimo\Marshallers\MarshallFeesToDto;
 use Malarrimo\Repositories\Booking;
+use Malarrimo\Repositories\Fee;
 
 class BookingController extends BaseController
 {
@@ -10,19 +11,33 @@ class BookingController extends BaseController
 	/**
 	 * @var Booking
 	 */
-	protected $bookingRepo;
+	private $bookingRepo;
 
-	public function __construct(Booking $bookingRepo)
+	/**
+	 * @var Fee
+	 */
+	private $feesRepo;
+
+	/**
+	 * @var MarshallFeesToDto
+	 */
+	private $marshaller;
+
+	public function __construct(Booking $bookingRepo, Fee $feesRepo, MarshallFeesToDto $marshaller)
 	{
 		parent::__construct();
 		$this->bookingRepo = $bookingRepo;
+		$this->setFeesRepo($feesRepo);
 	}
 
 	public function index()
 	{
+		$fees = $this->getFeesRepo()->getAll();
+		$fees = $this->marshaller->marshall($fees);
 		$data = [
 			'title' => Lang::get('booking.booking') . ' | ',
 			'headerClass' => 'booking-header',
+			'fees' => json_encode($fees),
 		];
 
 		return View::make('booking/booking', $data);
@@ -51,6 +66,24 @@ class BookingController extends BaseController
 		];
 
 		return View::make('booking/bookingConfirmation', $data);
+	}
+
+	/**
+	 * @return Fee
+	 */
+	public function getFeesRepo()
+	{
+		return $this->feesRepo;
+	}
+
+	/**
+	 * @param Fee $feesRepo
+	 * @return static
+	 */
+	public function setFeesRepo($feesRepo)
+	{
+		$this->feesRepo = $feesRepo;
+		return $this;
 	}
 
 }

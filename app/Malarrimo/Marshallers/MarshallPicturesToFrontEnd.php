@@ -5,14 +5,18 @@ use stdClass;
 
 class MarshallPicturesToFrontEnd implements Marshaller
 {
-	
-	public static function marshall($pictures)
+
+	/**
+	 * @param mixed $pictures
+	 * @return stdClass
+	 */
+	public function marshall($pictures)
 	{
 		$files = array();
 
 		foreach ($pictures as $pic) 
 		{
-			$files[] = static::marshallPicture($pic);
+			$files[] = $this->marshallPicture($pic);
 		}
 
 		$response = new stdClass();
@@ -21,7 +25,7 @@ class MarshallPicturesToFrontEnd implements Marshaller
 		return $response;
 	}
 
-	protected static function marshallPicture($picture)
+	private function marshallPicture($picture)
 	{
 		$response = new stdClass();
 

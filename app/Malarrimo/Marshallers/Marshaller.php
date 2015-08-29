@@ -8,5 +8,5 @@ interface Marshaller
 	 * @param mixed $obj
 	 * @return mixed
 	 */
-	public static function marshall($obj);
+	public function marshall($obj);
 }

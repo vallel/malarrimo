@@ -298,6 +298,9 @@
 
 @section('appendHead')
     {{ HTML::style('css/datepicker.css') }}
+    <script>
+        var fees = {{$fees}};
+    </script>
 @endsection
 
 @section('scripts')

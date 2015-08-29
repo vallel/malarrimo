@@ -20,14 +20,18 @@ class AdminGalleriesController extends BaseController
      */
     protected $pictureRepo;
 
+    private $marshaller;
+
     /**
      * @param GalleryRepo $repository
      * @param PictureRepo $pictureRepo
+     * @param MarshallPicturesToFrontEnd $marshaller
      */
-    public function __construct(GalleryRepo $repository, PictureRepo $pictureRepo)
+    public function __construct(GalleryRepo $repository, PictureRepo $pictureRepo, MarshallPicturesToFrontEnd $marshaller)
     {
         $this->repository = $repository;
         $this->pictureRepo = $pictureRepo;
+        $this->marshaller = $marshaller;
     }
 
     public function getList()
@@ -132,7 +136,7 @@ class AdminGalleriesController extends BaseController
     public  function getPictures($id)
     {
         $pictures = $this->pictureRepo->getGalleryPictures($id);
-        $response = MarshallPicturesToFrontEnd::marshall($pictures);
+        $response = $this->marshaller->marshall($pictures);
 
         return Response::json($response);
     }

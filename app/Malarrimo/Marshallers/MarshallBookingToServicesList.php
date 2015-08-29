@@ -13,14 +13,14 @@ class MarshallBookingToServicesList implements Marshaller
      * @param Booking $booking
      * @return array
      */
-    public static function marshall($booking)
+    public function marshall($booking)
     {
         $services = array();
 
         if (!empty($booking))
         {
-            $services[] = static::marshallWhales($booking);
-            $services[] = static::marshallHotel($booking);
+            $services[] = $this->marshallWhales($booking);
+            $services[] = $this->marshallHotel($booking);
 
             dd($services);
             $services = array_filter($services);
@@ -33,7 +33,7 @@ class MarshallBookingToServicesList implements Marshaller
      * @param Booking $booking
      * @return BookingServices|null
      */
-    protected static function marshallHotel($booking)
+    private function marshallHotel($booking)
     {
         if ($booking->hotelCheckIn && $booking->hotelCheckOut &&
             ($booking->hotelSingleRooms || $booking->hotelDoubleRooms) &&
@@ -59,7 +59,7 @@ class MarshallBookingToServicesList implements Marshaller
 
             $dates = date('d-m-Y', $booking->hotelCheckIn) . ' - ' . date('d-m-Y', $booking->hotelCheckOut);
 
-            $service = static::createService($booking->id, $description, $dates);
+            $service = $this->createService($booking->id, $description, $dates);
             return $service;
         }
 
@@ -70,7 +70,7 @@ class MarshallBookingToServicesList implements Marshaller
      * @param Booking $booking
      * @return BookingServices|null
      */
-    protected static function marshallWhales($booking)
+    private function marshallWhales($booking)
     {
         if ($booking->whalesDate && $booking->whalesAdults)
         {
@@ -80,7 +80,7 @@ class MarshallBookingToServicesList implements Marshaller
                 $description .= ' y ' . $booking->whalesChildren . ' Niños';
             }
             $dates = date('d-m-Y', strtotime($booking->whalesDate)) . ' a las ' . $booking->whalesTime;
-            $service = static::createService($booking->id, $description, $dates);
+            $service = $this->createService($booking->id, $description, $dates);
             return $service;
         }
 
@@ -93,7 +93,7 @@ class MarshallBookingToServicesList implements Marshaller
      * @param string $dates
      * @return BookingServices
      */
-    protected static function createService($bookingId, $description, $dates)
+    private function createService($bookingId, $description, $dates)
     {
         $service = new BookingServices();
         $service->setBookingId($bookingId);

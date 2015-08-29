@@ -1,7 +1,7 @@
 <?php
 
 use Malarrimo\Managers\FeeManager;
-use Malarrimo\Marshallers\MarshallFeesToFrontEnd;
+use Malarrimo\Marshallers\MarshallFeesToDto;
 use Malarrimo\Repositories\Fee;
 
 class AdminFeesController extends BaseController
@@ -17,16 +17,22 @@ class AdminFeesController extends BaseController
      */
     private $manager;
 
-    public function __construct(Fee $feesRepository, FeeManager $manager)
+    /**
+     * @var MarshallFeesToDto
+     */
+    private $marshaller;
+
+    public function __construct(Fee $feesRepository, FeeManager $manager, MarshallFeesToDto $marshaller)
     {
         $this->setFeesRepository($feesRepository);
         $this->setManager($manager);
+        $this->marshaller = $marshaller;
     }
 
     public function getList()
     {
         $fees = $this->getFeesRepository()->getAll();
-        $feeGroups = MarshallFeesToFrontEnd::marshall($fees);
+        $feeGroups = $this->marshaller->marshall($fees);
         return View::make('admin/fees')->with('fees', $feeGroups);
     }
 
