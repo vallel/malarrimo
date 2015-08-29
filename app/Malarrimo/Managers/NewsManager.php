@@ -67,6 +67,11 @@ class NewsManager extends ManagerBase
 
                     // create thumbnail
                     $thumbDir = public_path() . '/uploads/news/thumb/';
+
+                    if (!is_dir($thumbDir)) {
+                        mkdir($thumbDir);
+                    }
+
                     $image->fit(250, 150, function ($constraint) {
                         $constraint->upsize();
                     })->save($thumbDir . $img->getFilename());
