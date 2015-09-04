@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('scripts')
+    {{ HTML::script('js/home.js') }}
+@endsection
+
 @section('content')
 
     <header class="section-header home-section-header">
@@ -46,13 +50,27 @@
         </article>
 
         <div class="award-icons-container">
-            <a href="" class="award-icon">
+            <a href="#" class="award-icon" data-img="{{ asset('img/baja-traveller-2008.jpg') }}">
                 <img src="{{ asset('img/bestofbaja.jpg') }}" alt="Best of Baja Reader's choice award" width="150" height="150"/>
             </a>
-            <a href="" class="award-icon">
+            <a href="#" class="award-icon" data-img="{{ asset('img/cert-profepa-2009-2011.jpg') }}">
                 <img src="{{ asset('img/calidadambiental.jpg') }}" alt="Calidad ambiental turistica" width="150" height="150"/>
             </a>
         </div>
+
+        <div class="modal fade awards-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title"><!-- Modal title --></h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Modal body -->
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
     </div>
 
