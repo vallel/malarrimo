@@ -45,6 +45,15 @@
 
         </article>
 
+        <div class="award-icons-container">
+            <a href="" class="award-icon">
+                <img src="{{ asset('img/bestofbaja.jpg') }}" alt="Best of Baja Reader's choice award" width="150" height="150"/>
+            </a>
+            <a href="" class="award-icon">
+                <img src="{{ asset('img/calidadambiental.jpg') }}" alt="Calidad ambiental turistica" width="150" height="150"/>
+            </a>
+        </div>
+
     </div>
 
 @endsection
