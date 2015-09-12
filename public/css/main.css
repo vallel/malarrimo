@@ -749,6 +749,7 @@ a.section-menu-item:hover {
     margin-right: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
+    max-width: 300px;
 }
 
 .galleries-list--item a {
@@ -836,6 +837,9 @@ a.section-menu-item:hover {
 }
 #carousel-custom .carousel-outer {
     position: relative;
+}
+.carousel-inner img {
+    margin: auto;
 }
 
 
