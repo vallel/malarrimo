@@ -18,7 +18,7 @@
         {{ Session::get('msg') }}
     @endif
 
-    <a href="" class="btn btn-primary tool-btn pull-right"><span class="glyphicon glyphicon-plus"></span> Registrar reservación</a>
+    <!--<a href="" class="btn btn-primary tool-btn pull-right"><span class="glyphicon glyphicon-plus"></span> Registrar reservación</a>-->
 
     <table class="table table-striped booking-table">
         <thead>
