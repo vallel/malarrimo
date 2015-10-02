@@ -18,4 +18,15 @@
 
     <p>*We are sorry, pets are not allowed in the rooms</p>
 
+    <h2 class="section-content-subtitle">Current rates ({{$feesSeason}}):</h2>
+
+    <table class="table fees-grid">
+        @foreach($fees as $fee)
+            <tr>
+                <td>{{Lang::get('fees.' . $fee->short_name)}}</td>
+                <td>${{$fee->pesos_fee or $fee->dollars_fee}} {{$fee->pesos_fee ? ' pesos' : ' dolares'}}</td>
+            </tr>
+        @endforeach
+    </table>
+
 @endsection

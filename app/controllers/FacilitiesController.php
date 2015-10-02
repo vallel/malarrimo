@@ -1,7 +1,18 @@
 <?php
 
+use Malarrimo\Entities\FeeConceptGroup;
+use Malarrimo\Repositories\Fee;
+
 class FacilitiesController extends BaseController
 {
+
+    /** @var  Fee */
+    private $feesRepository;
+
+    public function __construct(Fee $feesRepository) {
+        parent::__construct();
+        $this->setFeesRepository($feesRepository);
+    }
 
     public function malarrimo()
     {
@@ -38,10 +49,14 @@ class FacilitiesController extends BaseController
 
     public function motel()
     {
+        $fees = $this->getFeesRepository()->getByGroup(FeeConceptGroup::HOTEL);
+        $season = date('Y', strtotime($fees[0]->updated_at));
         $data = [
             'title' => Lang::get('facilities.facilities') . ' | Motel Malarrimo',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'motel-banner',
+            'feesSeason' => $season.' - '.($season+1),
+            'fees' => $fees,
         ];
 
         return View::make('facilities/' . Lang::getLocale() . '/motel', $data);
@@ -78,6 +93,24 @@ class FacilitiesController extends BaseController
         ];
 
         return View::make('facilities/' . Lang::getLocale() . '/deli', $data);
+    }
+
+    /**
+     * @return Fee
+     */
+    public function getFeesRepository()
+    {
+        return $this->feesRepository;
+    }
+
+    /**
+     * @param Fee $feesRepository
+     * @return static
+     */
+    public function setFeesRepository($feesRepository)
+    {
+        $this->feesRepository = $feesRepository;
+        return $this;
     }
 
 }

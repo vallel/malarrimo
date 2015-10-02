@@ -12,16 +12,15 @@
         <li>Temporada oficial del 15 de diciembre al 15 de abril</li>
     </ul>
 
-    <h2 class="section-content-subtitle">Tarifas vigentes para la temporada 2010-2011</h2>
+    <h2 class="section-content-subtitle">Tarifas vigentes para la temporada {{$feesSeason}}:</h2>
 
     <table class="table fees-grid">
-        <tr>
-            <td>
-                Adultos<br>
-                <span class="small">(no incluye pago de área protegida)</span>
-            </td>
-            <td>desde $400.00 a $550.00 pesos</td>
-        </tr>
+        @foreach($fees as $fee)
+            <tr>
+                <td>{{Lang::get('fees.'.$fee->name)}}</td>
+                <td>${{$fee->pesos_fee or $fee->dollars_fee}} {{$fee->pesos_fee ? ' pesos' : ' dolares'}} <span class="small">(no incluye pago de área protegida)</span></td>
+            </tr>
+        @endforeach
     </table>
 
     <p>*El pago de derechos por visitar un área protegida es obligatorio. Este pago no aplica para menores de 6 años
