@@ -64,10 +64,14 @@ class FacilitiesController extends BaseController
 
     public function rvparking()
     {
+        $fees = $this->getFeesRepository()->getByGroup(FeeConceptGroup::RV);
+        $season = date('Y', strtotime($fees[0]->updated_at));
         $data = [
             'title' => Lang::get('facilities.facilities') . ' | RV Parking',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'rvparking-banner',
+            'feesSeason' => $season.' - '.($season+1),
+            'fees' => $fees,
         ];
 
         return View::make('facilities/' . Lang::getLocale() . '/rvparking', $data);

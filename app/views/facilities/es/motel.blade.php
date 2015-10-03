@@ -24,7 +24,7 @@
         @foreach($fees as $fee)
             <tr>
                 <td>{{$fee->name}}</td>
-                <td>${{$fee->pesos_fee or $fee->dollars_fee}} {{$fee->pesos_fee ? ' pesos' : ' dolares'}}</td>
+                <td>${{$fee->pesos_fee > 0 ? $fee->pesos_fee . ' pesos' : $fee->dollars_fee . ' USD'}}</td>
             </tr>
         @endforeach
     </table>

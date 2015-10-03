@@ -17,8 +17,8 @@
     <table class="table fees-grid">
         @foreach($fees as $fee)
             <tr>
-                <td>{{Lang::get('fees.'.$fee->name)}}</td>
-                <td>${{$fee->pesos_fee or $fee->dollars_fee}} {{$fee->pesos_fee ? ' pesos' : ' dolares'}} <span class="small">(no incluye pago de área protegida)</span></td>
+                <td>{{$fee->name}}</td>
+                <td>${{$fee->pesos_fee > 0 ? $fee->pesos_fee . ' pesos' : $fee->dollars_fee . ' USD'}} <span class="small">(no incluye pago de área protegida)</span></td>
             </tr>
         @endforeach
     </table>
