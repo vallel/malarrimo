@@ -17,7 +17,7 @@ class FacilitiesController extends BaseController
     public function malarrimo()
     {
         $data = [
-            'title' => Lang::get('facilities.facilities') . ' | Malarrimo',
+            'title' => Lang::get('facilities.facilities') . ' | ',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'facilities-malarrimo-banner',
         ];
@@ -28,7 +28,7 @@ class FacilitiesController extends BaseController
     public function tours()
     {
         $data = [
-            'title' => Lang::get('facilities.facilities') . ' | Eco-Tours Malarrimo',
+            'title' => Lang::get('facilities.facilities') . ' &raquo; Eco-Tours | ',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'facilities-tours-banner',
         ];
@@ -39,7 +39,7 @@ class FacilitiesController extends BaseController
     public function restaurant()
     {
         $data = [
-            'title' => Lang::get('facilities.facilities') . ' | Restaurante Malarrimo',
+            'title' => Lang::get('facilities.facilities') . ' &raquo; Restaurante | ',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'restaurant-banner',
         ];
@@ -52,7 +52,7 @@ class FacilitiesController extends BaseController
         $fees = $this->getFeesRepository()->getByGroup(FeeConceptGroup::HOTEL);
         $season = date('Y', strtotime($fees[0]->updated_at));
         $data = [
-            'title' => Lang::get('facilities.facilities') . ' | Motel Malarrimo',
+            'title' => Lang::get('facilities.facilities') . ' &raquo; Motel | ',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'motel-banner',
             'feesSeason' => $season.' - '.($season+1),
@@ -67,7 +67,7 @@ class FacilitiesController extends BaseController
         $fees = $this->getFeesRepository()->getByGroup(FeeConceptGroup::RV);
         $season = date('Y', strtotime($fees[0]->updated_at));
         $data = [
-            'title' => Lang::get('facilities.facilities') . ' | RV Parking',
+            'title' => Lang::get('facilities.facilities') . ' &raquo; RV Parking | ',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'rvparking-banner',
             'feesSeason' => $season.' - '.($season+1),
@@ -80,7 +80,7 @@ class FacilitiesController extends BaseController
     public function casaelviejocactus()
     {
         $data = [
-            'title' => Lang::get('facilities.facilities') . ' | Casa El Viejo Cactus',
+            'title' => Lang::get('facilities.facilities') . ' &raquo; Casa El Viejo Cactus | ',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'cevc-banner',
         ];
@@ -91,7 +91,7 @@ class FacilitiesController extends BaseController
     public function deli()
     {
         $data = [
-            'title' => Lang::get('facilities.facilities') . ' | Malarrimo Deli',
+            'title' => Lang::get('facilities.facilities') . ' &raquo; Malarrimo Deli | ',
             'headerClass' => 'facilities-header',
             'facilitiesBanner' => 'deli-banner',
         ];

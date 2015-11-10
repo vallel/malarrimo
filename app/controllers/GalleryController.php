@@ -43,7 +43,7 @@ class GalleryController extends BaseController
         }
 
         $data = array(
-            'title' => Lang::get('galleries.galleries') . ' &raquo; ' . $title . ' | ',
+            'title' => Lang::get('galleries.galleries') . ' &raquo; ' . $gallery->title . ' | ',
             'headerClass' => 'gallery-header',
             'gallery' => $gallery,
         );
