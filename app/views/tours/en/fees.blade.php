@@ -17,7 +17,7 @@
         @foreach($fees as $fee)
             <tr>
                 <td>{{Lang::get('fees.'.$fee->name)}}</td>
-                <td>${{$fee->dollars_fee > 0 ? $fee->dollars_fee . ' pesos' : $fee->pesos_fee . ' USD'}} <span class="small">(*plus National Park Fee)</span></td>
+                <td>${{$fee->dollars_fee > 0 ? $fee->dollars_fee . ' USD' : $fee->pesos_fee . ' pesos'}} <span class="small">(*plus National Park Fee)</span></td>
             </tr>
         @endforeach
     </table>

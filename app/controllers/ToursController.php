@@ -47,7 +47,7 @@ class ToursController extends BaseController
         $fees = $this->getFeesRepository()->getByGroup(FeeConceptGroup::WHALES);
         $season = date('Y', strtotime($fees[0]->updated_at));
         $data = [
-            'title' => 'Tours &raquo; ' . Lang::get('tours.fees') . ' | ',
+            'title' => 'Tours &raquo; ' . Lang::get('tours.rates') . ' | ',
             'headerClass' => 'tours-header',
             'toursBanner' => 'tours-banner',
             'fees' => $fees,
