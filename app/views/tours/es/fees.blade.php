@@ -29,6 +29,11 @@
     <p>*El pago por Área Natural Protegida puede variar de acuerdo a los cambios en la Ley federal de Derechos
         publicada anualmente en el Diario Oficial de la Federación en su Artículo 198 y 198-A.</p>
 
+    <p class="alert alert-warning" role="alert">
+        <strong>NACIONALES CON IFE</strong> preguntar por tarifa <strong>PLAN VIVE MEXICO</strong> para una tarifa más baja
+        (presentar credencial IFE obligatoria)
+    </p>
+
     <p>Los viajes incluyen:</p>
 
     <ul class="section-content-list">
